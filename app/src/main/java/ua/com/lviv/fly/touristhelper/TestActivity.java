@@ -15,99 +15,87 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Activity;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
+import com.google.android.gms.common.GooglePlayServicesRepairableException;
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.location.places.Place;
+import com.google.android.gms.location.places.Places;
+import com.google.android.gms.location.places.ui.PlacePicker;
+
 import ua.com.lviv.fly.touristhelper.R;
 
-public class TestActivity extends Activity {
-    private String googleAPIKey = "your google api key";
-
-
-    final String TAG = getClass().getSimpleName();
-
+public class TestActivity extends Activity implements GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
+    int PLACE_PICKER_REQUEST = 1;
+    private GoogleApiClient mGoogleApiClient;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-        System.out.println("hello");
-
-        new UpdateTask().execute();
+        mGoogleApiClient = new GoogleApiClient
+                .Builder(this)
+                .addApi(Places.GEO_DATA_API)
+                .addApi(Places.PLACE_DETECTION_API)
+                .addConnectionCallbacks(this)
+                .addOnConnectionFailedListener(this)
+                .build();
     }
 
-    private class UpdateTask extends AsyncTask<String, String, String> {
-        DefaultHttpClient client;
-        HttpResponse res;
-        HttpGet req;
-        InputStream in;
-        JSONObject jsonobj;
-        JSONArray resarray;
-        String requesturl;
-        HttpEntity jsonentity;
-
-        protected String doInBackground(String... urls) {
-            requesturl = "https://maps.googleapis.com/maps/api/place/search/json?radius=500&sensor=false&key=" + "AIzaSyDcjBH-d5PcKPAAzt683TFT6h30t6YwVNY" + "&location=13.01,74.79";
-
-            System.out.println("Request " + requesturl);
-            client = new DefaultHttpClient();
-
-            req=new HttpGet(requesturl);
-            try {
-                res = client.execute(req);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            StatusLine status = res.getStatusLine();
-            int code = status.getStatusCode();
-            System.out.println(code);
-            if (code != 200) {
-                System.out.println("Request Has not succeeded");
-                finish();
-            }
-
-            jsonentity = res.getEntity();
-            try {
-                in = jsonentity.getContent();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-
-            try {
-                jsonobj = new JSONObject(convertStreamToString(in));
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-            try {
-                resarray = jsonobj.getJSONArray("results");
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-            Log.e("Test", resarray.toString());
-            return resarray.toString();
-        }
-
+    @Override
+    protected void onStart() {
+        super.onStart();
+        mGoogleApiClient.connect();
     }
 
-    private String convertStreamToString(InputStream in) {
-        BufferedReader br = new BufferedReader(new InputStreamReader(in));
-        StringBuilder jsonstr = new StringBuilder();
-        String line;
+    @Override
+    protected void onStop() {
+        mGoogleApiClient.disconnect();
+        super.onStop();
+    }
+
+    @Override
+    public void onConnected(@Nullable Bundle bundle) {
+        Log.e(TestActivity.class.getName(), "onConnectionSuspended");
+
+        PlacePicker.IntentBuilder builder = new PlacePicker.IntentBuilder();
+
         try {
-            while ((line = br.readLine()) != null) {
-                String t = line + "\n";
-                jsonstr.append(t);
-            }
-            br.close();
-        } catch (IOException e) {
+            startActivityForResult(builder.build(this), PLACE_PICKER_REQUEST);
+        } catch (GooglePlayServicesRepairableException e) {
+            e.printStackTrace();
+        } catch (GooglePlayServicesNotAvailableException e) {
             e.printStackTrace();
         }
-        return jsonstr.toString();
     }
 
+    @Override
+    public void onConnectionSuspended(int i) {
+        Log.e(TestActivity.class.getName(), "onConnectionSuspended");
+    }
+
+    @Override
+    public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
+        Log.e(TestActivity.class.getName(), "onConnectionFailed");
+    }
+
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == PLACE_PICKER_REQUEST) {
+            if (resultCode == RESULT_OK) {
+                Place place = PlacePicker.getPlace(data, this);
+                String toastMsg = String.format("Place: %s", place.getName());
+                Toast.makeText(this, toastMsg, Toast.LENGTH_LONG).show();
+            }
+        }
+    }
 }
