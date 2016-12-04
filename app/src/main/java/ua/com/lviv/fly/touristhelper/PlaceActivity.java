@@ -3,7 +3,6 @@ package ua.com.lviv.fly.touristhelper;
 
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Activity;
 import android.support.annotation.NonNull;
@@ -27,8 +26,8 @@ import com.google.android.gms.location.places.Places;
 import com.google.android.gms.location.places.ui.PlacePicker;
 
 
-public class TestActivity extends Activity implements GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
-    private final static String TAG = TestActivity.class.getName();
+public class PlaceActivity extends Activity implements GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
+    private final static String TAG = PlaceActivity.class.getName();
     int PLACE_PICKER_REQUEST = 1;
     private GoogleApiClient mGoogleApiClient;
 
@@ -62,7 +61,7 @@ public class TestActivity extends Activity implements GoogleApiClient.Connection
     public void onConnected(@Nullable Bundle bundle) {
         getCurrentLocation();
 //        placePicker();
-        Log.e(TestActivity.class.getName(), "onConnectionSuspended");
+        Log.e(PlaceActivity.class.getName(), "onConnectionSuspended");
 
     }
 
@@ -103,12 +102,12 @@ public class TestActivity extends Activity implements GoogleApiClient.Connection
 
     @Override
     public void onConnectionSuspended(int i) {
-        Log.e(TestActivity.class.getName(), "onConnectionSuspended");
+        Log.e(PlaceActivity.class.getName(), "onConnectionSuspended");
     }
 
     @Override
     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
-        Log.e(TestActivity.class.getName(), "onConnectionFailed");
+        Log.e(PlaceActivity.class.getName(), "onConnectionFailed");
     }
 //
 //    private void getPlaceById(){
