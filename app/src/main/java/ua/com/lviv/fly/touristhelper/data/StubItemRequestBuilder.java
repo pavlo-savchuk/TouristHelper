@@ -15,11 +15,10 @@ public class StubItemRequestBuilder extends BaseRequestBuilder {
 
     private String pageId;
 
-    public StubItemRequestBuilder(String pageId) {
-        this.pageId = pageId;
+    public StubItemRequestBuilder() {
         setRequestMethod(BaseRequest.RequestMethod.GET);
         setResponseFormat(BaseRequest.ResponseFormat.JSON);
-        Type listType = new TypeToken<List<ResponseVO>>() {
+        Type listType = new TypeToken<ResponseVO>() {
         }.getType();
         setResponseClassSpecifier(listType);
         setRequestURL(getPath());
