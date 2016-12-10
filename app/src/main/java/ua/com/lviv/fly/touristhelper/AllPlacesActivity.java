@@ -20,9 +20,10 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Activity;
 import android.util.Log;
+import android.view.View;
 import android.widget.Toast;
 
-public class AllPlacesActivity extends Activity {
+public class AllPlacesActivity extends Activity implements View.OnClickListener {
     DefaultHttpClient client;
     HttpResponse res;
     HttpGet req;
@@ -38,17 +39,14 @@ public class AllPlacesActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        requesturl = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=49.832,24.01678&radius=500&types=food&name=cruise&key=AIzaSyDcjBH-d5PcKPAAzt683TFT6h30t6YwVNY";
-
-        System.out.println("Request " + requesturl);
+        setContentView(R.layout.activity_test);
+        findViewById(R.id.button2).setOnClickListener(this);
+        requesturl = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=49.832,24.01678&radius=500&types=cafe=cruise&key=AIzaSyDcjBH-d5PcKPAAzt683TFT6h30t6YwVNY";
+//        requesturl = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=51.509972,-0.128727&radius=500&types=food&name=cruise&key=AIzaSyDcjBH-d5PcKPAAzt683TFT6h30t6YwVNY";
         client = new DefaultHttpClient();
-        System.out.println("hello");
-//        49.832091, 24.016785
 
-        System.out.println("hello");
-        new DownloadFilesTask().execute();
+//        49.832091, 24.016785
+        //  51.509972, -0.128727
     }
 
     private String convertStreamToString(InputStream in) {
@@ -65,6 +63,16 @@ public class AllPlacesActivity extends Activity {
             e.printStackTrace();
         }
         return jsonstr.toString();
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.button2:
+                Log.e(TAG, "Request " + requesturl);
+                new DownloadFilesTask().execute();
+                break;
+        }
     }
 
     private class DownloadFilesTask extends AsyncTask<Void, Void, Void> {
@@ -89,7 +97,7 @@ public class AllPlacesActivity extends Activity {
 
 
                 resarray = jsonobj.getJSONArray("results");
-                Log.e(TAG, resarray.toString());
+                Log.e(TAG, jsonobj.toString());
 //                if (resarray.length() == 0) {
 //                } else {
 //                    int len = resarray.length();

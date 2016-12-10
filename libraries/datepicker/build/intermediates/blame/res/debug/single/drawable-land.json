@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "D:\\android\\TouristHelper\\libraries\\datepicker\\build\\intermediates\\res\\merged\\debug\\drawable-land\\mdtp_done_background_color.xml",
+        "source": "D:\\android\\TouristHelper\\libraries\\datepicker\\src\\main\\res\\drawable-land\\mdtp_done_background_color.xml"
+    },
+    {
+        "merged": "D:\\android\\TouristHelper\\libraries\\datepicker\\build\\intermediates\\res\\merged\\debug\\drawable-land\\mdtp_done_background_color_dark.xml",
+        "source": "D:\\android\\TouristHelper\\libraries\\datepicker\\src\\main\\res\\drawable-land\\mdtp_done_background_color_dark.xml"
+    }
+]
