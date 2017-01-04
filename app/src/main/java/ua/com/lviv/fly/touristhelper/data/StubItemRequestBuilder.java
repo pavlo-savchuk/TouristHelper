@@ -3,6 +3,7 @@ package ua.com.lviv.fly.touristhelper.data;
 import com.google.gson.reflect.TypeToken;
 import com.ls.http.base.BaseRequest;
 import com.ls.http.base.BaseRequestBuilder;
+import com.ls.util.L;
 
 
 import java.lang.reflect.Type;
@@ -21,6 +22,7 @@ public class StubItemRequestBuilder extends BaseRequestBuilder {
         Type listType = new TypeToken<ResponseVO>() {
         }.getType();
         setResponseClassSpecifier(listType);
+        L.e("getPath() = " + getPath());
         setRequestURL(getPath());
     }
 

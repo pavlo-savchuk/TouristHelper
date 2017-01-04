@@ -1,0 +1,20 @@
+<resources>
+    <string name="create_table_stub_items">
+        create table stub_items(
+        _id string primary key,
+        imageURL string,
+        description string,
+        isFavorite integer,
+        page_id string
+        )
+    </string>
+
+        <string name="create_table_response">
+         create table results(
+        _id string primary key,
+        icon string,
+        name string
+        )
+
+    </string>
+</resources>

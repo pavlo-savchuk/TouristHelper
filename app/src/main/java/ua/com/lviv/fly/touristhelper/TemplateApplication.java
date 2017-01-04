@@ -4,6 +4,7 @@ import android.app.Application;
 import android.content.Context;
 import android.support.annotation.NonNull;
 
+import ua.com.lviv.fly.touristhelper.data.base.DatabaseFacade;
 import ua.com.lviv.fly.touristhelper.model.Model;
 
 
@@ -19,9 +20,7 @@ public final class TemplateApplication extends Application {
         super.onCreate();
         sharedContext = this;
         Model.instance(sharedContext);
-        //Setting client is optional: you can perform this action in case is authentication is
-        // required in order to load images
-        //DrupalImageView.setupSharedClient(Model.instance().getClient());
+        DatabaseFacade.instance(sharedContext);
     }
 
     @NonNull

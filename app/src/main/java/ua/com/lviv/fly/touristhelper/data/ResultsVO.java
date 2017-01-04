@@ -1,10 +1,12 @@
 package ua.com.lviv.fly.touristhelper.data;
 
+import ua.com.lviv.fly.touristhelper.data.base.AbstractVO;
+
 /**
  * Created by PASHA on 10.12.2016.
  */
 
-public class Results {
+public class ResultsVO extends AbstractVO<String> {
 //    private Geometry[] geometry;
     private String icon;
     private String name;
@@ -27,7 +29,7 @@ public class Results {
 
     @Override
     public String toString() {
-        return "Results{" +
+        return "ResultsVO{" +
                 "icon='" + icon + '\'' +
                 ", name='" + name + '\'' +
                 '}';
