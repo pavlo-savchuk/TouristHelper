@@ -9,7 +9,7 @@ import ua.com.lviv.fly.touristhelper.data.base.AbstractDAO;
 /**
  * Created on 22.05.2015.
  */
-public class StubItemDAO extends AbstractDAO<ResultsVO, String> {
+public class ResultItemDAO extends AbstractDAO<ResultsVO, String> {
 
     private final static String TABLE_NAME = "results";
     private final static String COLUMN_ID = "_id";

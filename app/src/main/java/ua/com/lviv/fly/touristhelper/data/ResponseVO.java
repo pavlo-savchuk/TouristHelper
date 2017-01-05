@@ -1,5 +1,7 @@
 package ua.com.lviv.fly.touristhelper.data;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -10,12 +12,13 @@ import ua.com.lviv.fly.touristhelper.data.base.AbstractVO;
  */
 
 public class ResponseVO extends AbstractVO<String> {
-   private String[] html_attributions;
+   @SerializedName("html_attributions")
+   private String[] htmlAttributions;
    private List<ResultsVO> results;
    private String status;
 
-   public String[] getHtml_attributions() {
-      return html_attributions;
+   public String[] getHtmlAttributions() {
+      return htmlAttributions;
    }
 
    public List<ResultsVO> getResults() {
@@ -29,7 +32,7 @@ public class ResponseVO extends AbstractVO<String> {
    @Override
    public String toString() {
       return "ResponseVO{" +
-              "html_attributions=" + Arrays.toString(html_attributions) +
+              "htmlAttributions=" + Arrays.toString(htmlAttributions) +
               ", results=" + results +
               ", status='" + status + '\'' +
               '}';

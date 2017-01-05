@@ -1,25 +1,13 @@
 package ua.com.lviv.fly.touristhelper.model;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 
-import com.android.volley.Network;
 import com.android.volley.RequestQueue;
-import com.android.volley.toolbox.BasicNetwork;
-import com.android.volley.toolbox.DiskBasedCache;
-import com.android.volley.toolbox.HttpStack;
 import com.ls.http.base.client.LSClient;
 
-import com.ls.util.internal.VolleyHelperFactory;
-
-import java.io.File;
-import java.net.CookieHandler;
-import java.net.CookieManager;
-import java.net.CookiePolicy;
 import java.net.CookieStore;
 
-import ua.com.lviv.fly.touristhelper.data.StubItemManager;
+import ua.com.lviv.fly.touristhelper.data.manager.StubItemManager;
 
 /**
  * Created on 21.05.2015.

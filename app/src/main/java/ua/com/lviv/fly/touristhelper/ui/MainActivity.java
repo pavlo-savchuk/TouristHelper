@@ -92,6 +92,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
 
         } else if (id == R.id.nav_gallery) {
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            fragmentManager.beginTransaction().replace(R.id.content_main, NearbyPlacesFragment.newInstance()).commit();
 
         } else if (id == R.id.nav_slideshow) {
 

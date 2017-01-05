@@ -7,7 +7,6 @@ import ua.com.lviv.fly.touristhelper.data.base.AbstractVO;
  */
 
 public class ResultsVO extends AbstractVO<String> {
-//    private Geometry[] geometry;
     private String icon;
     private String name;
 

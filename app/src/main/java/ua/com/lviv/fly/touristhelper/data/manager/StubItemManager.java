@@ -1,4 +1,4 @@
-package ua.com.lviv.fly.touristhelper.data;
+package ua.com.lviv.fly.touristhelper.data.manager;
 
 import android.os.Bundle;
 
@@ -7,24 +7,23 @@ import com.ls.http.base.ResponseData;
 import com.ls.http.base.client.LSClient;
 import com.ls.util.L;
 
-import java.util.ArrayList;
 import java.util.List;
 
-import ua.com.lviv.fly.touristhelper.data.dao.StubItemDAO;
-import ua.com.lviv.fly.touristhelper.data.manager.SynchronizedDatabaseManager;
+import ua.com.lviv.fly.touristhelper.data.*;
+import ua.com.lviv.fly.touristhelper.data.dao.ResultItemDAO;
 
 /**
  * Created on 22.05.2015.
  */
-public class StubItemManager extends BaseItemManager<List<ResultsVO>, Bundle, String> {
+public class StubItemManager extends ua.com.lviv.fly.touristhelper.data.BaseItemManager<List<ResultsVO>, Bundle, String> {
 
     private final static String PAGE_ID_KEY = "page_ID";
     private final static String TAG_PREFIX = "stub_item_id:";
-    private StubItemDAO dao;
+    private ResultItemDAO dao;
 
     public StubItemManager(LSClient client) {
         super(client);
-        dao = new StubItemDAO();
+        dao = new ResultItemDAO();
     }
 
     /**
@@ -34,7 +33,7 @@ public class StubItemManager extends BaseItemManager<List<ResultsVO>, Bundle, St
     @Override
     protected BaseRequest getFetchRequest(LSClient client, Bundle requestParams) {
 
-        StubItemRequestBuilder builder = new StubItemRequestBuilder();
+        NearbySearchRequestBuilder builder = new NearbySearchRequestBuilder();
         return builder.create();
     }
 
@@ -62,6 +61,10 @@ public class StubItemManager extends BaseItemManager<List<ResultsVO>, Bundle, St
 
     @Override
     protected List<ResultsVO> restoreResponse(String tag) {
+        return dao.getAllSafe();
+    }
+
+    public List<ResultsVO> getAllData(){
         return dao.getAllSafe();
     }
 
