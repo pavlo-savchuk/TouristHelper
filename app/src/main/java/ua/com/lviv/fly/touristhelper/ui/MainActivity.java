@@ -3,6 +3,7 @@ package ua.com.lviv.fly.touristhelper.ui;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -87,14 +88,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         int id = item.getItemId();
 
         if (id == R.id.nav_camera) {
-            FragmentManager fragmentManager = getSupportFragmentManager();
-            fragmentManager.beginTransaction().replace(R.id.content_main, HomeFragment.newInstance()).commit();
-
+            setFragment(HomeFragment.newInstance());
 
         } else if (id == R.id.nav_gallery) {
-            FragmentManager fragmentManager = getSupportFragmentManager();
-            fragmentManager.beginTransaction().replace(R.id.content_main, NearbyPlacesFragment.newInstance()).commit();
-
+            setFragment(NearbyPlacesFragment.newInstance());
         } else if (id == R.id.nav_slideshow) {
 
         } else if (id == R.id.nav_manage) {
@@ -109,5 +106,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         drawer.closeDrawer(GravityCompat.START);
         toolbar.setTitle("Map");
         return true;
+    }
+
+    private void setFragment(Fragment fragment){
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        fragmentManager.beginTransaction().replace(R.id.content_main,fragment).commit();
     }
 }
