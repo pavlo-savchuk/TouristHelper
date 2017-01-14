@@ -25,10 +25,11 @@ public class NearbySearchRequestBuilder extends BaseRequestBuilder {
         Type listType = new TypeToken<ResponseVO>() {
         }.getType();
         setResponseClassSpecifier(listType);
-        setRequestURL(getPath());
+        L.e("getPath() = " + getPath());
+        setRequestUri(getPath());
     }
 
-    protected String getPath() {
+    private String getPath() {
         return ProjectConfig.BASE_URL + "/nearbysearch/json?location=49.832,24.01678&radius=5000&types=food|cafe&keyword=vegetarian&key=" + ProjectConfig.API_KEY;
     }
 }

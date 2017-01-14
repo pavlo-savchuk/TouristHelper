@@ -44,7 +44,6 @@ public class StubItemManager extends ua.com.lviv.fly.touristhelper.data.BaseItem
 
     @Override
     protected List<ResultsVO> readResponseFromRequest(BaseRequest request, ResponseData data, String tag) {
-        L.e("Test =" + data.toString());
         ResponseVO items = (ResponseVO) data.getData();
         L.e("Weeeeeee =" + items.getResults());
 
