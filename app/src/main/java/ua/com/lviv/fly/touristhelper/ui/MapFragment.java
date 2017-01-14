@@ -2,7 +2,6 @@ package ua.com.lviv.fly.touristhelper.ui;
 
 
 import android.Manifest;
-import android.app.Activity;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.os.Build;
@@ -33,7 +32,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 import ua.com.lviv.fly.touristhelper.R;
 
-public class HomeFragment extends Fragment implements OnMapReadyCallback, GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener, LocationListener {
+public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener, LocationListener {
     public static final int MY_PERMISSIONS_REQUEST_LOCATION = 99;
     private GoogleMap mMap;
     private GoogleApiClient mGoogleApiClient;
@@ -41,11 +40,11 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback, Google
     private Marker mCurrLocationMarker;
     private LocationRequest mLocationRequest;
 
-    public static HomeFragment newInstance() {
+    public static MapFragment newInstance() {
 
         Bundle args = new Bundle();
 
-        HomeFragment fragment = new HomeFragment();
+        MapFragment fragment = new MapFragment();
         fragment.setArguments(args);
         return fragment;
     }
@@ -86,7 +85,7 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback, Google
 //        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
 
         mMap = googleMap;
-        mMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
+//        mMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
 
         //Initialize Google Play Services
         if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
@@ -126,7 +125,6 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback, Google
                     // Permission denied, Disable the functionality that depends on this permission.
                     Toast.makeText(getActivity(), "permission denied", Toast.LENGTH_LONG).show();
                 }
-                return;
             }
 
             // other 'case' lines to check for other permissions this app might request.
