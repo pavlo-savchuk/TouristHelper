@@ -18,6 +18,8 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.maps.model.Polyline;
+import com.google.android.gms.maps.model.PolylineOptions;
 
 import ua.com.lviv.fly.touristhelper.R;
 
@@ -62,11 +64,15 @@ public class PlaceMapFragment extends Fragment implements OnMapReadyCallback {
         // Add a marker in Sydney and move the camera
 //        LatLng sydney = new LatLng(49.839887, 24.0309807);
         LatLng lviv = new LatLng(49.839887, 24.0309807);
-        mMap.addMarker(new MarkerOptions().position(lviv).title("Marker in Sydney"));
+//        mMap.addMarker(new MarkerOptions().position(lviv).title("Marker in Sydney"));
+//
+//        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(lviv, 15f));
 
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(lviv, 15f));
+        PolylineOptions polylineOptions = new PolylineOptions()
+                .add(new LatLng(37.35, -122.0))
+                .add(new LatLng(38.35, -123.0)); // Point B.
 
-
+        Polyline polyline = mMap.addPolyline(polylineOptions);
 
     }
 }
