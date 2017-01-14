@@ -1,5 +1,4 @@
-include ':app', ':jsonserializable', 'drupallibrary','lshttpclient','datepicker'
+include ':app', ':jsonserializable', 'drupallibrary','lshttpclient'
 project(':drupallibrary').projectDir = new File('libraries/drupallibrary')
 project(':lshttpclient').projectDir = new File('libraries/lshttpclient')
 project(':jsonserializable').projectDir = new File('libraries/jsonserializable')
-project(':datepicker').projectDir = new File('libraries/datepicker')

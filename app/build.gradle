@@ -32,5 +32,4 @@ dependencies {
     compile project(':drupallibrary')
     compile project(':lshttpclient')
     compile project(':jsonserializable')
-    compile project(':datepicker')
 }

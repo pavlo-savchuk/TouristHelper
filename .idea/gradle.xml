@@ -10,7 +10,6 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/libraries/datepicker" />
             <option value="$PROJECT_DIR$/libraries/drupallibrary" />
             <option value="$PROJECT_DIR$/libraries/jsonserializable" />
             <option value="$PROJECT_DIR$/libraries/lshttpclient" />
