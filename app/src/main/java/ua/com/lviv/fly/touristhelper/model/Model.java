@@ -7,7 +7,8 @@ import com.ls.http.base.client.LSClient;
 
 import java.net.CookieStore;
 
-import ua.com.lviv.fly.touristhelper.data.manager.StubItemManager;
+import ua.com.lviv.fly.touristhelper.data.manager.OptionManager;
+import ua.com.lviv.fly.touristhelper.data.manager.PlaceItemManager;
 
 /**
  * Created on 21.05.2015.
@@ -38,7 +39,11 @@ public class Model {
     private RequestQueue queue;
 
     //Managers
-    private StubItemManager stubManager;
+    private PlaceItemManager stubManager;
+
+    //settingsManager
+
+    private OptionManager optionManager;
 
 
     public LSClient getClient() {
@@ -54,8 +59,12 @@ public class Model {
         return cookieStore;
     }
 
-    public StubItemManager getStubManager() {
+    public PlaceItemManager getStubManager() {
         return stubManager;
+    }
+
+    public OptionManager getOptionManager() {
+        return optionManager;
     }
 
     /**
@@ -64,10 +73,10 @@ public class Model {
 
 
     private Model(Context context) {
-        client = new LSClient.Builder(context)
-                .build();
+        client = new LSClient.Builder(context).build();
 
-        stubManager = new StubItemManager(client);
+        stubManager = new PlaceItemManager(client);
+        optionManager = new OptionManager();
     }
 
 }

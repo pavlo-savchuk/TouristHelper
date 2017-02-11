@@ -46,7 +46,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         navigationView.setNavigationItemSelectedListener(this);
 
 
-
     }
 
     @Override
@@ -95,7 +94,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } else if (id == R.id.nav_slideshow) {
             setFragment(PlaceMapFragment.newInstance());
         } else if (id == R.id.nav_manage) {
-
+            setFragment(SettingsFragment.newInstance());
         } else if (id == R.id.nav_share) {
 
         } else if (id == R.id.nav_send) {
@@ -108,8 +107,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         return true;
     }
 
-    private void setFragment(Fragment fragment){
+    private void setFragment(Fragment fragment) {
         FragmentManager fragmentManager = getSupportFragmentManager();
-        fragmentManager.beginTransaction().replace(R.id.content_main,fragment).commit();
+        fragmentManager.beginTransaction().replace(R.id.content_main, fragment).commit();
     }
 }

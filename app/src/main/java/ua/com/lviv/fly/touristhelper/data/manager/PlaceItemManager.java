@@ -15,13 +15,13 @@ import ua.com.lviv.fly.touristhelper.data.dao.ResultItemDAO;
 /**
  * Created on 22.05.2015.
  */
-public class StubItemManager extends ua.com.lviv.fly.touristhelper.data.BaseItemManager<List<ResultsVO>, Bundle, String> {
+public class PlaceItemManager extends ua.com.lviv.fly.touristhelper.data.BaseItemManager<List<ResultsVO>, Bundle, String> {
 
     private final static String PAGE_ID_KEY = "page_ID";
     private final static String TAG_PREFIX = "stub_item_id:";
     private ResultItemDAO dao;
 
-    public StubItemManager(LSClient client) {
+    public PlaceItemManager(LSClient client) {
         super(client);
         dao = new ResultItemDAO();
     }
