@@ -31,6 +31,7 @@ import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 import ua.com.lviv.fly.touristhelper.R;
+import ua.com.lviv.fly.touristhelper.model.Model;
 
 public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener, LocationListener {
     public static final int MY_PERMISSIONS_REQUEST_LOCATION = 99;
@@ -193,6 +194,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleA
     public void onLocationChanged(Location location) {
 
         mLastLocation = location;
+        Model.instance().getOptionManager().setMyLocation(location);
         if (mCurrLocationMarker != null) {
             mCurrLocationMarker.remove();
         }

@@ -5,18 +5,40 @@
     android:orientation="vertical"
     tools:context="ua.com.lviv.fly.touristhelper.ui.SettingsFragment">
 
-    <TextView
-        android:id="@+id/bank"
-        android:layout_width="wrap_content"
+    <CheckBox
+        android:text="Use my location"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="16dp"
-        android:text="Bank" />
+        android:id="@+id/checkBox" />
 
-    <TextView
-        android:id="@+id/cafe"
-        android:layout_width="wrap_content"
+    <CheckBox
+        android:text="cafe"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="16dp"
-        android:text="Cafe" />
+        android:id="@+id/cafe" />
+
+    <CheckBox
+        android:text="bank"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/bank" />
+
+    <CheckBox
+        android:text="CheckBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/checkBox2" />
+
+    <CheckBox
+        android:text="Radius 1000"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/radius1" />
+
+    <CheckBox
+        android:text="Radius 2000"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/radius2" />
 
 </LinearLayout>
