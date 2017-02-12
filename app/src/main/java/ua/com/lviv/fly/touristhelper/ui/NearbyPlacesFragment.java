@@ -5,6 +5,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 
 import com.ls.http.base.ResponseData;
 import com.ls.util.L;
@@ -16,9 +17,12 @@ import ua.com.lviv.fly.touristhelper.data.BaseItemManager;
 import ua.com.lviv.fly.touristhelper.data.ResultsVO;
 import ua.com.lviv.fly.touristhelper.data.dao.ResultItemDAO;
 import ua.com.lviv.fly.touristhelper.model.Model;
+import ua.com.lviv.fly.touristhelper.ui.adapters.ResultAdapter;
 
 public class NearbyPlacesFragment extends Fragment {
-
+    ListView list;
+    ResultAdapter adapter ;
+    List<ResultsVO> data1;
 
     public static NearbyPlacesFragment newInstance() {
 
@@ -31,6 +35,7 @@ public class NearbyPlacesFragment extends Fragment {
     BaseItemManager.OnDataFetchCompleteListener<List<ResultsVO>, String> listener = new BaseItemManager.OnDataFetchCompleteListener<List<ResultsVO>, String>() {
         @Override
         public void onDataFetchComplete(List<ResultsVO> result, ResponseData data, String requestTag) {
+            data1 = result;
             L.e("onDataFetchComplete");
         }
 
@@ -48,6 +53,7 @@ public class NearbyPlacesFragment extends Fragment {
         Model.instance().getStubManager().addDataFetchCompleteListener(listener);
 
         Model.instance().getStubManager().fetchData(null);
+        adapter = new ResultAdapter(data1, getContext());
 
 
     }
@@ -63,6 +69,9 @@ public class NearbyPlacesFragment extends Fragment {
                 L.e("allSafe = " + allSafe.toString());
             }
         });
+
+        list = (ListView)rootView.findViewById(R.id.list);
+        list.setAdapter(adapter);
         return rootView;
     }
 

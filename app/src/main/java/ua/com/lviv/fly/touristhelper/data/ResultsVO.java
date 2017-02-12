@@ -2,13 +2,11 @@ package ua.com.lviv.fly.touristhelper.data;
 
 import ua.com.lviv.fly.touristhelper.data.base.AbstractVO;
 
-/**
- * Created by PASHA on 10.12.2016.
- */
 
 public class ResultsVO extends AbstractVO<String> {
     private String icon;
     private String name;
+    private String rating;
 
     public String getIcon() {
         return icon;
@@ -26,11 +24,20 @@ public class ResultsVO extends AbstractVO<String> {
         this.name = name;
     }
 
+    public String getRating() {
+        return rating;
+    }
+
+    public void setRating(String rating) {
+        this.rating = rating;
+    }
+
     @Override
     public String toString() {
         return "ResultsVO{" +
                 "icon='" + icon + '\'' +
                 ", name='" + name + '\'' +
+                ", rating='" + rating + '\'' +
                 '}';
     }
 }
