@@ -1,4 +1,5 @@
 package ua.com.lviv.fly.touristhelper.ui;
+
 ;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -10,6 +11,7 @@ import android.widget.ListView;
 import com.ls.http.base.ResponseData;
 import com.ls.util.L;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import ua.com.lviv.fly.touristhelper.R;
@@ -21,8 +23,8 @@ import ua.com.lviv.fly.touristhelper.ui.adapters.ResultAdapter;
 
 public class NearbyPlacesFragment extends Fragment {
     ListView list;
-    ResultAdapter adapter ;
-    List<ResultsVO> data1;
+    ResultAdapter adapter;
+    List<ResultsVO> data1 = new ArrayList<>();
 
     public static NearbyPlacesFragment newInstance() {
 
@@ -32,10 +34,11 @@ public class NearbyPlacesFragment extends Fragment {
         fragment.setArguments(args);
         return fragment;
     }
+
     BaseItemManager.OnDataFetchCompleteListener<List<ResultsVO>, String> listener = new BaseItemManager.OnDataFetchCompleteListener<List<ResultsVO>, String>() {
         @Override
         public void onDataFetchComplete(List<ResultsVO> result, ResponseData data, String requestTag) {
-            data1 = result;
+            adapter.setData(result);
             L.e("onDataFetchComplete");
         }
 
@@ -46,14 +49,13 @@ public class NearbyPlacesFragment extends Fragment {
     };
 
 
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Model.instance().getStubManager().addDataFetchCompleteListener(listener);
 
         Model.instance().getStubManager().fetchData(null);
-        adapter = new ResultAdapter(data1, getContext());
+        adapter = new ResultAdapter(getContext());
 
 
     }
@@ -70,7 +72,7 @@ public class NearbyPlacesFragment extends Fragment {
             }
         });
 
-        list = (ListView)rootView.findViewById(R.id.list);
+        list = (ListView) rootView.findViewById(R.id.list);
         list.setAdapter(adapter);
         return rootView;
     }

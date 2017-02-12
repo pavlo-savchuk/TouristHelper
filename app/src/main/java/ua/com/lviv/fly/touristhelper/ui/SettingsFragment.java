@@ -11,8 +11,11 @@ import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.google.android.gms.common.api.GoogleApiClient;
@@ -22,6 +25,11 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.Marker;
 import com.ls.util.L;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 import ua.com.lviv.fly.touristhelper.R;
 import ua.com.lviv.fly.touristhelper.data.manager.OptionManager;
@@ -44,6 +52,7 @@ public class SettingsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_settings, container, false);
+        initSpiner(view);
         final OptionManager optionManager = Model.instance().getOptionManager();
         final Location myLocation = optionManager.getMyLocation();
 
@@ -83,6 +92,31 @@ public class SettingsFragment extends Fragment {
         });
 
         return view;
+    }
+
+    public void initSpiner(View view) {
+
+        Spinner spinner = (Spinner) view.findViewById(R.id.type_spinner);
+        final String[] types = getResources().getStringArray(R.array.types);
+        ArrayList<String> wordList = (ArrayList<String>) Arrays.asList(getResources().getStringArray(R.array.types));
+        final List<String> list = Arrays.asList(getResources().getStringArray(R.array.types);
+
+
+        final ArrayAdapter<String> dataAdapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_spinner_item, types);
+        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(dataAdapter);
+
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+//                L.e("item", dataAdapter.getItem(position));
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                // TODO Auto-generated method stub
+            }
+        });
     }
 
     private String getLocation() {

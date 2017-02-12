@@ -11,4 +11,9 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string-array name="types">
+        <item>bank</item>
+        <item>cafe</item>
+    </string-array>
 </resources>
