@@ -16,4 +16,12 @@
         <item>bank</item>
         <item>cafe</item>
     </string-array>
+
+    <string-array name="radius">
+        <item>500</item>
+        <item>1000</item>
+        <item>2000</item>
+        <item>3000</item>
+    </string-array>
+
 </resources>

@@ -9,6 +9,7 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.util.Log;
+import android.view.View;
 import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
@@ -20,6 +21,7 @@ import com.google.android.gms.common.api.PendingResult;
 import com.google.android.gms.common.api.ResultCallback;
 import com.google.android.gms.location.places.Place;
 
+import com.google.android.gms.location.places.PlaceBuffer;
 import com.google.android.gms.location.places.PlaceLikelihood;
 import com.google.android.gms.location.places.PlaceLikelihoodBuffer;
 import com.google.android.gms.location.places.Places;
@@ -34,7 +36,7 @@ public class PlaceActivity extends Activity implements GoogleApiClient.Connectio
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_current_place);
 
         mGoogleApiClient = new GoogleApiClient
                 .Builder(this)
@@ -43,6 +45,13 @@ public class PlaceActivity extends Activity implements GoogleApiClient.Connectio
                 .addConnectionCallbacks(this)
                 .addOnConnectionFailedListener(this)
                 .build();
+
+        findViewById(R.id.currentButton).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getPlaceById();
+            }
+        });
     }
 
     @Override
@@ -60,7 +69,7 @@ public class PlaceActivity extends Activity implements GoogleApiClient.Connectio
     @Override
     public void onConnected(@Nullable Bundle bundle) {
         getCurrentLocation();
-//        placePicker();
+        placePicker();
         Log.e(PlaceActivity.class.getName(), "onConnectionSuspended");
 
     }
@@ -109,22 +118,22 @@ public class PlaceActivity extends Activity implements GoogleApiClient.Connectio
     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
         Log.e(PlaceActivity.class.getName(), "onConnectionFailed");
     }
-//
-//    private void getPlaceById(){
-//        Places.GeoDataApi.getPlaceById(mGoogleApiClient, placeId)
-//                .setResultCallback(new ResultCallback<PlaceBuffer>() {
-//                    @Override
-//                    public void onResult(PlaceBuffer places) {
-//                        if (places.getStatus().isSuccess() && places.getCount() > 0) {
-//                            final Place myPlace = places.get(0);
-//                            Log.i(TAG, "Place found: " + myPlace.getName());
-//                        } else {
-//                            Log.e(TAG, "Place not found");
-//                        }
-//                        places.release();
-//                    }
-//                });
-//    }
+
+    private void getPlaceById(){
+        Places.GeoDataApi.getPlaceById(mGoogleApiClient, "ChIJbWzYOHnnOkcRoqq9YijKcEQ")
+                .setResultCallback(new ResultCallback<PlaceBuffer>() {
+                    @Override
+                    public void onResult(PlaceBuffer places) {
+                        if (places.getStatus().isSuccess() && places.getCount() > 0) {
+                            final Place myPlace = places.get(0);
+                            Log.i(TAG, "Place found: " + myPlace.getWebsiteUri());
+                        } else {
+                            Log.e(TAG, "Place not found");
+                        }
+                        places.release();
+                    }
+                });
+    }
 
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == PLACE_PICKER_REQUEST) {
