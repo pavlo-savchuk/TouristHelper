@@ -26,7 +26,7 @@ import ua.com.lviv.fly.touristhelper.ui.adapters.ResultAdapter;
 public class NearbyPlacesFragment extends Fragment {
     ListView list;
     ResultAdapter adapter;
-    List<ResultsVO> data1 = new ArrayList<>();
+    List<ResultsVO> data = new ArrayList<>();
 
     public static NearbyPlacesFragment newInstance() {
 
@@ -80,7 +80,9 @@ public class NearbyPlacesFragment extends Fragment {
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                DetailsActivity.startThisActivty(getContext());
+                ResultsVO item = (ResultsVO) adapter.getItem(i);
+                L.e("item = " + item.toString());
+                DetailsActivity.startThisActivity(getContext(), item.getPlaceId());
             }
         });
         return rootView;

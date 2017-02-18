@@ -31,7 +31,7 @@ public class NearbySearchRequestBuilder extends BaseRequestBuilder {
 
     private String getPath() {
 //        return ProjectConfig.BASE_URL + "/nearbysearch/json?location=49.832,24.01678&radius=5000&types=food|cafe&keyword=vegetarian&key=" + ProjectConfig.API_KEY;
-        return ProjectConfig.BASE_URL + Model.instance().getOptionManager().getType() + ProjectConfig.API_KEY;
+        return ProjectConfig.BASE_URL + ProjectConfig.NEARBY_URL +  Model.instance().getOptionManager().getType() + ProjectConfig.API_KEY;
     }
 
     //https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=49.8323,24.0120&radius=500&types=bank&key=AIzaSyDcjBH-d5PcKPAAzt683TFT6h30t6YwVNY

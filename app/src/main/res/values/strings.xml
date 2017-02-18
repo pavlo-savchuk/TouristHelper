@@ -15,6 +15,15 @@
     <string-array name="types">
         <item>bank</item>
         <item>cafe</item>
+        <item>hospital</item>
+        <item>church</item>
+        <item>bar</item>
+        <item>store</item>
+        <item>embassy</item>
+        <item>park</item>
+        <item>library</item>
+        <item>museum</item>
+
     </string-array>
 
     <string-array name="radius">
@@ -33,6 +42,8 @@
         <item>@string/moon</item>
     </string-array>
 
+    <string name="radius_key">radius_key</string>
+    <string name="types_key">types_key</string>
 
-    
+
 </resources>

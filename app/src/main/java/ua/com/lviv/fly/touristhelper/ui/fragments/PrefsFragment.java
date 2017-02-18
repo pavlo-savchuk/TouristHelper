@@ -28,8 +28,8 @@ public class PrefsFragment extends PreferenceFragmentCompat {
 //        Toast.makeText(getActivity(),"checkbox_preference " + checkbox_preference, Toast.LENGTH_LONG).show();
 
 
-        SharedPreferences list_preference = PreferenceManager.getDefaultSharedPreferences(getActivity());
-        String preference = list_preference.getString("list_preference", "Test");
+        SharedPreferences radiusPref = PreferenceManager.getDefaultSharedPreferences(getActivity());
+        String preference = radiusPref.getString(getString(R.string.radius_key), "Test");
 
         Toast.makeText(getActivity(),"preference " + preference, Toast.LENGTH_LONG).show();
     }

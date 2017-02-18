@@ -43,6 +43,8 @@ public class ResultAdapter extends BaseAdapter {
         notifyDataSetChanged();
     }
 
+
+
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
