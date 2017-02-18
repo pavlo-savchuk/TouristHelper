@@ -24,4 +24,15 @@
         <item>3000</item>
     </string-array>
 
+
+    <string name="earth">Earth</string>
+    <string name="moon">Moon</string>
+
+    <string-array name="system">
+        <item>@string/earth</item>
+        <item>@string/moon</item>
+    </string-array>
+
+
+    
 </resources>

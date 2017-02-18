@@ -18,6 +18,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import ua.com.lviv.fly.touristhelper.R;
+import ua.com.lviv.fly.touristhelper.ui.fragments.PrefHolder;
+import ua.com.lviv.fly.touristhelper.ui.fragments.PrefsFragment;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private Toolbar toolbar;
@@ -100,7 +102,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } else if (id == R.id.nav_slideshow) {
             setFragment(SettingsFragment.newInstance());
         } else if (id == R.id.nav_share) {
-
+            setFragment(PrefsFragment.newInstance());
         } else if (id == R.id.nav_send) {
 
         }

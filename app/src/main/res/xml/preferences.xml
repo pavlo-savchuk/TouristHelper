@@ -1,0 +1,52 @@
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+        android:title="PreferenceCategory A">
+
+        <CheckBoxPreference
+            android:key="checkbox_preference"
+            android:title="title_checkbox_preference"
+            android:summary="summary_checkbox_preference" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="PreferenceCategory B">
+
+        <EditTextPreference
+            android:key="edittext_preference"
+            android:title="title_edittext_preference"
+            android:summary="summary_edittext_preference"
+            android:dialogTitle="dialog_title_edittext_preference" />
+
+    </PreferenceCategory>
+
+
+    <PreferenceCategory
+        android:title="PreferenceCategoryC">
+
+        <PreferenceScreen
+            android:title="Preference B"
+            android:summary="Preference B"/>
+
+        <intent android:action="android.intent.action.VIEW"
+            android:data="http://www.android.com" />
+
+    </PreferenceCategory>
+
+
+    <PreferenceCategory
+        android:title="ListPreference">
+
+        <ListPreference
+            android:key="list_preference"
+            android:title="ListPreference"
+            android:summary="ListPreference"
+            android:entries="@array/system"
+            android:entryValues="@array/radius"
+            android:dialogTitle="dialogTitle" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>
