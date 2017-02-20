@@ -194,7 +194,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleA
     public void onLocationChanged(Location location) {
 
         mLastLocation = location;
-        Model.instance().getOptionManager().setMyLocation(location);
+//        Model.instance().getOptionManager().setMyLocation(location);
         if (mCurrLocationMarker != null) {
             mCurrLocationMarker.remove();
         }

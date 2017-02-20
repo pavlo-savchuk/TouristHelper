@@ -13,13 +13,21 @@
 
     <TextView
         android:id="@+id/webSite"
-        android:padding="@dimen/activity_horizontal_margin"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:text="No web site"
+        android:padding="@dimen/activity_horizontal_margin" />
 
     <TextView
         android:id="@+id/data"
-        android:padding="@dimen/activity_horizontal_margin"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:padding="@dimen/activity_horizontal_margin" />
+
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        tools:context="ua.com.lviv.fly.touristhelper.MapsActivity" />
 </LinearLayout>
