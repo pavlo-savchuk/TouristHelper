@@ -1,4 +1,5 @@
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <PreferenceCategory android:title="Types">
 
@@ -23,6 +24,16 @@
             android:key="@string/radius_key"
             android:summary="Choose radius"
             android:title="Radius" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="User">
+
+        <EditTextPreference
+            android:key="@string/user_first_name_key"
+            android:title="@string/user_first_name_default_value"
+            android:summary="@string/user_first_name_default_value"
+            android:dialogTitle="Enter User Name" />
 
     </PreferenceCategory>
 

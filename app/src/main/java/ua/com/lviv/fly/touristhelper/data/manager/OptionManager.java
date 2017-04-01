@@ -19,6 +19,9 @@ public class OptionManager {
     private String radius;
     private String keyword;
     private Location myLocation;
+    private String firstName;
+    private String secondName;
+    private String email;
 
     public OptionManager() {
         this.radiusPref = PreferenceManager.getDefaultSharedPreferences(TemplateApplication.getSharedContext());
@@ -58,7 +61,18 @@ public class OptionManager {
     }
 
     private String getLocation() {
-        Location location = Model.instance().getOptionManager().getMyLocation();
-        return location.getLatitude() + "," + location.getLongitude();
+        return myLocation.getLatitude() + "," + myLocation.getLongitude();
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public void setSecondName(String secondName) {
+        this.secondName = secondName;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }
