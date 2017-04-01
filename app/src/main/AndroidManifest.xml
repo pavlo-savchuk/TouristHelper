@@ -38,18 +38,19 @@
         <activity
             android:name=".MapsActivity"
             android:label="@string/title_activity_maps"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ui.MainActivity"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".PlaceActivity"
+        <activity
+            android:name=".PlaceActivity"
             android:screenOrientation="portrait">
 
             <!-- <intent-filter> -->
@@ -59,7 +60,8 @@
             <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
             <!-- </intent-filter> -->
         </activity>
-        <activity android:name=".ui.PlacesAPIActivity"
+        <activity
+            android:name=".ui.PlacesAPIActivity"
             android:screenOrientation="portrait">
 
             <!-- <intent-filter> -->
@@ -77,21 +79,23 @@
         <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
         <!-- </intent-filter> -->
         <!-- </activity> -->
-        <activity android:name=".NearbyPlacesActivity"
-            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".NearbyPlacesActivity"
+            android:screenOrientation="portrait" />
 
         <activity
             android:name=".ui.PathActivity"
             android:label="@string/title_activity_path"
             android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN" />-->
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+                <!--<category android:name="android.intent.category.LAUNCHER" />-->
+            <!--</intent-filter>-->
         </activity>
-        <activity android:name=".ui.activity.DetailsActivity"
-            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.activity.DetailsActivity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

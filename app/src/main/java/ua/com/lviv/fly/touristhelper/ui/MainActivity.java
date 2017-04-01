@@ -18,12 +18,14 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import ua.com.lviv.fly.touristhelper.R;
-import ua.com.lviv.fly.touristhelper.ui.fragments.PrefHolder;
 import ua.com.lviv.fly.touristhelper.ui.fragments.PrefsFragment;
+import ua.com.lviv.fly.touristhelper.ui.fragments.SettingsFragment;
+import ua.com.lviv.fly.touristhelper.ui.fragments.TestFragment;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private Toolbar toolbar;
     private Menu menu;
+    private NavigationView navigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +33,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         setContentView(R.layout.activity_main);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        setDefaultFragment(MapFragment.newInstance());
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,8 +47,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        setDefaultFragment(MapFragment.newInstance());
 
 
     }
@@ -93,20 +95,24 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
-
-        if (id == R.id.nav_camera) {
-            setFragment(MapFragment.newInstance());
-
-        } else if (id == R.id.nav_gallery) {
-            setFragment(NearbyPlacesFragment.newInstance());
-        } else if (id == R.id.nav_slideshow) {
-            setFragment(SettingsFragment.newInstance());
-        } else if (id == R.id.nav_share) {
-            setFragment(PrefsFragment.newInstance());
-        } else if (id == R.id.nav_send) {
+        switch (id) {
+            case R.id.nav_camera:
+                setFragment(MapFragment.newInstance());
+                break;
+            case R.id.nav_gallery:
+                setFragment(NearbyPlacesFragment.newInstance());
+                break;
+            case R.id.nav_slideshow:
+                setFragment(SettingsFragment.newInstance());
+                break;
+            case R.id.nav_share:
+                setFragment(PrefsFragment.newInstance());
+                break;
+            case R.id.nav_send:
+                setFragment(TestFragment.newInstance());
+                break;
 
         }
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         toolbar.setTitle(item.getTitle());
@@ -121,5 +127,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private void setDefaultFragment(Fragment fragment) {
         setFragment(fragment);
         toolbar.setTitle("Map");
+        navigationView.getMenu().getItem(0).setChecked(true);
     }
 }

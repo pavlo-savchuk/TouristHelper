@@ -1,4 +1,4 @@
-package ua.com.lviv.fly.touristhelper.ui;
+package ua.com.lviv.fly.touristhelper.ui.fragments;
 
 import android.location.Location;
 import android.os.Bundle;
@@ -174,8 +174,7 @@ public class SettingsFragment extends Fragment implements TextToSpeech.OnInitLis
 
             int result = tts.setLanguage(Locale.US);
 
-            if (result == TextToSpeech.LANG_MISSING_DATA
-                    || result == TextToSpeech.LANG_NOT_SUPPORTED) {
+            if (result == TextToSpeech.LANG_MISSING_DATA || result == TextToSpeech.LANG_NOT_SUPPORTED) {
                 L.e( "This Language is not supported");
             } else {
                 btnSpeak.setEnabled(true);

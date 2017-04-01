@@ -94,8 +94,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleA
                 buildGoogleApiClient();
                 mMap.setMyLocationEnabled(true);
             }
-        }
-        else {
+        } else {
             buildGoogleApiClient();
             mMap.setMyLocationEnabled(true);
         }
