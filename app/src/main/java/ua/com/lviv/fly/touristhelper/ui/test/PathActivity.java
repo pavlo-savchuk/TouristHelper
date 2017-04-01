@@ -1,4 +1,4 @@
-package ua.com.lviv.fly.touristhelper.ui;
+package ua.com.lviv.fly.touristhelper.ui.test;
 
 import android.Manifest;
 import android.content.pm.PackageManager;

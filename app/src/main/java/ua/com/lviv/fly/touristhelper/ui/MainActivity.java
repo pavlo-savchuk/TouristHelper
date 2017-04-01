@@ -18,6 +18,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import ua.com.lviv.fly.touristhelper.R;
+import ua.com.lviv.fly.touristhelper.ui.fragments.MapFragment;
+import ua.com.lviv.fly.touristhelper.ui.fragments.NearbyPlacesFragment;
 import ua.com.lviv.fly.touristhelper.ui.fragments.PrefsFragment;
 import ua.com.lviv.fly.touristhelper.ui.fragments.SettingsFragment;
 import ua.com.lviv.fly.touristhelper.ui.fragments.TestFragment;

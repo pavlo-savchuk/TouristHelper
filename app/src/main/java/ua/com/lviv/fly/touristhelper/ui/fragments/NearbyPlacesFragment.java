@@ -1,4 +1,4 @@
-package ua.com.lviv.fly.touristhelper.ui;
+package ua.com.lviv.fly.touristhelper.ui.fragments;
 
 ;
 import android.os.Bundle;

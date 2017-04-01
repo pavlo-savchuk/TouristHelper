@@ -1,6 +1,7 @@
 package ua.com.lviv.fly.touristhelper.data.manager;
 
 
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.location.Location;
 import android.preference.PreferenceManager;
@@ -12,15 +13,20 @@ import ua.com.lviv.fly.touristhelper.TemplateApplication;
 import ua.com.lviv.fly.touristhelper.model.Model;
 
 public class OptionManager {
-    SharedPreferences radiusPref = PreferenceManager.getDefaultSharedPreferences(TemplateApplication.getSharedContext());
-    String type;
-    String radius;
-    String keyword;
-    Location myLocation;
+    private Context context;
+    private SharedPreferences radiusPref;
+    private String type;
+    private String radius;
+    private String keyword;
+    private Location myLocation;
 
+    public OptionManager() {
+        this.radiusPref = PreferenceManager.getDefaultSharedPreferences(TemplateApplication.getSharedContext());
+        this.context = TemplateApplication.getSharedContext();
+    }
 
     public String getType() {
-        return getLocation() + getRadius() + "&types=" + radiusPref.getString(TemplateApplication.getSharedContext().getString(R.string.types_key), "bank")  + "&key=";
+        return getLocation() + getRadius() + "&types=" + radiusPref.getString(context.getString(R.string.types_key), context.getResources().getStringArray(R.array.types)[0]) + "&key=";
     }
 
     public void setType(String type) {
@@ -28,7 +34,7 @@ public class OptionManager {
     }
 
     public String getRadius() {
-        return "&radius=" + radiusPref.getString(TemplateApplication.getSharedContext().getString(R.string.radius_key), "1000");
+        return "&radius=" + radiusPref.getString(context.getString(R.string.radius_key), "1000");
     }
 
     public void setRadius(String radius) {
