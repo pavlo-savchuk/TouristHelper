@@ -11,16 +11,16 @@
 
 
     <string-array name="types">
-        <item>cafe</item>
-        <item>bank</item>
-        <item>hospital</item>
-        <item>church</item>
-        <item>bar</item>
-        <item>store</item>
-        <item>embassy</item>
-        <item>park</item>
-        <item>library</item>
-        <item>museum</item>
+        <item>Cafe</item>
+        <item>Bank</item>
+        <item>Hospital</item>
+        <item>Church</item>
+        <item>Bar</item>
+        <item>Store</item>
+        <item>Embassy</item>
+        <item>Park</item>
+        <item>Library</item>
+        <item>Museum</item>
 
     </string-array>
 
@@ -39,6 +39,10 @@
         <item>@string/earth</item>
         <item>@string/moon</item>
     </string-array>
+
+
+    <string name="radius_pref_title">Radius</string>
+    <string name="types_pref_title">Types</string>
 
     <string name="radius_key">radius_key</string>
     <string name="types_key">types_key</string>

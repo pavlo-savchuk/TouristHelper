@@ -22,14 +22,18 @@ public class OptionManager {
     private String firstName;
     private String secondName;
     private String email;
+    private String defaultType;
+    private String deffultRadius;
 
     public OptionManager() {
         this.radiusPref = PreferenceManager.getDefaultSharedPreferences(TemplateApplication.getSharedContext());
         this.context = TemplateApplication.getSharedContext();
+        this.defaultType = context.getResources().getStringArray(R.array.types)[0];
+        this.deffultRadius = context.getResources().getStringArray(R.array.radius)[0];
     }
 
     public String getType() {
-        return getLocation() + getRadius() + "&types=" + radiusPref.getString(context.getString(R.string.types_key), context.getResources().getStringArray(R.array.types)[0]) + "&key=";
+        return getLocation() + getRadius() + "&types=" + radiusPref.getString(context.getString(R.string.types_key), defaultType) + "&key=";
     }
 
     public void setType(String type) {
@@ -37,7 +41,7 @@ public class OptionManager {
     }
 
     public String getRadius() {
-        return "&radius=" + radiusPref.getString(context.getString(R.string.radius_key), "1000");
+        return "&radius=" + radiusPref.getString(context.getString(R.string.radius_key), deffultRadius);
     }
 
     public void setRadius(String radius) {

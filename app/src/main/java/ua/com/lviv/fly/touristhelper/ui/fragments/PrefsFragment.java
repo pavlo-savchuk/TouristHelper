@@ -3,6 +3,7 @@ package ua.com.lviv.fly.touristhelper.ui.fragments;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.preference.EditTextPreference;
+import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
 import android.support.v7.preference.PreferenceFragmentCompat;
 
@@ -20,9 +21,16 @@ public class PrefsFragment extends PreferenceFragmentCompat implements SharedPre
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
 
         addPreferencesFromResource(R.xml.preferences);
-        SharedPreferences sp = getPreferenceScreen().getSharedPreferences();
+        SharedPreferences preferences = getPreferenceScreen().getSharedPreferences();
+
         EditTextPreference editTextPref = (EditTextPreference) findPreference(getString(R.string.user_first_name_key));
-        editTextPref.setTitle(sp.getString(getString(R.string.user_first_name_key), getString(R.string.user_first_name_default_value)));
+        editTextPref.setTitle(preferences.getString(getString(R.string.user_first_name_key), getString(R.string.user_first_name_default_value)));
+
+        ListPreference prefTypes = (ListPreference) findPreference(getString(R.string.types_key));
+        prefTypes.setTitle(preferences.getString(getString(R.string.types_key), getResources().getStringArray(R.array.types)[0]));
+
+        ListPreference prefRadius = (ListPreference) findPreference(getString(R.string.radius_key));
+        prefRadius.setTitle(preferences.getString(getString(R.string.radius_key), getResources().getStringArray(R.array.radius)[0]));
     }
 
     @Override
@@ -33,6 +41,13 @@ public class PrefsFragment extends PreferenceFragmentCompat implements SharedPre
             EditTextPreference etp = (EditTextPreference) pref;
 //            pref.setSummary(etp.getText());
             pref.setTitle(etp.getText());
+        } else if (pref instanceof ListPreference) {
+            String prefTitle = pref.getTitle().toString();
+            if (prefTitle.contains(getString(R.string.radius_pref_title))) {
+                pref.setTitle(((ListPreference) pref).getValue());
+            } else if (prefTitle.contains(getString(R.string.types_pref_title))) {
+                pref.setTitle(((ListPreference) pref).getValue());
+            }
         }
     }
 

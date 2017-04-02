@@ -32,6 +32,7 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.PolylineOptions;
 import com.ls.util.L;
@@ -385,7 +386,7 @@ public class DetailsActivity extends AppCompatActivity implements GoogleApiClien
         protected void onPostExecute(List<List<HashMap<String, String>>> result) {
             ArrayList<LatLng> points;
             PolylineOptions lineOptions = null;
-
+            LatLngBounds.Builder builder = new LatLngBounds.Builder();
             // Traversing through all the routes
             for (int i = 0; i < result.size(); i++) {
                 points = new ArrayList<>();
@@ -401,7 +402,7 @@ public class DetailsActivity extends AppCompatActivity implements GoogleApiClien
                     double lat = Double.parseDouble(point.get("lat"));
                     double lng = Double.parseDouble(point.get("lng"));
                     LatLng position = new LatLng(lat, lng);
-
+                    builder.include(position);
                     points.add(position);
                 }
 
@@ -417,6 +418,7 @@ public class DetailsActivity extends AppCompatActivity implements GoogleApiClien
             // Drawing polyline in the Google Map for the i-th route
             if (lineOptions != null) {
                 mMap.addPolyline(lineOptions);
+                mMap.animateCamera(CameraUpdateFactory.newLatLngBounds(builder.build(), 5));
             } else {
                 Log.d("onPostExecute", "without Polylines drawn");
             }

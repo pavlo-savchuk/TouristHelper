@@ -5,12 +5,12 @@
 
         <ListPreference
             android:defaultValue="1"
-            android:dialogTitle="Types"
+            android:dialogTitle="@string/types_pref_title"
             android:entries="@array/types"
             android:entryValues="@array/types"
             android:key="@string/types_key"
             android:summary="Choose types"
-            android:title="Types" />
+            android:title="@string/types_pref_title" />
 
     </PreferenceCategory>
 
@@ -18,12 +18,12 @@
 
         <ListPreference
             android:defaultValue="1"
-            android:dialogTitle="Radius"
+            android:dialogTitle="@string/radius_pref_title"
             android:entries="@array/radius"
             android:entryValues="@array/radius"
             android:key="@string/radius_key"
             android:summary="Choose radius"
-            android:title="Radius" />
+            android:title="@string/radius_pref_title" />
 
     </PreferenceCategory>
 
