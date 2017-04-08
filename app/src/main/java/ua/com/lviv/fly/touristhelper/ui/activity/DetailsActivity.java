@@ -9,6 +9,7 @@ import android.location.Location;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
+import android.speech.tts.TextToSpeech;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
@@ -48,17 +49,20 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 
 import ua.com.lviv.fly.touristhelper.PlaceActivity;
 import ua.com.lviv.fly.touristhelper.R;
 import ua.com.lviv.fly.touristhelper.data.DataParser;
 import ua.com.lviv.fly.touristhelper.model.Model;
+import ua.com.lviv.fly.touristhelper.ui.fragments.OptionsFragment;
 
-public class DetailsActivity extends AppCompatActivity implements GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener, OnMapReadyCallback {
+public class DetailsActivity extends AppCompatActivity implements GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener, OnMapReadyCallback, TextToSpeech.OnInitListener{
     public static final int MY_PERMISSIONS_REQUEST_LOCATION = 99;
     public static final String PLACE_ID_KEY = "PLACE_ID_KEY";
     private GoogleApiClient mGoogleApiClient;
-    private Uri webUrl;
+    private TextToSpeech textToSpeech;
+    private boolean ready = false;
     private String placeId;
     private GoogleMap mMap;
     private Place place;
@@ -83,8 +87,15 @@ public class DetailsActivity extends AppCompatActivity implements GoogleApiClien
 
         Bundle extras = getIntent().getExtras();
         placeId = extras.getString(PLACE_ID_KEY);
-        Location myLocation = Model.instance().getOptionManager().getMyLocation();
-        MarkerPoints.add(new LatLng(myLocation.getLatitude(), myLocation.getLongitude()));
+        //My location was added
+        {
+            Location myLocation = Model.instance().getOptionManager().getMyLocation();
+            MarkerPoints.add(new LatLng(myLocation.getLatitude(), myLocation.getLongitude()));
+        }
+
+
+        //TextToSpeech
+        textToSpeech = new TextToSpeech(this, DetailsActivity.this);
     }
 
     @Override
@@ -101,6 +112,12 @@ public class DetailsActivity extends AppCompatActivity implements GoogleApiClien
             mGoogleApiClient.disconnect();
         }
         super.onStop();
+    }
+
+    @Override
+    protected void onDestroy() {
+        textToSpeech.shutdown();
+        super.onDestroy();
     }
 
     @Override
@@ -152,7 +169,7 @@ public class DetailsActivity extends AppCompatActivity implements GoogleApiClien
     }
 
     private void fillView(final Place place) {
-        webUrl = place.getWebsiteUri();
+        final Uri webUrl; webUrl = place.getWebsiteUri();
         TextView site = (TextView) findViewById(R.id.webSite);
         TextView data = (TextView) findViewById(R.id.data);
         data.setText(place.getAddress());
@@ -321,6 +338,25 @@ public class DetailsActivity extends AppCompatActivity implements GoogleApiClien
             urlConnection.disconnect();
         }
         return data;
+    }
+
+    @Override
+    public void onInit(int status) {
+        if (status == TextToSpeech.LANG_MISSING_DATA) {
+            Intent installIntent = new Intent();
+            installIntent.setAction(
+                    TextToSpeech.Engine.ACTION_INSTALL_TTS_DATA);
+            startActivity(installIntent);
+        }
+        if (status == TextToSpeech.SUCCESS) {
+            // Change this to match your
+            // locale
+            textToSpeech.setLanguage(Locale.US);
+            ready = true;
+            textToSpeech.speak("Test", TextToSpeech.QUEUE_FLUSH, null);
+        } else {
+            ready = false;
+        }
     }
 
     // Fetches data from url passed

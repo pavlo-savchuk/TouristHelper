@@ -39,7 +39,6 @@ public class PrefsFragment extends PreferenceFragmentCompat implements SharedPre
         Preference pref = findPreference(key);
         if (pref instanceof EditTextPreference) {
             EditTextPreference etp = (EditTextPreference) pref;
-//            pref.setSummary(etp.getText());
             pref.setTitle(etp.getText());
         } else if (pref instanceof ListPreference) {
             String prefTitle = pref.getTitle().toString();
