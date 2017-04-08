@@ -60,7 +60,9 @@ import ua.com.lviv.fly.touristhelper.ui.fragments.OptionsFragment;
 public class DetailsActivity extends AppCompatActivity implements GoogleApiClient.ConnectionCallbacks,
         GoogleApiClient.OnConnectionFailedListener,
         OnMapReadyCallback,
-        TextToSpeech.OnInitListener, View.OnClickListener {
+        TextToSpeech.OnInitListener,
+        View.OnClickListener {
+
     public static final int MY_PERMISSIONS_REQUEST_LOCATION = 99;
     public static final String PLACE_ID_KEY = "PLACE_ID_KEY";
     private GoogleApiClient mGoogleApiClient;
@@ -172,23 +174,27 @@ public class DetailsActivity extends AppCompatActivity implements GoogleApiClien
     }
 
     private void fillView(final Place place) {
-        final Uri webUrl;
-        webUrl = place.getWebsiteUri();
         TextView site = (TextView) findViewById(R.id.webSite);
         TextView data = (TextView) findViewById(R.id.data);
+        TextView phoneNumber = (TextView) findViewById(R.id.phoneNumber);
+//        TextView data = (TextView) findViewById(R.id.data);
         data.setText(place.getAddress());
-        if (webUrl != null) {
+
+        if (place.getWebsiteUri() != null) {
             site.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     Intent i = new Intent(Intent.ACTION_VIEW);
-                    i.setData(webUrl);
+                    i.setData(place.getWebsiteUri());
                     startActivity(i);
 
                 }
             });
             site.setText(place.getWebsiteUri().toString());
         }
+
+        setValue(phoneNumber, place.getPhoneNumber());
+
 
     }
 
@@ -361,7 +367,11 @@ public class DetailsActivity extends AppCompatActivity implements GoogleApiClien
 
     @Override
     public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.webSite:
 
+                break;
+        }
     }
 
     // Fetches data from url passed
@@ -471,6 +481,20 @@ public class DetailsActivity extends AppCompatActivity implements GoogleApiClien
             textToSpeech.setLanguage(Locale.ENGLISH);
             textToSpeech.speak(text, TextToSpeech.QUEUE_FLUSH, null);
         }
+    }
 
+    private void initView() {
+        findViewById(R.id.webSite).setOnClickListener(this);
+        findViewById(R.id.data).setOnClickListener(this);
+//        findViewById(R.id.webSite);
+//        findViewById(R.id.data);
+//        findViewById(R.id.webSite);
+//        findViewById(R.id.data);
+    }
+
+    private void setValue(TextView view, CharSequence value){
+        if(value !=null){
+            view.setText(value);
+        }
     }
 }
