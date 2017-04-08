@@ -26,6 +26,9 @@ public class PrefsFragment extends PreferenceFragmentCompat implements SharedPre
         EditTextPreference editTextPref = (EditTextPreference) findPreference(getString(R.string.user_first_name_key));
         editTextPref.setTitle(preferences.getString(getString(R.string.user_first_name_key), getString(R.string.user_first_name_default_value)));
 
+        EditTextPreference prefEmail = (EditTextPreference) findPreference(getString(R.string.user_email_key));
+        prefEmail.setTitle(preferences.getString(getString(R.string.user_email_key), getString(R.string.user_email_default_value)));
+
         ListPreference prefTypes = (ListPreference) findPreference(getString(R.string.types_key));
         prefTypes.setTitle(preferences.getString(getString(R.string.types_key), getResources().getStringArray(R.array.types)[0]));
 
@@ -39,7 +42,13 @@ public class PrefsFragment extends PreferenceFragmentCompat implements SharedPre
         Preference pref = findPreference(key);
         if (pref instanceof EditTextPreference) {
             EditTextPreference etp = (EditTextPreference) pref;
-            pref.setTitle(etp.getText());
+            String title = etp.getTitle().toString();
+            if (title.contains(getString(R.string.user_first_name_title))) {
+                pref.setTitle(etp.getText());
+            } else if (title.contains(getString(R.string.user_email_title))) {
+                pref.setTitle(etp.getText());
+            }
+
         } else if (pref instanceof ListPreference) {
             String prefTitle = pref.getTitle().toString();
             if (prefTitle.contains(getString(R.string.radius_pref_title))) {

@@ -47,7 +47,11 @@
     <string name="radius_key">radius_key</string>
     <string name="types_key">types_key</string>
     <string name="user_first_name_key">user_first_name_key</string>
+    <string name="user_email_key">user_email_key</string>
 
     <string name="user_first_name_default_value">User First Name</string>
+    <string name="user_email_default_value">User Email</string>
+
     <string name="user_first_name_title">User First Name</string>
+    <string name="user_email_title">User Email</string>
 </resources>

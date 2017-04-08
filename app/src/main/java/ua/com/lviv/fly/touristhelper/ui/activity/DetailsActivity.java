@@ -57,7 +57,10 @@ import ua.com.lviv.fly.touristhelper.data.DataParser;
 import ua.com.lviv.fly.touristhelper.model.Model;
 import ua.com.lviv.fly.touristhelper.ui.fragments.OptionsFragment;
 
-public class DetailsActivity extends AppCompatActivity implements GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener, OnMapReadyCallback, TextToSpeech.OnInitListener{
+public class DetailsActivity extends AppCompatActivity implements GoogleApiClient.ConnectionCallbacks,
+        GoogleApiClient.OnConnectionFailedListener,
+        OnMapReadyCallback,
+        TextToSpeech.OnInitListener, View.OnClickListener {
     public static final int MY_PERMISSIONS_REQUEST_LOCATION = 99;
     public static final String PLACE_ID_KEY = "PLACE_ID_KEY";
     private GoogleApiClient mGoogleApiClient;
@@ -67,7 +70,7 @@ public class DetailsActivity extends AppCompatActivity implements GoogleApiClien
     private GoogleMap mMap;
     private Place place;
 
-    private ArrayList<LatLng> MarkerPoints =  new ArrayList<>();
+    private ArrayList<LatLng> MarkerPoints = new ArrayList<>();
 
     public static void startThisActivity(Context context, String placeId) {
         Intent intent = new Intent(context, DetailsActivity.class);
@@ -169,7 +172,8 @@ public class DetailsActivity extends AppCompatActivity implements GoogleApiClien
     }
 
     private void fillView(final Place place) {
-        final Uri webUrl; webUrl = place.getWebsiteUri();
+        final Uri webUrl;
+        webUrl = place.getWebsiteUri();
         TextView site = (TextView) findViewById(R.id.webSite);
         TextView data = (TextView) findViewById(R.id.data);
         data.setText(place.getAddress());
@@ -344,19 +348,20 @@ public class DetailsActivity extends AppCompatActivity implements GoogleApiClien
     public void onInit(int status) {
         if (status == TextToSpeech.LANG_MISSING_DATA) {
             Intent installIntent = new Intent();
-            installIntent.setAction(
-                    TextToSpeech.Engine.ACTION_INSTALL_TTS_DATA);
+            installIntent.setAction(TextToSpeech.Engine.ACTION_INSTALL_TTS_DATA);
             startActivity(installIntent);
         }
         if (status == TextToSpeech.SUCCESS) {
-            // Change this to match your
-            // locale
-            textToSpeech.setLanguage(Locale.US);
             ready = true;
-            textToSpeech.speak("Test", TextToSpeech.QUEUE_FLUSH, null);
+            speak("Lviv");
         } else {
             ready = false;
         }
+    }
+
+    @Override
+    public void onClick(View view) {
+
     }
 
     // Fetches data from url passed
@@ -459,5 +464,13 @@ public class DetailsActivity extends AppCompatActivity implements GoogleApiClien
                 Log.d("onPostExecute", "without Polylines drawn");
             }
         }
+    }
+
+    private void speak(String text) {
+        if (ready) {
+            textToSpeech.setLanguage(Locale.ENGLISH);
+            textToSpeech.speak(text, TextToSpeech.QUEUE_FLUSH, null);
+        }
+
     }
 }

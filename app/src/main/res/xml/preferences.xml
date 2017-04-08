@@ -35,6 +35,12 @@
             android:summary="@string/user_first_name_default_value"
             android:dialogTitle="Enter User Name" />
 
+
+        <EditTextPreference
+            android:key="@string/user_email_key"
+            android:title="@string/user_email_title"
+            android:summary="@string/user_email_default_value"
+            android:dialogTitle="Enter Email" />
     </PreferenceCategory>
 
 </PreferenceScreen>

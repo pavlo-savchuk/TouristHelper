@@ -1,7 +1,9 @@
 package ua.com.lviv.fly.touristhelper.ui;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.PersistableBundle;
+import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -16,8 +18,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 import ua.com.lviv.fly.touristhelper.R;
+import ua.com.lviv.fly.touristhelper.TemplateApplication;
 import ua.com.lviv.fly.touristhelper.ui.fragments.MapFragment;
 import ua.com.lviv.fly.touristhelper.ui.fragments.NearbyPlacesFragment;
 import ua.com.lviv.fly.touristhelper.ui.fragments.OptionsFragment;
@@ -54,6 +58,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         navigationView.setNavigationItemSelectedListener(this);
         setDefaultFragment(MapFragment.newInstance());
 
+        initUserView();
 
     }
 
@@ -134,5 +139,20 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         setFragment(fragment);
         toolbar.setTitle("Map");
         navigationView.getMenu().getItem(0).setChecked(true);
+    }
+
+    private void initUserView() {
+        SharedPreferences defaultSharedPreferences = PreferenceManager.getDefaultSharedPreferences(TemplateApplication.getSharedContext());
+        String name = defaultSharedPreferences.getString(getString(R.string.user_first_name_key), getString(R.string.user_first_name_default_value));
+        String email = defaultSharedPreferences.getString(getString(R.string.user_email_key), getString(R.string.user_email_title));
+
+        View headerLayout = navigationView.getHeaderView(0);
+        TextView userName = (TextView) headerLayout.findViewById(R.id.userName);
+        userName.setText(name);
+
+        TextView userEmail = (TextView) headerLayout.findViewById(R.id.userEmail);
+        userEmail.setText(email);
+
+
     }
 }
