@@ -11,16 +11,16 @@
 
 
     <string-array name="types">
-        <item>Cafe</item>
-        <item>Bank</item>
-        <item>Hospital</item>
-        <item>Church</item>
-        <item>Bar</item>
-        <item>Store</item>
-        <item>Embassy</item>
-        <item>Park</item>
-        <item>Library</item>
-        <item>Museum</item>
+        <item>cafe</item>
+        <item>bank</item>
+        <item>hospital</item>
+        <item>church</item>
+        <item>bar</item>
+        <item>store</item>
+        <item>embassy</item>
+        <item>park</item>
+        <item>library</item>
+        <item>museum</item>
 
     </string-array>
 
@@ -55,4 +55,27 @@
     <string name="user_first_name_title">User First Name</string>
     <string name="user_email_title">User Email</string>
     <string name="no_information">No information</string>
+
+
+    <string name="key_1">Key 1</string>
+    <string name="key_2">Key 2</string>
+    <string name="key_3">Key 3</string>
+
+    <string-array name="values_1">
+        <item>values 1</item>
+        <item>values 2</item>
+        <item>values 3</item>
+    </string-array>
+
+    <string-array name="values_2">
+        <item>values 1</item>
+        <item>values 2</item>
+        <item>values 3</item>
+    </string-array>
+
+    <string-array name="values_3">
+        <item>values 1</item>
+        <item>values 2</item>
+        <item>values 3</item>
+    </string-array>
 </resources>

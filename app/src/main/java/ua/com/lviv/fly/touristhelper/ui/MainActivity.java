@@ -26,6 +26,7 @@ import ua.com.lviv.fly.touristhelper.ui.fragments.MapFragment;
 import ua.com.lviv.fly.touristhelper.ui.fragments.NearbyPlacesFragment;
 import ua.com.lviv.fly.touristhelper.ui.fragments.OptionsFragment;
 import ua.com.lviv.fly.touristhelper.ui.fragments.PrefsFragment;
+import ua.com.lviv.fly.touristhelper.ui.fragments.ProfileFragment;
 import ua.com.lviv.fly.touristhelper.ui.fragments.SettingsFragment;
 import ua.com.lviv.fly.touristhelper.ui.fragments.TestFragment;
 
@@ -125,6 +126,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 break;
             case R.id.nav_opt:
                 setFragment(OptionsFragment.newInstance());
+                break;
+            case R.id.nav_profile:
+                setFragment(ProfileFragment.newInstance());
                 break;
 
         }

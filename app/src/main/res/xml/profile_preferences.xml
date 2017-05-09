@@ -1,0 +1,29 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory android:title="Type 1">
+
+        <ListPreference
+            android:defaultValue="1"
+            android:entries="@array/values_1"
+            android:entryValues="@array/values_1"
+            android:key="@string/key_1"
+            android:summary="%s"
+            android:title="Title 1" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Type 2">
+
+        <ListPreference
+
+            android:defaultValue="1"
+            android:entries="@array/values_1"
+            android:entryValues="@array/values_1"
+            android:key="@string/key_2"
+            android:summary="%s"
+            android:title="Title 2" />
+
+    </PreferenceCategory>
+
+
+</PreferenceScreen>

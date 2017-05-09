@@ -34,6 +34,8 @@ public class PrefsFragment extends PreferenceFragmentCompat implements SharedPre
 
         ListPreference prefRadius = (ListPreference) findPreference(getString(R.string.radius_key));
         prefRadius.setTitle(preferences.getString(getString(R.string.radius_key), getResources().getStringArray(R.array.radius)[0]));
+
+        L.e("Pref test = " + preferences.getString(getString(R.string.key_1), getResources().getStringArray(R.array.values_1)[0]));
     }
 
     @Override
@@ -53,12 +55,23 @@ public class PrefsFragment extends PreferenceFragmentCompat implements SharedPre
 
         } else if (pref instanceof ListPreference) {
             String prefTitle = pref.getTitle().toString();
+            pref.setTitle(((ListPreference) pref).getValue());
+            switch (key) {
+                case "radius_key":
+                    L.e("prefTitle = " + prefTitle);
+                    L.e("pref = " +((ListPreference) pref).getValue());
+                    pref.setTitle(((ListPreference) pref).getValue());
+                    break;
+
+            }
             if (prefTitle.contains(getString(R.string.radius_pref_title))) {
                 pref.setTitle(((ListPreference) pref).getValue());
             } else if (prefTitle.contains(getString(R.string.types_pref_title))) {
                 pref.setTitle(((ListPreference) pref).getValue());
             }
         }
+        String string = getString(R.string.types_key);
+
     }
 
     @Override

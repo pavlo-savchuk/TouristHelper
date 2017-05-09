@@ -27,6 +27,11 @@
             android:id="@+id/nav_opt"
             android:icon="@drawable/ic_menu_send"
             android:title="Options" />
+
+        <item
+            android:id="@+id/nav_profile"
+            android:icon="@drawable/ic_menu_send"
+            android:title="Profile" />
     </group>
 
     <!--<item android:title="Communicate">-->
