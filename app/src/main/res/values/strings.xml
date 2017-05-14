@@ -60,11 +60,39 @@
     <string name="key_1">Key 1</string>
     <string name="key_2">Key 2</string>
     <string name="key_3">Key 3</string>
+    <string name="key_4">Key 4</string>
+    <string name="key_5">Key 5</string>
+    <string name="key_6">Key 6</string>
+    <string name="key_7">Key 7</string>
+    <string name="key_8">Key 8</string>
+    <string name="key_9">Key 9</string>
+    <string name="key_10">Key 10</string>
+    <string name="key_11">Key 11</string>
+    <string name="key_12">Key 12</string>
+    <string name="key_13">Key 13</string>
+    <string name="key_14">Key 14</string>
+    <string name="key_15">Key 15</string>
+    <string name="key_16">Key 16</string>
+    <string name="key_17">Key 17</string>
+    <string name="key_18">Key 18</string>
+    <string name="key_19">Key 19</string>
+    <string name="key_20">Key 20</string>
+    <string name="key_21">Key 21</string>
+    <string name="key_22">Key 22</string>
+    <string name="key_23">Key 23</string>
+    <string name="key_24">Key 24</string>
+    <string name="key_25">Key 25</string>
+    <string name="key_26">Key 26</string>
+    <string name="key_27">Key 27</string>
+    <string name="key_28">Key 28</string>
+    <string name="key_29">Key 29</string>
+    <string name="key_30">Key 30</string>
+
 
     <string-array name="values_1">
-        <item>values 1</item>
-        <item>values 2</item>
-        <item>values 3</item>
+        <item>Тест 1</item>
+        <item>Тест 2</item>
+        <item>Тест 3</item>
     </string-array>
 
     <string-array name="values_2">
@@ -78,4 +106,173 @@
         <item>values 2</item>
         <item>values 3</item>
     </string-array>
+
+    <string-array name="values_4">
+        <item>Тест 1</item>
+        <item>Тест 2</item>
+        <item>Тест 3</item>
+    </string-array>
+
+    <string-array name="values_5">
+        <item>values 1</item>
+        <item>values 2</item>
+        <item>values 3</item>
+    </string-array>
+
+    <string-array name="values_6">
+        <item>values 1</item>
+        <item>values 2</item>
+        <item>values 3</item>
+    </string-array>
+
+    <string-array name="values_7">
+        <item>Тест 1</item>
+        <item>Тест 2</item>
+        <item>Тест 3</item>
+    </string-array>
+
+    <string-array name="values_8">
+        <item>values 1</item>
+        <item>values 2</item>
+        <item>values 3</item>
+    </string-array>
+
+    <string-array name="values_9">
+        <item>values 1</item>
+        <item>values 2</item>
+        <item>values 3</item>
+    </string-array>
+
+    <string-array name="values_10">
+        <item>Тест 1</item>
+        <item>Тест 2</item>
+        <item>Тест 3</item>
+    </string-array>
+
+    <string-array name="values_11">
+        <item>values 1</item>
+        <item>values 2</item>
+        <item>values 3</item>
+    </string-array>
+
+    <string-array name="values_12">
+        <item>values 1</item>
+        <item>values 2</item>
+        <item>values 3</item>
+    </string-array>
+
+    <string-array name="values_13">
+        <item>Тест 1</item>
+        <item>Тест 2</item>
+        <item>Тест 3</item>
+    </string-array>
+
+    <string-array name="values_14">
+        <item>values 1</item>
+        <item>values 2</item>
+        <item>values 3</item>
+    </string-array>
+
+    <string-array name="values_15">
+        <item>values 1</item>
+        <item>values 2</item>
+        <item>values 3</item>
+    </string-array>
+
+    <string-array name="values_16">
+        <item>Тест 1</item>
+        <item>Тест 2</item>
+        <item>Тест 3</item>
+    </string-array>
+
+    <string-array name="values_17">
+        <item>values 1</item>
+        <item>values 2</item>
+        <item>values 3</item>
+    </string-array>
+
+    <string-array name="values_18">
+        <item>values 1</item>
+        <item>values 2</item>
+        <item>values 3</item>
+    </string-array>
+
+    <string-array name="values_19">
+        <item>Тест 1</item>
+        <item>Тест 2</item>
+        <item>Тест 3</item>
+    </string-array>
+
+    <string-array name="values_20">
+        <item>values 1</item>
+        <item>values 2</item>
+        <item>values 3</item>
+    </string-array>
+
+    <string-array name="values_21">
+        <item>values 1</item>
+        <item>values 2</item>
+        <item>values 3</item>
+    </string-array>
+
+    <string-array name="values_22">
+        <item>values 1</item>
+        <item>values 2</item>
+        <item>values 3</item>
+    </string-array>
+
+    <string-array name="values_23">
+        <item>values 1</item>
+        <item>values 2</item>
+        <item>values 3</item>
+    </string-array>
+
+    <string-array name="values_24">
+        <item>Тест 1</item>
+        <item>Тест 2</item>
+        <item>Тест 3</item>
+    </string-array>
+
+    <string-array name="values_25">
+        <item>values 1</item>
+        <item>values 2</item>
+        <item>values 3</item>
+    </string-array>
+
+    <string-array name="values_26">
+        <item>values 1</item>
+        <item>values 2</item>
+        <item>values 3</item>
+    </string-array>
+
+    <string-array name="values_27">
+        <item>Тест 1</item>
+        <item>Тест 2</item>
+        <item>Тест 3</item>
+    </string-array>
+
+    <string-array name="values_28">
+        <item>Тест 1</item>
+        <item>Тест 2</item>
+        <item>Тест 3</item>
+    </string-array>
+
+    <string-array name="values_29">
+        <item>Тест 1</item>
+        <item>Тест 2</item>
+        <item>Тест 3</item>
+    </string-array>
+
+    <string-array name="values_30">
+        <item>Тест 1</item>
+        <item>Тест 2</item>
+        <item>Тест 3</item>
+    </string-array>
+
+    <integer-array name="options_1">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </integer-array>
 </resources>

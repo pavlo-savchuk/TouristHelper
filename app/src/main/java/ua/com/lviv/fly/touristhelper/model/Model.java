@@ -9,6 +9,7 @@ import java.net.CookieStore;
 
 import ua.com.lviv.fly.touristhelper.data.manager.OptionManager;
 import ua.com.lviv.fly.touristhelper.data.manager.PlaceItemManager;
+import ua.com.lviv.fly.touristhelper.data.manager.ProfileManager;
 
 /**
  * Created on 21.05.2015.
@@ -38,12 +39,9 @@ public class Model {
     private CookieStore cookieStore;
     private RequestQueue queue;
 
-    //Managers
     private PlaceItemManager stubManager;
-
-    //settingsManager
-
     private OptionManager optionManager;
+    private ProfileManager profileManager;
 
 
     public LSClient getClient() {
@@ -67,6 +65,10 @@ public class Model {
         return optionManager;
     }
 
+    public ProfileManager getProfileManager() {
+        return profileManager;
+    }
+
     /**
      * NOTE: login is performed in synchroneus way so you must never call it from UI thread.
      */
@@ -77,6 +79,7 @@ public class Model {
 
         stubManager = new PlaceItemManager(client);
         optionManager = new OptionManager();
+        profileManager = new ProfileManager();
     }
 
 }
