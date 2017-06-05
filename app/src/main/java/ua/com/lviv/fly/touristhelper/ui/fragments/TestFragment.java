@@ -12,11 +12,18 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.ls.util.L;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.Locale;
 
 import ua.com.lviv.fly.touristhelper.R;
+import ua.com.lviv.fly.touristhelper.data.JsonVO;
+import ua.com.lviv.fly.touristhelper.model.Model;
 
 public class TestFragment extends Fragment implements TextToSpeech.OnInitListener {
     TextToSpeech textToSpeech;
@@ -33,6 +40,9 @@ public class TestFragment extends Fragment implements TextToSpeech.OnInitListene
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        ArrayList<JsonVO> jsonVOs = parseJson("dental_clinics.json");
+        ArrayList<JsonVO> test1 = parseJson("museums.json");
+        L.e("Address = " +  jsonVOs.get(5).getAddress());
 
     }
 
@@ -95,5 +105,28 @@ public class TestFragment extends Fragment implements TextToSpeech.OnInitListene
         textToSpeech.speak(textholder, TextToSpeech.QUEUE_FLUSH, null);
 
         Toast.makeText(getActivity(), textholder, Toast.LENGTH_LONG).show();
+    }
+
+    public String loadJSONFromAsset(String jsonName) {
+        String json = null;
+        try {
+            InputStream is = getActivity().getAssets().open(jsonName);
+            int size = is.available();
+            byte[] buffer = new byte[size];
+            is.read(buffer);
+            is.close();
+            json = new String(buffer, "UTF-8");
+        } catch (IOException ex) {
+            ex.printStackTrace();
+            return null;
+        }
+        return json;
+    }
+
+    private  ArrayList<JsonVO> parseJson(String jsonName){
+        Gson gson = Model.instance().getGson();
+        ArrayList<JsonVO> list= gson.fromJson(loadJSONFromAsset(jsonName), new TypeToken<ArrayList<JsonVO>>(){}.getType());
+        L.e("Json  " + jsonName + " = " + list.toString());
+        return list;
     }
 }

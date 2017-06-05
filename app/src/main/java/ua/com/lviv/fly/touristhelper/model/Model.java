@@ -3,6 +3,7 @@ package ua.com.lviv.fly.touristhelper.model;
 import android.content.Context;
 
 import com.android.volley.RequestQueue;
+import com.google.gson.Gson;
 import com.ls.http.base.client.LSClient;
 
 import java.net.CookieStore;
@@ -42,6 +43,7 @@ public class Model {
     private PlaceItemManager stubManager;
     private OptionManager optionManager;
     private ProfileManager profileManager;
+    private Gson gson;
 
 
     public LSClient getClient() {
@@ -69,6 +71,10 @@ public class Model {
         return profileManager;
     }
 
+    public Gson getGson() {
+        return gson;
+    }
+
     /**
      * NOTE: login is performed in synchroneus way so you must never call it from UI thread.
      */
@@ -80,6 +86,7 @@ public class Model {
         stubManager = new PlaceItemManager(client);
         optionManager = new OptionManager();
         profileManager = new ProfileManager();
+        gson = new Gson();
     }
 
 }
