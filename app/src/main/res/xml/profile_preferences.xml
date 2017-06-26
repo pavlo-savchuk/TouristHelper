@@ -1,6 +1,6 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <PreferenceCategory android:title="Type 1">
+    <PreferenceCategory android:title="Опитування">
 
         <ListPreference
             android:defaultValue="-1"
@@ -10,18 +10,158 @@
             android:summary="%s"
             android:title="Title 1" />
 
-    </PreferenceCategory>
-
-    <PreferenceCategory android:title="Type 2">
-
         <ListPreference
-
             android:defaultValue="-1"
             android:entries="@array/values_2"
             android:entryValues="@array/values_2"
             android:key="@string/key_2"
             android:summary="%s"
             android:title="Title 2" />
+
+        <ListPreference
+            android:defaultValue="-1"
+            android:entries="@array/values_3"
+            android:entryValues="@array/values_3"
+            android:key="@string/key_3"
+            android:summary="%s"
+            android:title="Title 3" />
+
+        <ListPreference
+            android:defaultValue="-1"
+            android:entries="@array/values_4"
+            android:entryValues="@array/values_4"
+            android:key="@string/key_4"
+            android:summary="%s"
+            android:title="Title 4" />
+
+
+        <ListPreference
+            android:defaultValue="-1"
+            android:entries="@array/values_5"
+            android:entryValues="@array/values_5"
+            android:key="@string/key_5"
+            android:summary="%s"
+            android:title="Title 5" />
+
+        <ListPreference
+            android:defaultValue="-1"
+            android:entries="@array/values_6"
+            android:entryValues="@array/values_6"
+            android:key="@string/key_6"
+            android:summary="%s"
+            android:title="Title 6" />
+
+        <ListPreference
+            android:defaultValue="-1"
+            android:entries="@array/values_7"
+            android:entryValues="@array/values_7"
+            android:key="@string/key_7"
+            android:summary="%s"
+            android:title="Title 7" />
+
+        <ListPreference
+            android:defaultValue="-1"
+            android:entries="@array/values_7"
+            android:entryValues="@array/values_7"
+            android:key="@string/key_7"
+            android:summary="%s"
+            android:title="Title 7" />
+
+        <ListPreference
+            android:defaultValue="-1"
+            android:entries="@array/values_8"
+            android:entryValues="@array/values_8"
+            android:key="@string/key_8"
+            android:summary="%s"
+            android:title="Title 8" />
+
+        <ListPreference
+            android:defaultValue="-1"
+            android:entries="@array/values_9"
+            android:entryValues="@array/values_9"
+            android:key="@string/key_9"
+            android:summary="%s"
+            android:title="Title 9" />
+
+        <ListPreference
+            android:defaultValue="-1"
+            android:entries="@array/values_10"
+            android:entryValues="@array/values_10"
+            android:key="@string/key_10"
+            android:summary="%s"
+            android:title="Title 10" />
+
+        <ListPreference
+            android:defaultValue="-1"
+            android:entries="@array/values_11"
+            android:entryValues="@array/values_11"
+            android:key="@string/key_11"
+            android:summary="%s"
+            android:title="Title 11" />
+
+        <ListPreference
+            android:defaultValue="-1"
+            android:entries="@array/values_12"
+            android:entryValues="@array/values_12"
+            android:key="@string/key_12"
+            android:summary="%s"
+            android:title="Title 12" />
+
+        <ListPreference
+            android:defaultValue="-1"
+            android:entries="@array/values_13"
+            android:entryValues="@array/values_13"
+            android:key="@string/key_13"
+            android:summary="%s"
+            android:title="Title 13" />
+
+        <ListPreference
+            android:defaultValue="-1"
+            android:entries="@array/values_14"
+            android:entryValues="@array/values_14"
+            android:key="@string/key_14"
+            android:summary="%s"
+            android:title="Title 14" />
+
+        <ListPreference
+            android:defaultValue="-1"
+            android:entries="@array/values_15"
+            android:entryValues="@array/values_15"
+            android:key="@string/key_15"
+            android:summary="%s"
+            android:title="Title 15" />
+
+        <ListPreference
+            android:defaultValue="-1"
+            android:entries="@array/values_16"
+            android:entryValues="@array/values_16"
+            android:key="@string/key_16"
+            android:summary="%s"
+            android:title="Title 16" />
+
+        <ListPreference
+            android:defaultValue="-1"
+            android:entries="@array/values_17"
+            android:entryValues="@array/values_17"
+            android:key="@string/key_17"
+            android:summary="%s"
+            android:title="Title 17" />
+
+        <ListPreference
+            android:defaultValue="-1"
+            android:entries="@array/values_18"
+            android:entryValues="@array/values_18"
+            android:key="@string/key_18"
+            android:summary="%s"
+            android:title="Title 18" />
+
+        <ListPreference
+            android:defaultValue="-1"
+            android:entries="@array/values_19"
+            android:entryValues="@array/values_19"
+            android:key="@string/key_19"
+            android:summary="%s"
+            android:title="Title 20" />
 
     </PreferenceCategory>
 

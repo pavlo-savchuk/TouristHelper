@@ -90,9 +90,9 @@
 
 
     <string-array name="values_1">
-        <item>Тест 1</item>
-        <item>Тест 2</item>
-        <item>Тест 3</item>
+        <item>Так</item>
+        <item>Ні</item>
+        <item>Не знаю</item>
     </string-array>
 
     <string-array name="values_2">
