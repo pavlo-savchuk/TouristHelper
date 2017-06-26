@@ -3,165 +3,157 @@
     <PreferenceCategory android:title="Опитування">
 
         <ListPreference
-            android:defaultValue="-1"
+            android:defaultValue="Не знаю"
             android:entries="@array/values_1"
             android:entryValues="@array/values_1"
             android:key="@string/key_1"
             android:summary="%s"
-            android:title="Title 1" />
+            android:title="@string/Title_1" />
 
         <ListPreference
-            android:defaultValue="-1"
-            android:entries="@array/values_2"
-            android:entryValues="@array/values_2"
+            android:defaultValue="Не знаю"
+            android:entries="@array/values_1"
+            android:entryValues="@array/values_1"
             android:key="@string/key_2"
             android:summary="%s"
-            android:title="Title 2" />
+            android:title="@string/Title_2" />
 
         <ListPreference
-            android:defaultValue="-1"
-            android:entries="@array/values_3"
-            android:entryValues="@array/values_3"
+            android:defaultValue="Не знаю"
+            android:entries="@array/values_1"
+            android:entryValues="@array/values_1"
             android:key="@string/key_3"
             android:summary="%s"
-            android:title="Title 3" />
+            android:title="@string/Title_3" />
 
         <ListPreference
-            android:defaultValue="-1"
-            android:entries="@array/values_4"
-            android:entryValues="@array/values_4"
+            android:defaultValue="Не знаю"
+            android:entries="@array/values_1"
+            android:entryValues="@array/values_1"
             android:key="@string/key_4"
             android:summary="%s"
-            android:title="Title 4" />
+            android:title="@string/Title_4" />
 
 
         <ListPreference
             android:defaultValue="-1"
-            android:entries="@array/values_5"
-            android:entryValues="@array/values_5"
+            android:entries="@array/values_1"
+            android:entryValues="@array/values_1"
             android:key="@string/key_5"
             android:summary="%s"
-            android:title="Title 5" />
+            android:title="@string/Title_5" />
 
         <ListPreference
             android:defaultValue="-1"
-            android:entries="@array/values_6"
-            android:entryValues="@array/values_6"
+            android:entries="@array/values_1"
+            android:entryValues="@array/values_1"
             android:key="@string/key_6"
             android:summary="%s"
-            android:title="Title 6" />
+            android:title="@string/Title_6" />
 
         <ListPreference
             android:defaultValue="-1"
-            android:entries="@array/values_7"
-            android:entryValues="@array/values_7"
+            android:entries="@array/values_1"
+            android:entryValues="@array/values_1"
             android:key="@string/key_7"
             android:summary="%s"
-            android:title="Title 7" />
+            android:title="@string/Title_7" />
 
         <ListPreference
             android:defaultValue="-1"
-            android:entries="@array/values_7"
-            android:entryValues="@array/values_7"
-            android:key="@string/key_7"
-            android:summary="%s"
-            android:title="Title 7" />
-
-        <ListPreference
-            android:defaultValue="-1"
-            android:entries="@array/values_8"
-            android:entryValues="@array/values_8"
+            android:entries="@array/values_1"
+            android:entryValues="@array/values_1"
             android:key="@string/key_8"
             android:summary="%s"
-            android:title="Title 8" />
+            android:title="@string/Title_8" />
 
         <ListPreference
             android:defaultValue="-1"
-            android:entries="@array/values_9"
-            android:entryValues="@array/values_9"
+            android:entries="@array/values_1"
+            android:entryValues="@array/values_1"
             android:key="@string/key_9"
             android:summary="%s"
-            android:title="Title 9" />
+            android:title="@string/Title_9" />
 
         <ListPreference
             android:defaultValue="-1"
-            android:entries="@array/values_10"
-            android:entryValues="@array/values_10"
+            android:entries="@array/values_1"
+            android:entryValues="@array/values_1"
             android:key="@string/key_10"
             android:summary="%s"
-            android:title="Title 10" />
+            android:title="@string/Title_10" />
 
         <ListPreference
             android:defaultValue="-1"
-            android:entries="@array/values_11"
-            android:entryValues="@array/values_11"
+            android:entries="@array/values_1"
+            android:entryValues="@array/values_1"
             android:key="@string/key_11"
             android:summary="%s"
-            android:title="Title 11" />
+            android:title="@string/Title_11" />
 
         <ListPreference
             android:defaultValue="-1"
-            android:entries="@array/values_12"
-            android:entryValues="@array/values_12"
+            android:entries="@array/values_1"
+            android:entryValues="@array/values_1"
             android:key="@string/key_12"
             android:summary="%s"
-            android:title="Title 12" />
+            android:title="@string/Title_12" />
 
         <ListPreference
             android:defaultValue="-1"
-            android:entries="@array/values_13"
-            android:entryValues="@array/values_13"
+            android:entries="@array/values_1"
+            android:entryValues="@array/values_1"
             android:key="@string/key_13"
             android:summary="%s"
-            android:title="Title 13" />
+            android:title="@string/Title_13" />
 
         <ListPreference
             android:defaultValue="-1"
-            android:entries="@array/values_14"
-            android:entryValues="@array/values_14"
+            android:entries="@array/values_1"
+            android:entryValues="@array/values_1"
             android:key="@string/key_14"
             android:summary="%s"
-            android:title="Title 14" />
+            android:title="@string/Title_14" />
 
         <ListPreference
             android:defaultValue="-1"
-            android:entries="@array/values_15"
-            android:entryValues="@array/values_15"
+            android:entries="@array/values_1"
+            android:entryValues="@array/values_1"
             android:key="@string/key_15"
             android:summary="%s"
-            android:title="Title 15" />
+            android:title="@string/Title_15" />
 
         <ListPreference
             android:defaultValue="-1"
-            android:entries="@array/values_16"
-            android:entryValues="@array/values_16"
+            android:entries="@array/values_1"
+            android:entryValues="@array/values_1"
             android:key="@string/key_16"
             android:summary="%s"
-            android:title="Title 16" />
+            android:title="@string/Title_16" />
 
         <ListPreference
             android:defaultValue="-1"
-            android:entries="@array/values_17"
-            android:entryValues="@array/values_17"
+            android:entries="@array/values_1"
+            android:entryValues="@array/values_1"
             android:key="@string/key_17"
             android:summary="%s"
-            android:title="Title 17" />
+            android:title="@string/Title_17" />
 
         <ListPreference
             android:defaultValue="-1"
-            android:entries="@array/values_18"
-            android:entryValues="@array/values_18"
+            android:entries="@array/values_1"
+            android:entryValues="@array/values_1"
             android:key="@string/key_18"
             android:summary="%s"
-            android:title="Title 18" />
+            android:title="@string/Title_18" />
 
         <ListPreference
             android:defaultValue="-1"
-            android:entries="@array/values_19"
-            android:entryValues="@array/values_19"
+            android:entries="@array/values_1"
+            android:entryValues="@array/values_1"
             android:key="@string/key_19"
             android:summary="%s"
-            android:title="Title 20" />
+            android:title="@string/Title_19" />
 
     </PreferenceCategory>
 

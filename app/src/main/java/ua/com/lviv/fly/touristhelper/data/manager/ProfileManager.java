@@ -37,4 +37,23 @@ public class ProfileManager {
         return i;
 
     }
+
+
+    public String getPref2() {
+        return  pref.getString(context.getString(R.string.key_2),  "");
+    }
+
+    public int getPref2Point(){
+        int i = Arrays.asList(context.getResources().getStringArray(R.array.values_1)).indexOf(getPref2());
+//        L.e("Point 1 = " + i);
+//        int[] intArray = context.getResources().getIntArray(R.array.options_1);
+//        if(i == -1){
+//            return intArray[1];
+//        }else {
+//            return intArray[i];
+//        }
+
+        return i;
+
+    }
 }

@@ -20,8 +20,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+import com.ls.util.L;
+
 import ua.com.lviv.fly.touristhelper.R;
 import ua.com.lviv.fly.touristhelper.TemplateApplication;
+import ua.com.lviv.fly.touristhelper.data.manager.ProfileManager;
+import ua.com.lviv.fly.touristhelper.model.Model;
 import ua.com.lviv.fly.touristhelper.ui.fragments.MapFragment;
 import ua.com.lviv.fly.touristhelper.ui.fragments.NearbyPlacesFragment;
 import ua.com.lviv.fly.touristhelper.ui.fragments.OptionsFragment;
@@ -50,7 +54,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close){
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close) {
             @Override
             public void onDrawerOpened(View drawerView) {
                 super.onDrawerOpened(drawerView);
@@ -97,6 +101,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            ProfileManager profileManager = Model.instance().getProfileManager();
+            L.e("ProfileFragment = " + profileManager.getPref1());
+            L.e("ProfileFragment Points = " + profileManager.getPref1Point());
+
+            L.e("ProfileFragment 2 = " + profileManager.getPref2());
+            L.e("ProfileFragment Points 2 = " + profileManager.getPref2Point());
             return true;
         }
 
