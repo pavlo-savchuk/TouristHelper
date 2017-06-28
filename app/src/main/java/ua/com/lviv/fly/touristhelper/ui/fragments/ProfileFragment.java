@@ -24,10 +24,6 @@ public class ProfileFragment extends PreferenceFragmentCompat implements SharedP
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
         addPreferencesFromResource(R.xml.profile_preferences);
         PreferenceManager.setDefaultValues(getContext(), R.xml.preferences, false);
-
-//        ProfileManager profileManager = Model.instance().getProfileManager();
-//        L.e("ProfileFragment = " + profileManager.getPref1());
-//        L.e("ProfileFragment Points = " + profileManager.getPref1Point());
     }
 
     @Override
