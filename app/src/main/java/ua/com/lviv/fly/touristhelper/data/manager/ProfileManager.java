@@ -14,6 +14,10 @@ import ua.com.lviv.fly.touristhelper.TemplateApplication;
 public class ProfileManager {
     private SharedPreferences pref;
     private Context context;
+    private int index1 = 0;
+    private int index2 = 0;
+    private int index3 = 0;
+    private int index4 = 0;
 
     public ProfileManager() {
         this.pref = PreferenceManager.getDefaultSharedPreferences(TemplateApplication.getSharedContext());
@@ -30,15 +34,19 @@ public class ProfileManager {
         int result = 0;
         switch (pref1) {
             case "Не знаю":
-                result = -11;
+                result = 1;
+                index1 = index1 + result;
                 break;
             case "Так":
-                result = -22;
+                result = 2;
+                index2 = index2 + result;
                 break;
             case "Ні":
-                result = -33;
+                result = 3;
+                index3 = index3 + result;
                 break;
         }
+
         return result;
 
     }
