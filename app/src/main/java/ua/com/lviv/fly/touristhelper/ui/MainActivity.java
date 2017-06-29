@@ -102,18 +102,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             ProfileManager profileManager = Model.instance().getProfileManager();
-            profileManager.getPref1Point();
-            profileManager.getPref2Point();
-            profileManager.getPref3Point();
-            profileManager.getPref4Point();
-            profileManager.getPref5Point();
-            profileManager.getPref6Point();
-            profileManager.getPref7Point();
-            profileManager.getPref8Point();
-            profileManager.getPref9Point();
-            profileManager.getPref10Point();
-            profileManager.getPref11Point();
-            profileManager.getPref12Point();
+
 
 
             L.e("index1 = " + profileManager.getIndex1());

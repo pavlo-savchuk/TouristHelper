@@ -36,11 +36,29 @@ public class ProfileManager {
     }
 
 
-    public String getPref1() {
+    public void calculateScore() {
+        index1 = 0;
+        index2 = 0;
+        index3 = 0;
+        getPref1Point();
+        getPref2Point();
+        getPref3Point();
+        getPref4Point();
+        getPref5Point();
+        getPref6Point();
+        getPref7Point();
+        getPref8Point();
+        getPref9Point();
+        getPref10Point();
+        getPref11Point();
+        getPref12Point();
+    }
+
+    private String getPref1() {
         return pref.getString(context.getString(R.string.key_1), "Не знаю");
     }
 
-    public int getPref1Point() {
+    private int getPref1Point() {
         String pref = getPref1();
         int result = 0;
         switch (pref) {
@@ -63,11 +81,11 @@ public class ProfileManager {
     }
 
 
-    public String getPref2() {
+    private String getPref2() {
         return pref.getString(context.getString(R.string.key_2), "Не знаю");
     }
 
-    public int getPref2Point() {
+    private int getPref2Point() {
         String pref = getPref2();
         int result = 0;
         switch (pref) {
@@ -89,11 +107,11 @@ public class ProfileManager {
 
     }
 
-    public String getPref3() {
+    private String getPref3() {
         return pref.getString(context.getString(R.string.key_3), "Не знаю");
     }
 
-    public int getPref3Point() {
+    private int getPref3Point() {
         String pref = getPref3();
         int result = 0;
         switch (pref) {
@@ -115,11 +133,11 @@ public class ProfileManager {
 
     }
 
-    public String getPref4() {
+    private String getPref4() {
         return pref.getString(context.getString(R.string.key_4), "Не знаю");
     }
 
-    public int getPref4Point() {
+    private int getPref4Point() {
         String pref = getPref4();
         int result = 0;
         switch (pref) {
@@ -141,11 +159,11 @@ public class ProfileManager {
 
     }
 
-    public String getPref5() {
+    private String getPref5() {
         return pref.getString(context.getString(R.string.key_5), "Не знаю");
     }
 
-    public int getPref5Point() {
+    private int getPref5Point() {
         String pref = getPref5();
         int result = 0;
         switch (pref) {
@@ -167,11 +185,11 @@ public class ProfileManager {
 
     }
 
-    public String getPref6() {
+    private String getPref6() {
         return pref.getString(context.getString(R.string.key_6), "Не знаю");
     }
 
-    public int getPref6Point() {
+    private int getPref6Point() {
         String pref = getPref6();
         int result = 0;
         switch (pref) {
@@ -193,11 +211,11 @@ public class ProfileManager {
 
     }
 
-    public String getPref7() {
+    private String getPref7() {
         return pref.getString(context.getString(R.string.key_7), "Не знаю");
     }
 
-    public int getPref7Point() {
+    private int getPref7Point() {
         String pref = getPref7();
         int result = 0;
         switch (pref) {
@@ -219,11 +237,11 @@ public class ProfileManager {
 
     }
 
-    public String getPref8() {
+    private String getPref8() {
         return pref.getString(context.getString(R.string.key_8), "Не знаю");
     }
 
-    public int getPref8Point() {
+    private int getPref8Point() {
         String pref = getPref8();
         int result = 0;
         switch (pref) {
@@ -245,11 +263,11 @@ public class ProfileManager {
 
     }
 
-    public String getPref9() {
+    private String getPref9() {
         return pref.getString(context.getString(R.string.key_9), "Не знаю");
     }
 
-    public int getPref9Point() {
+    private int getPref9Point() {
         String pref = getPref9();
         int result = 0;
         switch (pref) {
@@ -271,11 +289,11 @@ public class ProfileManager {
 
     }
 
-    public String getPref10() {
+    private String getPref10() {
         return pref.getString(context.getString(R.string.key_10), "Не знаю");
     }
 
-    public int getPref10Point() {
+    private int getPref10Point() {
         String pref = getPref10();
         int result = 0;
         switch (pref) {
@@ -297,11 +315,11 @@ public class ProfileManager {
 
     }
 
-    public String getPref11() {
+    private String getPref11() {
         return pref.getString(context.getString(R.string.key_11), "Не знаю");
     }
 
-    public int getPref11Point() {
+    private int getPref11Point() {
         String pref = getPref11();
         int result = 0;
         switch (pref) {
@@ -323,11 +341,11 @@ public class ProfileManager {
 
     }
 
-    public String getPref12() {
+    private String getPref12() {
         return pref.getString(context.getString(R.string.key_12), "Не знаю");
     }
 
-    public int getPref12Point() {
+    private int getPref12Point() {
         String pref = getPref12();
         int result = 0;
         switch (pref) {
@@ -349,11 +367,11 @@ public class ProfileManager {
 
     }
 
-    public String getPref13() {
+    private String getPref13() {
         return pref.getString(context.getString(R.string.key_13), "Не знаю");
     }
 
-    public int getPref13Point() {
+    private int getPref13Point() {
         String pref = getPref13();
         int result = 0;
         switch (pref) {
@@ -375,11 +393,11 @@ public class ProfileManager {
 
     }
 
-    public String getPref14() {
+    private String getPref14() {
         return pref.getString(context.getString(R.string.key_14), "Не знаю");
     }
 
-    public int getPref14Point() {
+    private int getPref14Point() {
         String pref = getPref14();
         int result = 0;
         switch (pref) {
@@ -401,11 +419,11 @@ public class ProfileManager {
 
     }
 
-    public String getPref15() {
+    private String getPref15() {
         return pref.getString(context.getString(R.string.key_15), "Не знаю");
     }
 
-    public int getPref15Point() {
+    private int getPref15Point() {
         String pref = getPref15();
         int result = 0;
         switch (pref) {
@@ -427,11 +445,11 @@ public class ProfileManager {
 
     }
 
-    public String getPref16() {
+    private String getPref16() {
         return pref.getString(context.getString(R.string.key_16), "Не знаю");
     }
 
-    public int getPref16Point() {
+    private int getPref16Point() {
         String pref = getPref16();
         int result = 0;
         switch (pref) {
@@ -453,11 +471,11 @@ public class ProfileManager {
 
     }
 
-    public String getPref17() {
+    private String getPref17() {
         return pref.getString(context.getString(R.string.key_17), "Не знаю");
     }
 
-    public int getPref17Point() {
+    private int getPref17Point() {
         String pref = getPref17();
         int result = 0;
         switch (pref) {
@@ -479,11 +497,11 @@ public class ProfileManager {
 
     }
 
-    public String getPref18() {
+    private String getPref18() {
         return pref.getString(context.getString(R.string.key_18), "Не знаю");
     }
 
-    public int getPref18Point() {
+    private int getPref18Point() {
         String pref = getPref18();
         int result = 0;
         switch (pref) {
@@ -505,11 +523,11 @@ public class ProfileManager {
 
     }
 
-    public String getPref19() {
+    private String getPref19() {
         return pref.getString(context.getString(R.string.key_19), "Не знаю");
     }
 
-    public int getPref19Point() {
+    private int getPref19Point() {
         String pref = getPref19();
         int result = 0;
         switch (pref) {
@@ -531,11 +549,11 @@ public class ProfileManager {
 
     }
 
-    public String getPref20() {
+    private String getPref20() {
         return pref.getString(context.getString(R.string.key_20), "Не знаю");
     }
 
-    public int getPref20Point() {
+    private int getPref20Point() {
         String pref = getPref20();
         int result = 0;
         switch (pref) {
@@ -556,7 +574,6 @@ public class ProfileManager {
         return result;
 
     }
-
 
 
 }
