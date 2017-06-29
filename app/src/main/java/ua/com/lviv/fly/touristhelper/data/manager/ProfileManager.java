@@ -53,6 +53,15 @@ public class ProfileManager {
         getPref11Point();
         getPref12Point();
 
+        getPref13Point();
+        getPref14Point();
+        getPref15Point();
+        getPref16Point();
+        getPref17Point();
+        getPref18Point();
+        getPref19Point();
+        getPref20Point();
+
         L.e("index1 = " + getIndex1());
         L.e("index2 = " + getIndex2());
         L.e("index3 = " + getIndex3());
