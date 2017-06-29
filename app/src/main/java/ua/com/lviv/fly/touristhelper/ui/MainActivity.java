@@ -105,8 +105,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             L.e("ProfileFragment = " + profileManager.getPref1());
             L.e("ProfileFragment Points = " + profileManager.getPref1Point());
 
-            L.e("ProfileFragment 2 = " + profileManager.getPref2());
-            L.e("ProfileFragment Points 2 = " + profileManager.getPref2Point());
+//            L.e("ProfileFragment 2 = " + profileManager.getPref2());
+//            L.e("ProfileFragment Points 2 = " + profileManager.getPref2Point());
             return true;
         }
 
