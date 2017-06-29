@@ -52,6 +52,10 @@ public class ProfileManager {
         getPref10Point();
         getPref11Point();
         getPref12Point();
+
+        L.e("index1 = " + getIndex1());
+        L.e("index2 = " + getIndex2());
+        L.e("index3 = " + getIndex3());
     }
 
     private String getPref1() {
