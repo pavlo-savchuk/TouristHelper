@@ -8,8 +8,8 @@
         <item name="colorAccent">@color/colorAccent</item>
         <item name="preferenceTheme">@style/PreferenceThemeOverlay</item>
 
-        <item name="android:dialogTheme">@style/DialogStyle</item>
-        <item name="android:alertDialogTheme">@style/DialogStyle</item>
+        <item name="dialogTheme">@style/SettingsTheme.Dialog</item>
+        <item name="alertDialogTheme">@style/SettingsTheme.Dialog.Alert</item>
     </style>
 
     <style name="AppTheme.NoActionBar">
@@ -28,7 +28,15 @@
     <!-- Customize your color here -->
 
     <style name="DialogStyle" parent="Theme.AppCompat.Light.Dialog">
-        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:textColor">@color/colorPrimary</item>
         <item name="android:textSize">8sp</item>
+    </style>
+
+    <style name="SettingsTheme.Dialog" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorAccent">@color/colorPrimary</item>
+    </style>
+
+    <style name="SettingsTheme.Dialog.Alert" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="colorAccent">@color/colorPrimary</item>
     </style>
 </resources>
