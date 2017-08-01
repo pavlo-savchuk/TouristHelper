@@ -6,7 +6,9 @@ import android.preference.PreferenceManager;
 
 import com.ls.util.L;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import ua.com.lviv.fly.touristhelper.R;
 import ua.com.lviv.fly.touristhelper.TemplateApplication;
@@ -17,6 +19,7 @@ public class ProfileManager {
     private int index1 = 0;
     private int index2 = 0;
     private int index3 = 0;
+    private List<Enum> data = new ArrayList<>(21);
 
     public ProfileManager() {
         this.pref = PreferenceManager.getDefaultSharedPreferences(TemplateApplication.getSharedContext());
@@ -62,32 +65,33 @@ public class ProfileManager {
         getPref19Point();
         getPref20Point();
 
-        L.e("index1 = " + getIndex1());
-        L.e("index2 = " + getIndex2());
-        L.e("index3 = " + getIndex3());
+        L.e("Data test = " + data.toString());
+
+//        L.e("index1 = " + getIndex1());
+//        L.e("index2 = " + getIndex2());
+//        L.e("index3 = " + getIndex3());
     }
 
     private String getPref1() {
         return pref.getString(context.getString(R.string.key_1), "Не знаю");
     }
 
-    private int getPref1Point() {
+    private Enum getPref1Point() {
         String pref = getPref1();
-        int result = 0;
+        Enum result = null;
         switch (pref) {
             case "Не знаю":
-                result = 1;
-                index1 = index1 + result;
+                result = Enum.hz;
                 break;
             case "Так":
-                result = 2;
-                index2 = index2 + result;
+                result = Enum.yes;
                 break;
             case "Ні":
-                result = 3;
-                index3 = index3 + result;
+                result = Enum.no;
                 break;
         }
+        L.e("Data size  = " + data.size());
+        data.add(1, result);
 
         return result;
 
@@ -98,23 +102,21 @@ public class ProfileManager {
         return pref.getString(context.getString(R.string.key_2), "Не знаю");
     }
 
-    private int getPref2Point() {
+    private Enum getPref2Point() {
         String pref = getPref2();
-        int result = 0;
+        Enum result = null;
         switch (pref) {
             case "Не знаю":
-                result = 1;
-                index1 = index1 + result;
+                result = Enum.hz;
                 break;
             case "Так":
-                result = 2;
-                index2 = index2 + result;
+                result = Enum.yes;
                 break;
             case "Ні":
-                result = 3;
-                index3 = index3 + result;
+                result = Enum.no;
                 break;
         }
+        data.add(2, result);
 
         return result;
 
@@ -124,23 +126,21 @@ public class ProfileManager {
         return pref.getString(context.getString(R.string.key_3), "Не знаю");
     }
 
-    private int getPref3Point() {
+    private Enum getPref3Point() {
         String pref = getPref3();
-        int result = 0;
+        Enum result = null;
         switch (pref) {
             case "Не знаю":
-                result = 1;
-                index1 = index1 + result;
+                result = Enum.hz;
                 break;
             case "Так":
-                result = 2;
-                index2 = index2 + result;
+                result = Enum.yes;
                 break;
             case "Ні":
-                result = 3;
-                index3 = index3 + result;
+                result = Enum.no;
                 break;
         }
+        data.add(3, result);
 
         return result;
 
@@ -150,23 +150,21 @@ public class ProfileManager {
         return pref.getString(context.getString(R.string.key_4), "Не знаю");
     }
 
-    private int getPref4Point() {
+    private Enum getPref4Point() {
         String pref = getPref4();
-        int result = 0;
+        Enum result = null;
         switch (pref) {
             case "Не знаю":
-                result = 1;
-                index1 = index1 + result;
+                result = Enum.hz;
                 break;
             case "Так":
-                result = 2;
-                index2 = index2 + result;
+                result = Enum.yes;
                 break;
             case "Ні":
-                result = 3;
-                index3 = index3 + result;
+                result = Enum.no;
                 break;
         }
+        data.add(4, result);
 
         return result;
 
@@ -176,23 +174,21 @@ public class ProfileManager {
         return pref.getString(context.getString(R.string.key_5), "Не знаю");
     }
 
-    private int getPref5Point() {
+    private Enum getPref5Point() {
         String pref = getPref5();
-        int result = 0;
+        Enum result = null;
         switch (pref) {
             case "Не знаю":
-                result = 1;
-                index1 = index1 + result;
+                result = Enum.hz;
                 break;
             case "Так":
-                result = 2;
-                index2 = index2 + result;
+                result = Enum.yes;
                 break;
             case "Ні":
-                result = 3;
-                index3 = index3 + result;
+                result = Enum.no;
                 break;
         }
+        data.add(5, result);
 
         return result;
 
@@ -202,23 +198,21 @@ public class ProfileManager {
         return pref.getString(context.getString(R.string.key_6), "Не знаю");
     }
 
-    private int getPref6Point() {
+    private Enum getPref6Point() {
         String pref = getPref6();
-        int result = 0;
+        Enum result = null;
         switch (pref) {
             case "Не знаю":
-                result = 1;
-                index1 = index1 + result;
+                result = Enum.hz;
                 break;
             case "Так":
-                result = 2;
-                index2 = index2 + result;
+                result = Enum.yes;
                 break;
             case "Ні":
-                result = 3;
-                index3 = index3 + result;
+                result = Enum.no;
                 break;
         }
+        data.add(6, result);
 
         return result;
 
@@ -228,23 +222,21 @@ public class ProfileManager {
         return pref.getString(context.getString(R.string.key_7), "Не знаю");
     }
 
-    private int getPref7Point() {
+    private Enum getPref7Point() {
         String pref = getPref7();
-        int result = 0;
+        Enum result = null;
         switch (pref) {
             case "Не знаю":
-                result = 1;
-                index1 = index1 + result;
+                result = Enum.hz;
                 break;
             case "Так":
-                result = 2;
-                index2 = index2 + result;
+                result = Enum.yes;
                 break;
             case "Ні":
-                result = 3;
-                index3 = index3 + result;
+                result = Enum.no;
                 break;
         }
+        data.add(7, result);
 
         return result;
 
@@ -254,23 +246,21 @@ public class ProfileManager {
         return pref.getString(context.getString(R.string.key_8), "Не знаю");
     }
 
-    private int getPref8Point() {
+    private Enum getPref8Point() {
         String pref = getPref8();
-        int result = 0;
+        Enum result = null;
         switch (pref) {
             case "Не знаю":
-                result = 1;
-                index1 = index1 + result;
+                result = Enum.hz;
                 break;
             case "Так":
-                result = 2;
-                index2 = index2 + result;
+                result = Enum.yes;
                 break;
             case "Ні":
-                result = 3;
-                index3 = index3 + result;
+                result = Enum.no;
                 break;
         }
+        data.add(8, result);
 
         return result;
 
@@ -280,23 +270,21 @@ public class ProfileManager {
         return pref.getString(context.getString(R.string.key_9), "Не знаю");
     }
 
-    private int getPref9Point() {
+    private Enum getPref9Point() {
         String pref = getPref9();
-        int result = 0;
+        Enum result = null;
         switch (pref) {
             case "Не знаю":
-                result = 1;
-                index1 = index1 + result;
+                result = Enum.hz;
                 break;
             case "Так":
-                result = 2;
-                index2 = index2 + result;
+                result = Enum.yes;
                 break;
             case "Ні":
-                result = 3;
-                index3 = index3 + result;
+                result = Enum.no;
                 break;
         }
+        data.add(9, result);
 
         return result;
 
@@ -306,23 +294,21 @@ public class ProfileManager {
         return pref.getString(context.getString(R.string.key_10), "Не знаю");
     }
 
-    private int getPref10Point() {
+    private Enum getPref10Point() {
         String pref = getPref10();
-        int result = 0;
+        Enum result = null;
         switch (pref) {
             case "Не знаю":
-                result = 1;
-                index1 = index1 + result;
+                result = Enum.hz;
                 break;
             case "Так":
-                result = 2;
-                index2 = index2 + result;
+                result = Enum.yes;
                 break;
             case "Ні":
-                result = 3;
-                index3 = index3 + result;
+                result = Enum.no;
                 break;
         }
+        data.add(10, result);
 
         return result;
 
@@ -332,23 +318,21 @@ public class ProfileManager {
         return pref.getString(context.getString(R.string.key_11), "Не знаю");
     }
 
-    private int getPref11Point() {
+    private Enum getPref11Point() {
         String pref = getPref11();
-        int result = 0;
+        Enum result = null;
         switch (pref) {
             case "Не знаю":
-                result = 1;
-                index1 = index1 + result;
+                result = Enum.hz;
                 break;
             case "Так":
-                result = 2;
-                index2 = index2 + result;
+                result = Enum.yes;
                 break;
             case "Ні":
-                result = 3;
-                index3 = index3 + result;
+                result = Enum.no;
                 break;
         }
+        data.add(11, result);
 
         return result;
 
@@ -358,23 +342,21 @@ public class ProfileManager {
         return pref.getString(context.getString(R.string.key_12), "Не знаю");
     }
 
-    private int getPref12Point() {
+    private Enum getPref12Point() {
         String pref = getPref12();
-        int result = 0;
+        Enum result = null;
         switch (pref) {
             case "Не знаю":
-                result = 1;
-                index1 = index1 + result;
+                result = Enum.hz;
                 break;
             case "Так":
-                result = 2;
-                index2 = index2 + result;
+                result = Enum.yes;
                 break;
             case "Ні":
-                result = 3;
-                index3 = index3 + result;
+                result = Enum.no;
                 break;
         }
+        data.add(12, result);
 
         return result;
 
@@ -384,23 +366,21 @@ public class ProfileManager {
         return pref.getString(context.getString(R.string.key_13), "Не знаю");
     }
 
-    private int getPref13Point() {
+    private Enum getPref13Point() {
         String pref = getPref13();
-        int result = 0;
+        Enum result = null;
         switch (pref) {
             case "Не знаю":
-                result = 1;
-                index1 = index1 + result;
+                result = Enum.hz;
                 break;
             case "Так":
-                result = 2;
-                index2 = index2 + result;
+                result = Enum.yes;
                 break;
             case "Ні":
-                result = 3;
-                index3 = index3 + result;
+                result = Enum.no;
                 break;
         }
+        data.add(13, result);
 
         return result;
 
@@ -410,24 +390,21 @@ public class ProfileManager {
         return pref.getString(context.getString(R.string.key_14), "Не знаю");
     }
 
-    private int getPref14Point() {
+    private Enum getPref14Point() {
         String pref = getPref14();
-        int result = 0;
+        Enum result = null;
         switch (pref) {
             case "Не знаю":
-                result = 1;
-                index1 = index1 + result;
+                result = Enum.hz;
                 break;
             case "Так":
-                result = 2;
-                index2 = index2 + result;
+                result = Enum.yes;
                 break;
             case "Ні":
-                result = 3;
-                index3 = index3 + result;
+                result = Enum.no;
                 break;
         }
-
+        data.add(14, result);
         return result;
 
     }
@@ -436,23 +413,21 @@ public class ProfileManager {
         return pref.getString(context.getString(R.string.key_15), "Не знаю");
     }
 
-    private int getPref15Point() {
+    private Enum getPref15Point() {
         String pref = getPref15();
-        int result = 0;
+        Enum result = null;
         switch (pref) {
             case "Не знаю":
-                result = 1;
-                index1 = index1 + result;
+                result = Enum.hz;
                 break;
             case "Так":
-                result = 2;
-                index2 = index2 + result;
+                result = Enum.yes;
                 break;
             case "Ні":
-                result = 3;
-                index3 = index3 + result;
+                result = Enum.no;
                 break;
         }
+        data.add(15, result);
 
         return result;
 
@@ -462,23 +437,21 @@ public class ProfileManager {
         return pref.getString(context.getString(R.string.key_16), "Не знаю");
     }
 
-    private int getPref16Point() {
+    private Enum getPref16Point() {
         String pref = getPref16();
-        int result = 0;
+        Enum result = null;
         switch (pref) {
             case "Не знаю":
-                result = 1;
-                index1 = index1 + result;
+                result = Enum.hz;
                 break;
             case "Так":
-                result = 2;
-                index2 = index2 + result;
+                result = Enum.yes;
                 break;
             case "Ні":
-                result = 3;
-                index3 = index3 + result;
+                result = Enum.no;
                 break;
         }
+        data.add(16, result);
 
         return result;
 
@@ -488,23 +461,21 @@ public class ProfileManager {
         return pref.getString(context.getString(R.string.key_17), "Не знаю");
     }
 
-    private int getPref17Point() {
+    private Enum getPref17Point() {
         String pref = getPref17();
-        int result = 0;
+        Enum result = null;
         switch (pref) {
             case "Не знаю":
-                result = 1;
-                index1 = index1 + result;
+                result = Enum.hz;
                 break;
             case "Так":
-                result = 2;
-                index2 = index2 + result;
+                result = Enum.yes;
                 break;
             case "Ні":
-                result = 3;
-                index3 = index3 + result;
+                result = Enum.no;
                 break;
         }
+        data.add(17, result);
 
         return result;
 
@@ -514,24 +485,21 @@ public class ProfileManager {
         return pref.getString(context.getString(R.string.key_18), "Не знаю");
     }
 
-    private int getPref18Point() {
+    private Enum getPref18Point() {
         String pref = getPref18();
-        int result = 0;
+        Enum result = null;
         switch (pref) {
             case "Не знаю":
-                result = 1;
-                index1 = index1 + result;
+                result = Enum.hz;
                 break;
             case "Так":
-                result = 2;
-                index2 = index2 + result;
+                result = Enum.yes;
                 break;
             case "Ні":
-                result = 3;
-                index3 = index3 + result;
+                result = Enum.no;
                 break;
         }
-
+        data.add(18, result);
         return result;
 
     }
@@ -540,23 +508,21 @@ public class ProfileManager {
         return pref.getString(context.getString(R.string.key_19), "Не знаю");
     }
 
-    private int getPref19Point() {
+    private Enum getPref19Point() {
         String pref = getPref19();
-        int result = 0;
+        Enum result = null;
         switch (pref) {
             case "Не знаю":
-                result = 1;
-                index1 = index1 + result;
+                result = Enum.hz;
                 break;
             case "Так":
-                result = 2;
-                index2 = index2 + result;
+                result = Enum.yes;
                 break;
             case "Ні":
-                result = 3;
-                index3 = index3 + result;
+                result = Enum.no;
                 break;
         }
+        data.add(19, result);
 
         return result;
 
@@ -566,23 +532,21 @@ public class ProfileManager {
         return pref.getString(context.getString(R.string.key_20), "Не знаю");
     }
 
-    private int getPref20Point() {
+    private Enum getPref20Point() {
         String pref = getPref20();
-        int result = 0;
+        Enum result = null;
         switch (pref) {
             case "Не знаю":
-                result = 1;
-                index1 = index1 + result;
+                result = Enum.hz;
                 break;
             case "Так":
-                result = 2;
-                index2 = index2 + result;
+                result = Enum.yes;
                 break;
             case "Ні":
-                result = 3;
-                index3 = index3 + result;
+                result = Enum.no;
                 break;
         }
+        data.add(20, result);
 
         return result;
 

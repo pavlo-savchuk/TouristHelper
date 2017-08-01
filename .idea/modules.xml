@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/TouristHelper.iml" filepath="$PROJECT_DIR$/TouristHelper.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/libraries/drupallibrary/drupallibrary.iml" filepath="$PROJECT_DIR$/libraries/drupallibrary/drupallibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/github.iml" filepath="$PROJECT_DIR$/github.iml" />
       <module fileurl="file://$PROJECT_DIR$/libraries/jsonserializable/jsonserializable.iml" filepath="$PROJECT_DIR$/libraries/jsonserializable/jsonserializable.iml" />
       <module fileurl="file://$PROJECT_DIR$/libraries/lshttpclient/lshttpclient.iml" filepath="$PROJECT_DIR$/libraries/lshttpclient/lshttpclient.iml" />
     </modules>
