@@ -43,33 +43,63 @@ public class ProfileManager {
         index1 = 0;
         index2 = 0;
         index3 = 0;
-        getPref1Point();
-        getPref2Point();
-        getPref3Point();
-        getPref4Point();
-        getPref5Point();
-        getPref6Point();
-        getPref7Point();
-        getPref8Point();
-        getPref9Point();
-        getPref10Point();
-        getPref11Point();
-        getPref12Point();
-
-        getPref13Point();
-        getPref14Point();
-        getPref15Point();
-        getPref16Point();
-        getPref17Point();
-        getPref18Point();
-        getPref19Point();
-        getPref20Point();
+//        getPref1Point();
+//        getPref2Point();
+//        getPref3Point();
+//        getPref4Point();
+//        getPref5Point();
+//        getPref6Point();
+//        getPref7Point();
+//        getPref8Point();
+//        getPref9Point();
+//        getPref10Point();
+//        getPref11Point();
+//        getPref12Point();
+//        getPref13Point();
+//        getPref14Point();
+//        getPref15Point();
+//        getPref16Point();
+//        getPref17Point();
+//        getPref18Point();
+//        getPref19Point();
+//        getPref20Point();
 
         L.e("Data test = " + data.toString());
 
 //        L.e("index1 = " + getIndex1());
 //        L.e("index2 = " + getIndex2());
 //        L.e("index3 = " + getIndex3());
+        calculate();
+    }
+
+    private void calculate() {
+        for (int l = 1; l <= 20; l++) {
+            getPrefPoint(l);
+        }
+        L.e("Data test = " + data.toString());
+    }
+    private String getPref(int i) {
+        return pref.getString("Key "+ i, "Не знаю");
+    }
+
+    private Enum getPrefPoint(int i) {
+        String pref = getPref(i);
+        Enum result = null;
+        switch (pref) {
+            case "Не знаю":
+                result = Enum.hz;
+                break;
+            case "Так":
+                result = Enum.yes;
+                break;
+            case "Ні":
+                result = Enum.no;
+                break;
+        }
+        data.add( result);
+
+        return result;
+
     }
 
     private String getPref1() {
