@@ -155,6 +155,14 @@
             android:summary="%s"
             android:title="@string/Title_19" />
 
+        <ListPreference
+            android:defaultValue="Не знаю"
+            android:entries="@array/values_1"
+            android:entryValues="@array/values_1"
+            android:key="@string/key_20"
+            android:summary="%s"
+            android:title="@string/Title_20" />
+
     </PreferenceCategory>
 
 
