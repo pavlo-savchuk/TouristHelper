@@ -20,9 +20,7 @@ public class ProfileManager {
     private SharedPreferences pref;
     private Context context;
 
-    private List<Enum> data = new ArrayList<>();
-    private List<Enum> delete = new ArrayList<>();
-    private List<Integer> deleteTest = new ArrayList<>();
+    private List<Integer> delete = new ArrayList<>();
     private Map<Integer, Enum> mapData = new HashMap<>();
 
     public ProfileManager() {
@@ -32,10 +30,10 @@ public class ProfileManager {
 
 
     public void calculateScore() {
-        createTestData();
+//        createTestData();
         calculate();
 
-        mapData.keySet().removeAll(deleteTest);
+        filterData();
         createReport();
         L.e("Data test 1= " + mapData.toString());
 
@@ -45,7 +43,6 @@ public class ProfileManager {
         for (int l = 1; l <= 20; l++) {
             getPrefPoint(l);
         }
-        L.e("Data test weee= " + mapData.get(1));
         L.e("Data test = " + mapData.toString());
     }
 
@@ -73,56 +70,52 @@ public class ProfileManager {
     }
 
     private void filterData() {
-        if (data.get(1) == Enum.yes && data.get(1) == Enum.yes) {
-            delete.add(data.get(1));
+        delete.clear();
+        if (mapData.get(2) == Enum.yes && mapData.get(8) == Enum.yes) {
+            delete.add(2);
         }
-        if (data.get(7) == Enum.yes && data.get(13) == Enum.yes) {
-            delete.add(data.get(7));
+        if (mapData.get(2) == Enum.yes && mapData.get(14) == Enum.yes) {
+            delete.add(2);
+            delete.add(14);
         }
-        if (data.get(2) == Enum.yes && data.get(11) == Enum.yes) {
-            delete.add(data.get(2));
+        if (mapData.get(8) == Enum.yes && mapData.get(14) == Enum.yes) {
+            delete.add(14);
         }
-        if (data.get(2) == Enum.yes && data.get(11) == Enum.yes) {
-            delete.add(data.get(2));
+        if (mapData.get(3) == Enum.yes && mapData.get(7) == Enum.yes) {
+            delete.add(3);
+            delete.add(7);
         }
-        if (data.get(6) == Enum.yes && data.get(11) == Enum.yes) {
-            delete.add(data.get(12));
+        if (mapData.get(3) == Enum.yes && mapData.get(12) == Enum.yes) {
+            delete.add(12);
         }
+//        if (mapData.get(6) == Enum.yes && mapData.get(11) == Enum.yes) {
+//            delete.add(mapData.get(12));
+//        }
+//
+//        if (mapData.get(4) == Enum.yes && mapData.get(12) == Enum.yes) {
+//            delete.add(mapData.get(12));
+//        }
+//
+//        if (mapData.get(8) == Enum.yes && mapData.get(15) == Enum.yes) {
+//            delete.add(mapData.get(12));
+//        }
+//
+//        if (mapData.get(9) == Enum.yes && mapData.get(18) == Enum.yes) {
+//            delete.add(mapData.get(12));
+//        }
+//
+//        if (mapData.get(9) == Enum.yes && mapData.get(18) == Enum.yes) {
+//            delete.add(mapData.get(12));
+//        }
 
-        if (data.get(4) == Enum.yes && data.get(12) == Enum.yes) {
-            delete.add(data.get(12));
-        }
-
-        if (data.get(8) == Enum.yes && data.get(15) == Enum.yes) {
-            delete.add(data.get(12));
-        }
-
-        if (data.get(9) == Enum.yes && data.get(18) == Enum.yes) {
-            delete.add(data.get(12));
-        }
-
-        if (data.get(9) == Enum.yes && data.get(18) == Enum.yes) {
-            delete.add(data.get(12));
-        }
-
-        if (data.get(9) == Enum.yes && data.get(18) == Enum.yes) {
-            delete.add(data.get(12));
-        }
-
-    }
-
-    private void createTestData() {
-        deleteTest.add(1);
-        deleteTest.add(2);
-        deleteTest.add(3);
-        deleteTest.add(4);
-        deleteTest.add(5);
-        deleteTest.add(6);
-        deleteTest.add(7);
-        deleteTest.add(8);
-        deleteTest.add(9);
+//        if (mapData.get(9) == Enum.yes && mapData.get(18) == Enum.yes) {
+//            delete.add(mapData.get(12));
+//        }
+        L.e("deleteTest = " + delete.toString());
+        mapData.keySet().removeAll(delete);
 
     }
+
 
     private void createReport() {
         StringBuilder stringBuilder = new StringBuilder();
