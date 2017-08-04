@@ -37,7 +37,6 @@ public class ProfileManager {
 
         mapData.keySet().removeAll(deleteTest);
         createReport();
-        createTextFeed();
         L.e("Data test 1= " + mapData.toString());
 
     }
@@ -130,16 +129,15 @@ public class ProfileManager {
         for (Map.Entry<Integer, Enum> entry : mapData.entrySet()) {
             Integer key = entry.getKey();
             if (entry.getValue() == Enum.yes) {
-                stringBuilder.append(key + "|");
+                stringBuilder.append(createTextFeed(key) + "|");
             }
         }
         L.e("Result = " + stringBuilder.toString());
     }
 
-    private void createTextFeed() {
+    private String createTextFeed(int i) {
         String[] stringArray = context.getResources().getStringArray(R.array.text_array);
-        String s = stringArray[1];
-        L.e("createTextFeed = " + s);
+        return stringArray[i];
     }
 
 
