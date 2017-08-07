@@ -19,6 +19,7 @@ import com.ls.util.L;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 
 import ua.com.lviv.fly.touristhelper.R;
@@ -55,12 +56,15 @@ public class TestFragment extends Fragment implements TextToSpeech.OnInitListene
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+
+
         textToSpeech = new TextToSpeech(getActivity(), TestFragment.this);
 
         button = (Button) view.findViewById(R.id.button);
 
         editText = (EditText) view.findViewById(R.id.editText);
-
+        editText.setText(Model.instance().getProfileManager().fetchUserDescription());
         button.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -70,6 +74,16 @@ public class TestFragment extends Fragment implements TextToSpeech.OnInitListene
             }
 
         });
+
+
+        Locale[] locales = Locale.getAvailableLocales();
+        List<Locale> localeList = new ArrayList<Locale>();
+        for (Locale locale : locales) {
+            int res = textToSpeech.isLanguageAvailable(locale);
+            if (res == TextToSpeech.LANG_COUNTRY_AVAILABLE) {
+                localeList.add(locale);
+            }
+        }
     }
 
     @Override
@@ -77,8 +91,7 @@ public class TestFragment extends Fragment implements TextToSpeech.OnInitListene
         L.e("onInit" + status);
         if (status == TextToSpeech.LANG_MISSING_DATA) {
             Intent installIntent = new Intent();
-            installIntent.setAction(
-                    TextToSpeech.Engine.ACTION_INSTALL_TTS_DATA);
+            installIntent.setAction(TextToSpeech.Engine.ACTION_INSTALL_TTS_DATA);
             startActivity(installIntent);
         }
         if (status == TextToSpeech.SUCCESS) {

@@ -17,6 +17,7 @@ import ua.com.lviv.fly.touristhelper.R;
 import ua.com.lviv.fly.touristhelper.TemplateApplication;
 
 public class ProfileManager {
+    private static final String userDescriptionKey = "USER_DESCRIPTION_KEY";
     private SharedPreferences pref;
     private Context context;
 
@@ -88,36 +89,48 @@ public class ProfileManager {
         if (mapData.get(3) == Enum.yes && mapData.get(12) == Enum.yes) {
             delete.add(12);
         }
-//        if (mapData.get(6) == Enum.yes && mapData.get(11) == Enum.yes) {
-//            delete.add(mapData.get(12));
-//        }
-//
-//        if (mapData.get(4) == Enum.yes && mapData.get(12) == Enum.yes) {
-//            delete.add(mapData.get(12));
-//        }
-//
-//        if (mapData.get(8) == Enum.yes && mapData.get(15) == Enum.yes) {
-//            delete.add(mapData.get(12));
-//        }
-//
-//        if (mapData.get(9) == Enum.yes && mapData.get(18) == Enum.yes) {
-//            delete.add(mapData.get(12));
-//        }
-//
-//        if (mapData.get(9) == Enum.yes && mapData.get(18) == Enum.yes) {
-//            delete.add(mapData.get(12));
-//        }
 
-//        if (mapData.get(9) == Enum.yes && mapData.get(18) == Enum.yes) {
-//            delete.add(mapData.get(12));
-//        }
+        if (mapData.get(5) == Enum.yes && mapData.get(13) == Enum.yes) {
+            delete.add(5);
+            delete.add(13);
+        }
+
+        if (mapData.get(9) == Enum.yes && mapData.get(16) == Enum.yes) {
+            delete.add(9);
+            delete.add(16);
+        }
+
+        if (mapData.get(10) == Enum.yes && mapData.get(19) == Enum.yes) {
+            delete.add(10);
+        }
+
+        if (mapData.get(11) == Enum.yes && mapData.get(12) == Enum.yes) {
+            delete.add(11);
+        }
+
+        if (mapData.get(17) == Enum.yes && mapData.get(20) == Enum.yes) {
+            delete.add(20);
+        }
+
+
+        if (mapData.get(2) == Enum.yes && mapData.get(8) == Enum.yes && mapData.get(14) == Enum.yes) {
+            delete.add(2);
+            delete.add(14);
+        }
+
+        if (mapData.get(3) == Enum.yes && mapData.get(7) == Enum.yes && mapData.get(12) == Enum.yes) {
+            delete.add(3);
+            delete.add(12);
+        }
+
+
         L.e("deleteTest = " + delete.toString());
         mapData.keySet().removeAll(delete);
 
     }
 
 
-    private void createReport() {
+    public String createReport() {
         StringBuilder stringBuilder = new StringBuilder();
         for (Map.Entry<Integer, Enum> entry : mapData.entrySet()) {
             Integer key = entry.getKey();
@@ -125,12 +138,25 @@ public class ProfileManager {
                 stringBuilder.append(createTextFeed(key) + "|");
             }
         }
+
         L.e("Result = " + stringBuilder.toString());
+        saveUserDescription(stringBuilder.toString());
+        return stringBuilder.toString();
     }
 
     private String createTextFeed(int i) {
         String[] stringArray = context.getResources().getStringArray(R.array.text_array);
         return stringArray[i];
+    }
+
+    private void saveUserDescription(String value) {
+        SharedPreferences.Editor edit = pref.edit();
+        edit.putString(userDescriptionKey, value);
+        edit.apply();
+    }
+
+    public String fetchUserDescription() {
+        return pref.getString(userDescriptionKey, "");
     }
 
 

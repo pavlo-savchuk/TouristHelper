@@ -21,6 +21,7 @@ import java.util.Locale;
 
 import ua.com.lviv.fly.touristhelper.R;
 import ua.com.lviv.fly.touristhelper.TemplateApplication;
+import ua.com.lviv.fly.touristhelper.model.Model;
 
 public class OptionsFragment extends Fragment implements TextToSpeech.OnInitListener {
     TextToSpeech textToSpeech;
@@ -54,6 +55,7 @@ public class OptionsFragment extends Fragment implements TextToSpeech.OnInitList
         button = (Button) view.findViewById(R.id.button);
 
         editText = (EditText) view.findViewById(R.id.editText);
+        editText.setText(Model.instance().getProfileManager().createReport());
 
         button.setOnClickListener(new View.OnClickListener() {
 
