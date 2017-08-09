@@ -8,7 +8,7 @@
             android:entryValues="@array/values_1"
             android:key="@string/key_1"
             android:summary="%s"
-            android:title="@string/Title_1" />
+            android:title="@string/Title_1"/>
 
         <ListPreference
             android:defaultValue="Не знаю"
@@ -16,7 +16,7 @@
             android:entryValues="@array/values_1"
             android:key="@string/key_2"
             android:summary="%s"
-            android:title="@string/Title_2" />
+            android:title="@string/Title_2"/>
 
         <ListPreference
             android:defaultValue="Не знаю"
@@ -24,7 +24,7 @@
             android:entryValues="@array/values_1"
             android:key="@string/key_3"
             android:summary="%s"
-            android:title="@string/Title_3" />
+            android:title="@string/Title_3"/>
 
         <ListPreference
             android:defaultValue="Не знаю"
@@ -32,7 +32,7 @@
             android:entryValues="@array/values_1"
             android:key="@string/key_4"
             android:summary="%s"
-            android:title="@string/Title_4" />
+            android:title="@string/Title_4"/>
 
 
         <ListPreference
@@ -41,7 +41,7 @@
             android:entryValues="@array/values_1"
             android:key="@string/key_5"
             android:summary="%s"
-            android:title="@string/Title_5" />
+            android:title="@string/Title_5"/>
 
         <ListPreference
             android:defaultValue="Не знаю"
@@ -49,7 +49,7 @@
             android:entryValues="@array/values_1"
             android:key="@string/key_6"
             android:summary="%s"
-            android:title="@string/Title_6" />
+            android:title="@string/Title_6"/>
 
         <ListPreference
             android:defaultValue="Не знаю"
@@ -57,7 +57,7 @@
             android:entryValues="@array/values_1"
             android:key="@string/key_7"
             android:summary="%s"
-            android:title="@string/Title_7" />
+            android:title="@string/Title_7"/>
 
         <ListPreference
             android:defaultValue="Не знаю"
@@ -65,7 +65,7 @@
             android:entryValues="@array/values_1"
             android:key="@string/key_8"
             android:summary="%s"
-            android:title="@string/Title_8" />
+            android:title="@string/Title_8"/>
 
         <ListPreference
             android:defaultValue="Не знаю"
@@ -73,7 +73,7 @@
             android:entryValues="@array/values_1"
             android:key="@string/key_9"
             android:summary="%s"
-            android:title="@string/Title_9" />
+            android:title="@string/Title_9"/>
 
         <ListPreference
             android:defaultValue="Не знаю"
@@ -81,7 +81,7 @@
             android:entryValues="@array/values_1"
             android:key="@string/key_10"
             android:summary="%s"
-            android:title="@string/Title_10" />
+            android:title="@string/Title_10"/>
 
         <ListPreference
             android:defaultValue="Не знаю"
@@ -89,7 +89,7 @@
             android:entryValues="@array/values_1"
             android:key="@string/key_11"
             android:summary="%s"
-            android:title="@string/Title_11" />
+            android:title="@string/Title_11"/>
 
         <ListPreference
             android:defaultValue="Не знаю"
@@ -97,7 +97,7 @@
             android:entryValues="@array/values_1"
             android:key="@string/key_12"
             android:summary="%s"
-            android:title="@string/Title_12" />
+            android:title="@string/Title_12"/>
 
         <ListPreference
             android:defaultValue="Не знаю"
@@ -105,7 +105,7 @@
             android:entryValues="@array/values_1"
             android:key="@string/key_13"
             android:summary="%s"
-            android:title="@string/Title_13" />
+            android:title="@string/Title_13"/>
 
         <ListPreference
             android:defaultValue="Не знаю"
@@ -113,7 +113,7 @@
             android:entryValues="@array/values_1"
             android:key="@string/key_14"
             android:summary="%s"
-            android:title="@string/Title_14" />
+            android:title="@string/Title_14"/>
 
         <ListPreference
             android:defaultValue="Не знаю"
@@ -121,7 +121,7 @@
             android:entryValues="@array/values_1"
             android:key="@string/key_15"
             android:summary="%s"
-            android:title="@string/Title_15" />
+            android:title="@string/Title_15"/>
 
         <ListPreference
             android:defaultValue="Не знаю"
@@ -129,7 +129,7 @@
             android:entryValues="@array/values_1"
             android:key="@string/key_16"
             android:summary="%s"
-            android:title="@string/Title_16" />
+            android:title="@string/Title_16"/>
 
         <ListPreference
             android:defaultValue="Не знаю"
@@ -137,7 +137,7 @@
             android:entryValues="@array/values_1"
             android:key="@string/key_17"
             android:summary="%s"
-            android:title="@string/Title_17" />
+            android:title="@string/Title_17"/>
 
         <ListPreference
             android:defaultValue="Не знаю"
@@ -145,7 +145,7 @@
             android:entryValues="@array/values_1"
             android:key="@string/key_18"
             android:summary="%s"
-            android:title="@string/Title_18" />
+            android:title="@string/Title_18"/>
 
         <ListPreference
             android:defaultValue="Не знаю"
@@ -153,7 +153,7 @@
             android:entryValues="@array/values_1"
             android:key="@string/key_19"
             android:summary="%s"
-            android:title="@string/Title_19" />
+            android:title="@string/Title_19"/>
 
         <ListPreference
             android:defaultValue="Не знаю"
@@ -161,9 +161,106 @@
             android:entryValues="@array/values_1"
             android:key="@string/key_20"
             android:summary="%s"
-            android:title="@string/Title_20" />
+            android:title="@string/Title_20"/>
 
     </PreferenceCategory>
 
+
+    <PreferenceCategory android:title="Виберіть найактуальніше саме для Вас">
+
+        <ListPreference
+            android:defaultValue="1"
+            android:entries="@array/entries_1"
+            android:entryValues="@array/entries_1"
+            android:key="@string/key_2_1"
+            android:summary="%s"
+            android:title="Тест"
+            />
+
+        <ListPreference
+            android:defaultValue="1"
+            android:entries="@array/entries_2"
+            android:entryValues="@array/entries_2"
+            android:key="@string/key_2_2"
+            android:summary="%s"
+            android:title="@string/Title_2"/>
+
+        <ListPreference
+            android:defaultValue="Не знаю"
+            android:entries="@array/entries_3"
+            android:entryValues="@array/entries_3"
+            android:key="@string/key_2_3"
+            android:summary="%s"
+            android:title="@string/Title_3"/>
+
+        <ListPreference
+            android:defaultValue="Не знаю"
+            android:entries="@array/entries_4"
+            android:entryValues="@array/entries_4"
+            android:key="@string/key_2_4"
+            android:summary="%s"
+            android:title="@string/Title_4"/>
+
+
+        <ListPreference
+            android:defaultValue="Не знаю"
+            android:entries="@array/entries_5"
+            android:entryValues="@array/entries_5"
+            android:key="@string/key_2_5"
+            android:summary="%s"
+            android:title="@string/Title_5"/>
+
+        <ListPreference
+            android:defaultValue="Не знаю"
+            android:entries="@array/entries_6"
+            android:entryValues="@array/entries_6"
+            android:key="@string/key_2_6"
+            android:summary="%s"
+            android:title="@string/Title_6"/>
+
+
+
+        <ListPreference
+            android:defaultValue="1"
+            android:entries="@array/entries_7"
+            android:entryValues="@array/entries_7"
+            android:key="@string/key_2_7"
+            android:summary="%s"
+            android:title="Тест"/>
+
+        <ListPreference
+            android:defaultValue="Не знаю"
+            android:entries="@array/entries_8"
+            android:entryValues="@array/entries_8"
+            android:key="@string/key_2_8"
+            android:summary="%s"
+            android:title="@string/Title_2"/>
+
+        <ListPreference
+            android:defaultValue="Не знаю"
+            android:entries="@array/entries_9"
+            android:entryValues="@array/entries_9"
+            android:key="@string/key_2_9"
+            android:summary="%s"
+            android:title="@string/Title_3"/>
+
+        <ListPreference
+            android:defaultValue="Не знаю"
+            android:entries="@array/entries_10"
+            android:entryValues="@array/entries_10"
+            android:key="@string/key_2_10"
+            android:summary="%s"
+            android:title="@string/Title_4"/>
+
+
+        <ListPreference
+            android:defaultValue="Не знаю"
+            android:entries="@array/entries_11"
+            android:entryValues="@array/entries_11"
+            android:key="@string/key_2_11"
+            android:summary="%s"
+            android:title="@string/Title_5"/>
+
+    </PreferenceCategory>
 
 </PreferenceScreen>

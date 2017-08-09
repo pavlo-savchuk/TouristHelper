@@ -109,16 +109,6 @@
     <string name="Title_19">19 Самотність не обтяжує вас.</string>
     <string name="Title_20">20 Ви не занадто витривалі, швидко втомлюєтеся.</string>
 
-    <!--<string name="Title_21">Ви не любите багато рухатися, повільні.</string>-->
-    <!--<string name="Title_22">Нова обстановка викликає у вас замішання.</string>-->
-    <!--<string name="Title_23">Самотність не обтяжує вас.</string>-->
-    <!--<string name="Title_24">Ви не занадто витривалі, швидко втомлюєтеся.</string>-->
-
-    <string name="Title_26">Key 26</string>
-    <string name="Title_27">Key 27</string>
-    <string name="Title_28">Key 28</string>
-    <string name="Title_29">Key 29</string>
-    <string name="Title_30">Key 30</string>
 
     <string-array name="values_1">
         <item>Не знаю</item>
@@ -152,4 +142,82 @@
         <item>20 Вам сподобаються подорожі з відпочинком на пляжі, відвідуванням Спа-салонів, повільними прогулянками по узбережжю.</item>
     </string-array>
 
+    <string name="key_2_1">Key 1_2</string>
+    <string name="key_2_2">Key 2_2</string>
+    <string name="key_2_3">Key 3_2</string>
+    <string name="key_2_4">Key 4_2</string>
+    <string name="key_2_5">Key 5_2</string>
+    <string name="key_2_6">Key 6_2</string>
+    <string name="key_2_7">Key 7_2</string>
+    <string name="key_2_8">Key 8_2</string>
+    <string name="key_2_9">Key 9_2</string>
+    <string name="key_2_10">Key 10_2</string>
+    <string name="key_2_11">Key 11_2</string>
+
+
+    <string-array name="entries_1">
+        <item>Кіно</item>
+        <item>Tеатр</item>
+        <item>Yічний клуб</item>
+    </string-array>
+
+    <string-array name="entries_2">
+        <item>Мистецво</item>
+        <item>Історія</item>
+        <item>Технології</item>
+    </string-array>
+
+    <string-array name="entries_3">
+        <item>Натовп</item>
+        <item>самотність</item>
+        <item>компанія друзів</item>
+    </string-array>
+
+    <string-array name="entries_4">
+        <item>Екстремальні розваги</item>
+        <item>активний не екстремальний відпочинок</item>
+        <item>пасивний відпочинок</item>
+    </string-array>
+
+    <string-array name="entries_5">
+        <item>Прокинутись вранці</item>
+        <item>заснути пізно</item>
+        <item>ні те ні інше</item>
+    </string-array>
+
+    <string-array name="entries_6">
+        <item>Мясо</item>
+        <item>риба</item>
+        <item>вегетеріанська їжа</item>
+    </string-array>
+
+    <string-array name="entries_7">
+        <item>Європейска кухня</item>
+        <item>азіатська кухня</item>
+        <item>американська кухня</item>
+    </string-array>
+
+    <string-array name="entries_8">
+        <item>Автомобіль</item>
+        <item>літак</item>
+        <item>поїзд</item>
+    </string-array>
+
+    <string-array name="entries_9">
+        <item>Таксі</item>
+        <item>громадський транспорт</item>
+        <item>пішки</item>
+    </string-array>
+
+    <string-array name="entries_10">
+        <item>Атомобіль</item>
+        <item>велосипед</item>
+        <item>пішки</item>
+    </string-array>
+
+    <string-array name="entries_11">
+        <item>Пізнавальна подорож</item>
+        <item>відпочинкова подорож</item>
+        <item>комбінований тур</item>
+    </string-array>
 </resources>
