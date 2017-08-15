@@ -73,17 +73,16 @@ public class OptionsFragment extends Fragment implements TextToSpeech.OnInitList
 
     @Override
     public void onInit(int status) {
-        L.e("onInit" + status);
+        L.e("onInit" + Locale.getAvailableLocales().toString());
         if (status == TextToSpeech.LANG_MISSING_DATA) {
             Intent installIntent = new Intent();
-            installIntent.setAction(
-                    TextToSpeech.Engine.ACTION_INSTALL_TTS_DATA);
+            installIntent.setAction(TextToSpeech.Engine.ACTION_INSTALL_TTS_DATA);
             startActivity(installIntent);
         }
         if (status == TextToSpeech.SUCCESS) {
             // Change this to match your
             // locale
-            textToSpeech.setLanguage(Locale.US);
+            textToSpeech.setLanguage(new Locale("uk_UA"));
             ready = true;
             textToSpeech.speak("Test", TextToSpeech.QUEUE_FLUSH, null);
         } else {
