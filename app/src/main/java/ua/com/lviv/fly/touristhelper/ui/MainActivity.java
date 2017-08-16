@@ -20,8 +20,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
-import com.ls.util.L;
-
 import ua.com.lviv.fly.touristhelper.R;
 import ua.com.lviv.fly.touristhelper.TemplateApplication;
 import ua.com.lviv.fly.touristhelper.data.manager.ProfileManager;
@@ -32,7 +30,7 @@ import ua.com.lviv.fly.touristhelper.ui.fragments.OptionsFragment;
 import ua.com.lviv.fly.touristhelper.ui.fragments.PrefsFragment;
 import ua.com.lviv.fly.touristhelper.ui.fragments.ProfileFragment;
 import ua.com.lviv.fly.touristhelper.ui.fragments.SettingsFragment;
-import ua.com.lviv.fly.touristhelper.ui.fragments.TestFragment;
+import ua.com.lviv.fly.touristhelper.ui.fragments.FeedFragment;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private Toolbar toolbar;
@@ -129,7 +127,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 setFragment(PrefsFragment.newInstance());
                 break;
             case R.id.nav_send:
-                setFragment(TestFragment.newInstance());
+                setFragment(FeedFragment.newInstance());
                 break;
             case R.id.nav_opt:
                 setFragment(OptionsFragment.newInstance());

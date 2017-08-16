@@ -1,9 +1,5 @@
 package ua.com.lviv.fly.touristhelper.data;
 
-/**
- * Created by PASHA on 05.06.2017.
- */
-
 public class JsonVO {
     private String name;
     private String address;
