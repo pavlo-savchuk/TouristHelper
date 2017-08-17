@@ -12,7 +12,6 @@ import java.util.List;
 
 import ua.com.lviv.fly.touristhelper.R;
 import ua.com.lviv.fly.touristhelper.data.JsonVO;
-import ua.com.lviv.fly.touristhelper.data.ResultsVO;
 
 
 public class FeedAdapter extends BaseAdapter {
@@ -45,14 +44,34 @@ public class FeedAdapter extends BaseAdapter {
     }
 
 
-
     @Override
-    public View getView(int i, View view, ViewGroup viewGroup) {
-        LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View rowView = inflater.inflate(R.layout.item_result, viewGroup, false);
+    public View getView(int position, View convertView, ViewGroup viewGroup) {
 
-        TextView name = (TextView) rowView.findViewById(R.id.name);
-        name.setText(data.get(i).getName());
-        return rowView;
+        final ViewHolder viewHolder;
+
+        if (convertView == null) {
+            convertView = LayoutInflater.from(context).inflate(R.layout.item_feed, viewGroup, false);
+
+            viewHolder = new ViewHolder();
+            viewHolder.name = (TextView) convertView.findViewById(R.id.name);
+            viewHolder.location = (TextView) convertView.findViewById(R.id.location);
+
+            convertView.setTag(viewHolder);
+        } else {
+            viewHolder = (ViewHolder) convertView.getTag();
+        }
+        JsonVO jsonVO = data.get(position);
+        viewHolder.name.setText(jsonVO.getName());
+        viewHolder.location.setText(jsonVO.getAddress());
+
+        return convertView;
     }
+
+    private class ViewHolder {
+        TextView name;
+        TextView location;
+        TextView title3;
+    }
+
+
 }

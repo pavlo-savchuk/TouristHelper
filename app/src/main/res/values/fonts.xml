@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="regular">Roboto-Regular.ttf</string>
+    <string name="bold">Roboto-Bold.ttf</string>
+    <string name="light">Roboto-Light.ttf</string>
+    <string name="italic">Roboto-Italic.ttf</string>
 </resources>

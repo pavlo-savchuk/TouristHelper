@@ -25,6 +25,7 @@ import ua.com.lviv.fly.touristhelper.ui.adapters.FeedAdapter;
 public class FeedFragment extends Fragment {
     private FeedAdapter adapter;
     private ArrayList<JsonVO> feed1;
+    private ArrayList<JsonVO> feed2;
 
     public static FeedFragment newInstance() {
         return new FeedFragment();
@@ -34,24 +35,22 @@ public class FeedFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         feed1 = parseJson("dental_clinics.json");
-        ArrayList<JsonVO> feed2 = parseJson("museums.json");
+        feed2 = parseJson("museums.json");
 
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         adapter = new FeedAdapter(getContext());
         adapter.setData(feed1);
 
-        View inflate = inflater.inflate(R.layout.fragment_test, container, false);
+        View inflate = inflater.inflate(R.layout.fragment_feed, container, false);
         ListView listView = (ListView) inflate.findViewById(R.id.list);
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 JsonVO item = (JsonVO) adapter.getItem(i);
-                L.e("item = " + item.toString());
                 DetailsActivity.startThisActivity(getContext(), item.getAddress());
             }
         });

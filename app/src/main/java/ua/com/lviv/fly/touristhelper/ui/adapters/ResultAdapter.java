@@ -48,7 +48,7 @@ public class ResultAdapter extends BaseAdapter {
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View rowView = inflater.inflate(R.layout.item_result, viewGroup, false);
+        View rowView = inflater.inflate(R.layout.item_feed, viewGroup, false);
 
         TextView name = (TextView) rowView.findViewById(R.id.name);
         name.setText(data.get(i).getName());
