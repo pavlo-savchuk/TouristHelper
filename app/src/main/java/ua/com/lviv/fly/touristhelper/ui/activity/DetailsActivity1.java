@@ -6,16 +6,15 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.location.Location;
-import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
+import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
@@ -54,11 +53,9 @@ import java.util.Locale;
 import ua.com.lviv.fly.touristhelper.PlaceActivity;
 import ua.com.lviv.fly.touristhelper.R;
 import ua.com.lviv.fly.touristhelper.data.DataParser;
-import ua.com.lviv.fly.touristhelper.data.JsonVO;
 import ua.com.lviv.fly.touristhelper.model.Model;
-import ua.com.lviv.fly.touristhelper.ui.fragments.OptionsFragment;
 
-public class DetailsActivity extends AppCompatActivity implements GoogleApiClient.ConnectionCallbacks,
+public class DetailsActivity1 extends AppCompatActivity implements GoogleApiClient.ConnectionCallbacks,
         GoogleApiClient.OnConnectionFailedListener,
         OnMapReadyCallback,
         TextToSpeech.OnInitListener,
@@ -66,7 +63,6 @@ public class DetailsActivity extends AppCompatActivity implements GoogleApiClien
 
     public static final int MY_PERMISSIONS_REQUEST_LOCATION = 99;
     public static final String PLACE_ID_KEY = "PLACE_ID_KEY";
-    public static final String DATA_KEY = "PLACE_ID_KEY";
     private GoogleApiClient mGoogleApiClient;
     private TextToSpeech textToSpeech;
     private boolean ready = false;
@@ -77,14 +73,8 @@ public class DetailsActivity extends AppCompatActivity implements GoogleApiClien
     private ArrayList<LatLng> MarkerPoints = new ArrayList<>();
 
     public static void startThisActivity(Context context, String placeId) {
-        Intent intent = new Intent(context, DetailsActivity.class);
+        Intent intent = new Intent(context, DetailsActivity1.class);
         intent.putExtra(PLACE_ID_KEY, placeId);
-        context.startActivity(intent);
-    }
-
-    public static void start1ThisActivity(Context context, String data ) {
-        Intent intent = new Intent(context, DetailsActivity.class);
-        intent.putExtra(DATA_KEY, data);
         context.startActivity(intent);
     }
 
@@ -94,7 +84,7 @@ public class DetailsActivity extends AppCompatActivity implements GoogleApiClien
         setContentView(R.layout.activity_details);
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
-        if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             checkLocationPermission();
         }
 
@@ -108,7 +98,7 @@ public class DetailsActivity extends AppCompatActivity implements GoogleApiClien
 
 
         //TextToSpeech
-        textToSpeech = new TextToSpeech(this, DetailsActivity.this);
+        textToSpeech = new TextToSpeech(this, DetailsActivity1.this);
     }
 
     @Override
@@ -241,7 +231,7 @@ public class DetailsActivity extends AppCompatActivity implements GoogleApiClien
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
         L.e("onMapReady");
-        if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
                 mMap.setMyLocationEnabled(true);
             }

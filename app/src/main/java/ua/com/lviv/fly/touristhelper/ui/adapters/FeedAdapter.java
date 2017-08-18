@@ -1,6 +1,11 @@
 package ua.com.lviv.fly.touristhelper.ui.adapters;
 
 import android.content.Context;
+import android.graphics.Typeface;
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.text.SpannableStringBuilder;
+import android.text.style.RelativeSizeSpan;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,7 +24,6 @@ public class FeedAdapter extends BaseAdapter {
     Context context;
 
     public FeedAdapter(Context context) {
-        this.data = data;
         this.context = context;
     }
 
@@ -55,6 +59,9 @@ public class FeedAdapter extends BaseAdapter {
             viewHolder = new ViewHolder();
             viewHolder.name = (TextView) convertView.findViewById(R.id.name);
             viewHolder.location = (TextView) convertView.findViewById(R.id.location);
+            viewHolder.telephone = (TextView) convertView.findViewById(R.id.telephone);
+            viewHolder.info = (TextView) convertView.findViewById(R.id.info);
+            viewHolder.cheapestService = (TextView) convertView.findViewById(R.id.cheapestService);
 
             convertView.setTag(viewHolder);
         } else {
@@ -63,6 +70,9 @@ public class FeedAdapter extends BaseAdapter {
         JsonVO jsonVO = data.get(position);
         viewHolder.name.setText(jsonVO.getName());
         viewHolder.location.setText(jsonVO.getAddress());
+        viewHolder.telephone.setText(setSpannable(context.getString(R.string.contacts),  jsonVO.getTelephone()));
+        viewHolder.info.setText("Інфо: " + jsonVO.getInfo());
+        viewHolder.cheapestService.setText(jsonVO.getCheapestService());
 
         return convertView;
     }
@@ -70,7 +80,15 @@ public class FeedAdapter extends BaseAdapter {
     private class ViewHolder {
         TextView name;
         TextView location;
-        TextView title3;
+        TextView telephone;
+        TextView info;
+        TextView cheapestService;
+    }
+
+    private Spannable setSpannable(String text1, String text2){
+        Spannable span = new SpannableString(text1 + text2);
+        span.setSpan(new RelativeSizeSpan(0.8f), text1.length(), text1.length() + text2.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        return span;
     }
 
 

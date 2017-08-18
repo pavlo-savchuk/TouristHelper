@@ -45,12 +45,19 @@ public class FeedFragment extends Fragment {
         adapter.setData(feed1);
 
         View inflate = inflater.inflate(R.layout.fragment_feed, container, false);
+
         ListView listView = (ListView) inflate.findViewById(R.id.list);
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 JsonVO item = (JsonVO) adapter.getItem(i);
+                Gson gson = Model.instance().getGson();
+                String s = gson.toJson(item);
+                L.e("S 1 = " + s);
+                L.e("S 2= " + gson.fromJson(s, JsonVO.class));
+
+
                 DetailsActivity.startThisActivity(getContext(), item.getAddress());
             }
         });

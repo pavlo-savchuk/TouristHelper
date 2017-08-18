@@ -1,78 +1,165 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_details"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="@dimen/activity_padding"
-    tools:context="ua.com.lviv.fly.touristhelper.ui.activity.DetailsActivity">
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:id="@+id/activity_details"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              android:paddingLeft="@dimen/activity_padding"
+              android:paddingRight="@dimen/activity_padding"
+              tools:context="ua.com.lviv.fly.touristhelper.ui.activity.DetailsActivity">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="@dimen/activity_padding"
-        android:orientation="horizontal">
+        android:layout_height="300dp">
 
-        <ua.com.lviv.fly.touristhelper.views.FontTextView
-            android:layout_weight="0.3"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="Web site"
-            app:customFont="@string/regular" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-        <ua.com.lviv.fly.touristhelper.views.FontTextView
-            android:id="@+id/webSite"
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="@string/no_information"
-            app:customFont="@string/regular" />
-    </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/activity_padding">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="@dimen/activity_padding"
-        android:orientation="horizontal">
+                <ua.com.lviv.fly.touristhelper.views.FontTextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.3"
+                    android:text="Web site"
+                    app:customFont="@string/regular"/>
 
-        <ua.com.lviv.fly.touristhelper.views.FontTextView
-            android:layout_weight="0.3"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="Address"
-            app:customFont="@string/regular" />
+                <ua.com.lviv.fly.touristhelper.views.FontTextView
+                    android:id="@+id/webSite"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/no_information"
+                    app:customFont="@string/regular"/>
+            </LinearLayout>
 
-        <ua.com.lviv.fly.touristhelper.views.FontTextView
-            android:id="@+id/data"
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="@string/no_information"
-            app:customFont="@string/regular" />
-    </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/activity_padding">
+
+                <ua.com.lviv.fly.touristhelper.views.FontTextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.3"
+                    android:text="Address"
+                    app:customFont="@string/regular"/>
+
+                <ua.com.lviv.fly.touristhelper.views.FontTextView
+                    android:id="@+id/address"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/no_information"
+                    app:customFont="@string/regular"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/activity_padding">
+
+                <ua.com.lviv.fly.touristhelper.views.FontTextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.3"
+                    android:text="name"
+                    app:customFont="@string/regular"/>
+
+                <ua.com.lviv.fly.touristhelper.views.FontTextView
+                    android:id="@+id/name"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/no_information"
+                    app:customFont="@string/regular"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/activity_padding">
+
+                <ua.com.lviv.fly.touristhelper.views.FontTextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.3"
+                    android:text="Address"
+                    app:customFont="@string/regular"/>
+
+                <ua.com.lviv.fly.touristhelper.views.FontTextView
+                    android:id="@+id/data3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/no_information"
+                    app:customFont="@string/regular"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/activity_padding">
+
+                <ua.com.lviv.fly.touristhelper.views.FontTextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.3"
+                    android:text="Address"
+                    app:customFont="@string/regular"/>
+
+                <ua.com.lviv.fly.touristhelper.views.FontTextView
+                    android:id="@+id/data4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/no_information"
+                    app:customFont="@string/regular"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/activity_padding">
+
+                <ua.com.lviv.fly.touristhelper.views.FontTextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.3"
+                    android:text="Address"
+                    app:customFont="@string/regular"/>
+
+                <ua.com.lviv.fly.touristhelper.views.FontTextView
+                    android:id="@+id/data5"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/no_information"
+                    app:customFont="@string/regular"/>
+            </LinearLayout>
+
+        </LinearLayout>
 
 
-
-    <ua.com.lviv.fly.touristhelper.views.FontTextView
-        android:id="@+id/phoneNumber"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="@dimen/activity_padding"
-        app:customFont="@string/regular" />
-
-    <!--<ua.com.lviv.fly.touristhelper.views.FontTextView-->
-    <!--android:id="@+id/phoneNumber"-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:padding="@dimen/activity_padding"-->
-    <!--app:customFont="@string/regular" />-->
+    </ScrollView>
 
     <fragment
         android:id="@+id/map"
         android:name="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="match_parent"
         android:layout_height="400dp"
-        tools:context="ua.com.lviv.fly.touristhelper.MapsActivity" />
+        tools:context="ua.com.lviv.fly.touristhelper.MapsActivity"/>
 </LinearLayout>

@@ -222,4 +222,5 @@
     </string-array>
 
     <string name="Виберіть_найактуальніше_саме_для_Вас">Виберіть найактуальніше саме для Вас</string>
+    <string name="contacts">"Контакти:&#160;"</string>
 </resources>

@@ -10,10 +10,29 @@
         android:id="@+id/name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:customFont="@string/regular"/>
+        app:customFont="@string/bold"/>
 
     <ua.com.lviv.fly.touristhelper.views.FontTextView
         android:id="@+id/location"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:customFont="@string/light"
+        android:textSize="12sp"
+        />
+    <ua.com.lviv.fly.touristhelper.views.FontTextView
+        android:id="@+id/telephone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:customFont="@string/regular"/>
+
+    <ua.com.lviv.fly.touristhelper.views.FontTextView
+        android:id="@+id/info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:customFont="@string/regular"/>
+
+    <ua.com.lviv.fly.touristhelper.views.FontTextView
+        android:id="@+id/cheapestService"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:customFont="@string/light"
