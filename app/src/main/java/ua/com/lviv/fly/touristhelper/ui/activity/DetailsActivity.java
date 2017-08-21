@@ -69,11 +69,6 @@ public class DetailsActivity extends AppCompatActivity implements OnMapReadyCall
 
     private ArrayList<LatLng> MarkerPoints = new ArrayList<>();
 
-//    public static void startThisActivity(Context context, String placeId) {
-//        Intent intent = new Intent(context, DetailsActivity.class);
-//        intent.putExtra(PLACE_ID_KEY, placeId);
-//        context.startActivity(intent);
-//    }
 
     public static void startThisActivity(Context context, String data) {
         Intent intent = new Intent(context, DetailsActivity.class);
@@ -95,6 +90,8 @@ public class DetailsActivity extends AppCompatActivity implements OnMapReadyCall
         Gson gson = Model.instance().getGson();
         item = gson.fromJson(extras.getString(DATA_KEY), JsonVO.class);
 
+        fillView();
+
         //My location was added
         {
             Location myLocation = Model.instance().getOptionManager().getMyLocation();
@@ -108,10 +105,16 @@ public class DetailsActivity extends AppCompatActivity implements OnMapReadyCall
     private void fillView() {
         TextView address = (TextView) findViewById(R.id.address);
         TextView name = (TextView) findViewById(R.id.name);
+        TextView telephone = (TextView) findViewById(R.id.telephone);
+        TextView cheapestService = (TextView) findViewById(R.id.cheapestService);
+        TextView mostExpensiveService = (TextView) findViewById(R.id.mostExpensiveService);
+
+
         address.setText(item.getAddress());
         name.setText(item.getName());
-
-
+        telephone.setText(item.getTelephone());
+        cheapestService.setText(item.getCheapestService());
+        mostExpensiveService.setText(item.getMostExpensiveService());
     }
 
     @Override
@@ -152,9 +155,7 @@ public class DetailsActivity extends AppCompatActivity implements OnMapReadyCall
             mMap.setMyLocationEnabled(true);
         }
 
-        fillView();
         if (mMap != null) {
-
             addMarkerOnMap(new LatLng(49.826995, 24.042654));
         }
 
