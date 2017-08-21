@@ -36,6 +36,7 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.PolylineOptions;
+import com.google.gson.Gson;
 import com.ls.util.L;
 
 import org.json.JSONObject;
@@ -58,31 +59,23 @@ import ua.com.lviv.fly.touristhelper.data.JsonVO;
 import ua.com.lviv.fly.touristhelper.model.Model;
 import ua.com.lviv.fly.touristhelper.ui.fragments.OptionsFragment;
 
-public class DetailsActivity extends AppCompatActivity implements GoogleApiClient.ConnectionCallbacks,
-        GoogleApiClient.OnConnectionFailedListener,
-        OnMapReadyCallback,
-        TextToSpeech.OnInitListener,
-        View.OnClickListener {
+public class DetailsActivity extends AppCompatActivity implements OnMapReadyCallback, View.OnClickListener {
 
     public static final int MY_PERMISSIONS_REQUEST_LOCATION = 99;
     public static final String PLACE_ID_KEY = "PLACE_ID_KEY";
     public static final String DATA_KEY = "PLACE_ID_KEY";
-    private GoogleApiClient mGoogleApiClient;
-    private TextToSpeech textToSpeech;
-    private boolean ready = false;
-    private String placeId;
+    private JsonVO item;
     private GoogleMap mMap;
-    private Place place;
 
     private ArrayList<LatLng> MarkerPoints = new ArrayList<>();
 
-    public static void startThisActivity(Context context, String placeId) {
-        Intent intent = new Intent(context, DetailsActivity.class);
-        intent.putExtra(PLACE_ID_KEY, placeId);
-        context.startActivity(intent);
-    }
+//    public static void startThisActivity(Context context, String placeId) {
+//        Intent intent = new Intent(context, DetailsActivity.class);
+//        intent.putExtra(PLACE_ID_KEY, placeId);
+//        context.startActivity(intent);
+//    }
 
-    public static void start1ThisActivity(Context context, String data ) {
+    public static void startThisActivity(Context context, String data) {
         Intent intent = new Intent(context, DetailsActivity.class);
         intent.putExtra(DATA_KEY, data);
         context.startActivity(intent);
@@ -99,7 +92,9 @@ public class DetailsActivity extends AppCompatActivity implements GoogleApiClien
         }
 
         Bundle extras = getIntent().getExtras();
-        placeId = extras.getString(PLACE_ID_KEY);
+        Gson gson = Model.instance().getGson();
+        item = gson.fromJson(extras.getString(DATA_KEY), JsonVO.class);
+
         //My location was added
         {
             Location myLocation = Model.instance().getOptionManager().getMyLocation();
@@ -108,104 +103,13 @@ public class DetailsActivity extends AppCompatActivity implements GoogleApiClien
 
 
         //TextToSpeech
-        textToSpeech = new TextToSpeech(this, DetailsActivity.this);
     }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-        if (mGoogleApiClient != null) {
-            mGoogleApiClient.connect();
-        }
-    }
-
-    @Override
-    protected void onStop() {
-        if (mGoogleApiClient != null) {
-            mGoogleApiClient.disconnect();
-        }
-        super.onStop();
-    }
-
-    @Override
-    protected void onDestroy() {
-        textToSpeech.shutdown();
-        super.onDestroy();
-    }
-
-    @Override
-    public void onConnected(@Nullable Bundle bundle) {
-        getPlaceById();
-    }
-
-    @Override
-    public void onConnectionSuspended(int i) {
-        Log.e(PlaceActivity.class.getName(), "onConnectionSuspended");
-    }
-
-    @Override
-    public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
-        Log.e(PlaceActivity.class.getName(), "onConnectionFailed");
-    }
-
-    private void buildGoogleApiClient() {
-        mGoogleApiClient = new GoogleApiClient
-                .Builder(this)
-                .addApi(Places.GEO_DATA_API)
-                .addApi(Places.PLACE_DETECTION_API)
-                .addConnectionCallbacks(this)
-                .addOnConnectionFailedListener(this)
-                .build();
-        mGoogleApiClient.connect();
-
-    }
-
-    private void getPlaceById() {
-        Places.GeoDataApi.getPlaceById(mGoogleApiClient, placeId)
-                .setResultCallback(new ResultCallback<PlaceBuffer>() {
-                    @Override
-                    public void onResult(PlaceBuffer places) {
-                        L.e("onResult");
-
-                        if (places.getStatus().isSuccess() && places.getCount() > 0) {
-                            place = places.get(0);
-                            fillView(place);
-                            if (mMap != null) {
-                                addMarkerOnMap(place.getLatLng());
-                            }
-                        } else {
-                            L.e("Place not found");
-                        }
-                        places.release();
-                    }
-                });
-    }
-
-    private void fillView(final Place place) {
-        TextView site = (TextView) findViewById(R.id.webSite);
-//        TextView data = (TextView) findViewById(R.id.data);
-//        TextView phoneNumber = (TextView) findViewById(R.id.phoneNumber);
+    private void fillView() {
         TextView address = (TextView) findViewById(R.id.address);
         TextView name = (TextView) findViewById(R.id.name);
-
-//        data.setText(place.getAddress());
-        address.setText(place.getAddress());
-        name.setText(place.getAddress());
-
-        if (place.getWebsiteUri() != null) {
-            site.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Intent i = new Intent(Intent.ACTION_VIEW);
-                    i.setData(place.getWebsiteUri());
-                    startActivity(i);
-
-                }
-            });
-            site.setText(place.getWebsiteUri().toString());
-        }
-
-//        setValue(phoneNumber, place.getPhoneNumber());
+        address.setText(item.getAddress());
+        name.setText(item.getName());
 
 
     }
@@ -240,7 +144,6 @@ public class DetailsActivity extends AppCompatActivity implements GoogleApiClien
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-        L.e("onMapReady");
         if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
                 mMap.setMyLocationEnabled(true);
@@ -249,7 +152,12 @@ public class DetailsActivity extends AppCompatActivity implements GoogleApiClien
             mMap.setMyLocationEnabled(true);
         }
 
-        buildGoogleApiClient();
+        fillView();
+        if (mMap != null) {
+
+            addMarkerOnMap(new LatLng(49.826995, 24.042654));
+        }
+
 
     }
 
@@ -362,20 +270,6 @@ public class DetailsActivity extends AppCompatActivity implements GoogleApiClien
         return data;
     }
 
-    @Override
-    public void onInit(int status) {
-        if (status == TextToSpeech.LANG_MISSING_DATA) {
-            Intent installIntent = new Intent();
-            installIntent.setAction(TextToSpeech.Engine.ACTION_INSTALL_TTS_DATA);
-            startActivity(installIntent);
-        }
-        if (status == TextToSpeech.SUCCESS) {
-            ready = true;
-            speak("Lviv");
-        } else {
-            ready = false;
-        }
-    }
 
     @Override
     public void onClick(View view) {
@@ -488,25 +382,4 @@ public class DetailsActivity extends AppCompatActivity implements GoogleApiClien
         }
     }
 
-    private void speak(String text) {
-        if (ready) {
-            textToSpeech.setLanguage(Locale.ENGLISH);
-            textToSpeech.speak(text, TextToSpeech.QUEUE_FLUSH, null);
-        }
-    }
-
-    private void initView() {
-        findViewById(R.id.webSite).setOnClickListener(this);
-//        findViewById(R.id.data).setOnClickListener(this);
-//        findViewById(R.id.webSite);
-//        findViewById(R.id.data);
-//        findViewById(R.id.webSite);
-//        findViewById(R.id.data);
-    }
-
-    private void setValue(TextView view, CharSequence value){
-        if(value !=null){
-            view.setText(value);
-        }
-    }
 }

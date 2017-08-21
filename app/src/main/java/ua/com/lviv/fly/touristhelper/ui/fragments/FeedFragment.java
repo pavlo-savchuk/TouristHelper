@@ -58,7 +58,7 @@ public class FeedFragment extends Fragment {
                 L.e("S 2= " + gson.fromJson(s, JsonVO.class));
 
 
-                DetailsActivity.startThisActivity(getContext(), item.getAddress());
+                DetailsActivity.startThisActivity(getContext(), gson.toJson(item));
             }
         });
         return inflate;
