@@ -5,6 +5,7 @@ import android.graphics.Typeface;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.SpannableStringBuilder;
+import android.text.TextUtils;
 import android.text.style.RelativeSizeSpan;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -68,11 +69,16 @@ public class FeedAdapter extends BaseAdapter {
             viewHolder = (ViewHolder) convertView.getTag();
         }
         JsonVO jsonVO = data.get(position);
-        viewHolder.name.setText(jsonVO.getName());
-        viewHolder.location.setText(jsonVO.getAddress());
-        viewHolder.telephone.setText(setSpannable(context.getString(R.string.contacts),  jsonVO.getTelephone()));
-        viewHolder.info.setText("Інфо: " + jsonVO.getInfo());
-        viewHolder.cheapestService.setText(jsonVO.getCheapestService());
+        setText(viewHolder.name, jsonVO.getName());
+        setText(viewHolder.telephone, jsonVO.getAddress() );
+        setText(viewHolder.info, jsonVO.getTelephone() );
+        setText(viewHolder.cheapestService, jsonVO.getCheapestService() );
+
+//        viewHolder.name.setText(jsonVO.getName());
+//        viewHolder.location.setText(jsonVO.getAddress());
+//        viewHolder.telephone.setText(setSpannable(context.getString(R.string.contacts), jsonVO.getTelephone()));
+//        viewHolder.info.setText("Інфо: " + jsonVO.getInfo());
+//        viewHolder.cheapestService.setText(jsonVO.getCheapestService());
 
         return convertView;
     }
@@ -85,10 +91,19 @@ public class FeedAdapter extends BaseAdapter {
         TextView cheapestService;
     }
 
-    private Spannable setSpannable(String text1, String text2){
+    private Spannable setSpannable(String text1, String text2) {
         Spannable span = new SpannableString(text1 + text2);
         span.setSpan(new RelativeSizeSpan(0.8f), text1.length(), text1.length() + text2.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
         return span;
+    }
+
+    private void setText(TextView view, String text) {
+        if (TextUtils.isEmpty(text)) {
+            view.setVisibility(View.GONE);
+        } else {
+            view.setVisibility(View.VISIBLE);
+            view.setText(text);
+        }
     }
 
 

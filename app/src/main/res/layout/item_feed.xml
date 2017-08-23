@@ -8,12 +8,14 @@
 
     <ua.com.lviv.fly.touristhelper.views.FontTextView
         android:id="@+id/name"
+        android:text="name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:customFont="@string/bold"/>
 
     <ua.com.lviv.fly.touristhelper.views.FontTextView
         android:id="@+id/location"
+        android:text="location"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:customFont="@string/light"
@@ -21,18 +23,21 @@
         />
     <ua.com.lviv.fly.touristhelper.views.FontTextView
         android:id="@+id/telephone"
+        android:text="telephone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:customFont="@string/regular"/>
 
     <ua.com.lviv.fly.touristhelper.views.FontTextView
         android:id="@+id/info"
+        android:text="info"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:customFont="@string/regular"/>
 
     <ua.com.lviv.fly.touristhelper.views.FontTextView
         android:id="@+id/cheapestService"
+        android:text="cheapestService"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:customFont="@string/light"
