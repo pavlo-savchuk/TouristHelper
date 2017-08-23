@@ -70,8 +70,8 @@ public class FeedAdapter extends BaseAdapter {
         }
         JsonVO jsonVO = data.get(position);
         setText(viewHolder.name, jsonVO.getName());
-        setText(viewHolder.telephone, jsonVO.getAddress() );
-        setText(viewHolder.info, jsonVO.getTelephone() );
+        setText(viewHolder.location, jsonVO.getAddress() );
+        setText(viewHolder.telephone, jsonVO.getTelephone() );
         setText(viewHolder.cheapestService, jsonVO.getCheapestService() );
 
 //        viewHolder.name.setText(jsonVO.getName());

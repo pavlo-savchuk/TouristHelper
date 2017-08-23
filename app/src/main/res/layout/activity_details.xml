@@ -36,6 +36,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:paddingLeft="@dimen/padding"
                     android:text="@string/no_information"
                     app:customFont="@string/light"/>
             </LinearLayout>
@@ -58,6 +59,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:paddingLeft="@dimen/padding"
                     android:text="@string/no_information"
                     app:customFont="@string/light"/>
             </LinearLayout>
@@ -80,6 +82,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:paddingLeft="@dimen/padding"
                     android:text="@string/no_information"
                     app:customFont="@string/light"/>
             </LinearLayout>
@@ -102,6 +105,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:paddingLeft="@dimen/padding"
                     android:text="@string/no_information"
                     app:customFont="@string/light"/>
             </LinearLayout>
@@ -124,6 +128,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:paddingLeft="@dimen/padding"
                     android:text="@string/no_information"
                     app:customFont="@string/light"/>
             </LinearLayout>
@@ -146,10 +151,34 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:paddingLeft="@dimen/padding"
                     android:text="@string/no_information"
                     app:customFont="@string/light"/>
             </LinearLayout>
 
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/padding_small">
+
+                <ua.com.lviv.fly.touristhelper.views.FontTextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.4"
+                    android:text="Info"
+                    app:customFont="@string/bold"/>
+
+                <ua.com.lviv.fly.touristhelper.views.FontTextView
+                    android:id="@+id/info"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingLeft="@dimen/padding"
+                    android:text="@string/no_information"
+                    app:customFont="@string/light"/>
+            </LinearLayout>
         </LinearLayout>
 
 

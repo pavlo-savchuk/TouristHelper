@@ -108,13 +108,14 @@ public class DetailsActivity extends AppCompatActivity implements OnMapReadyCall
         TextView telephone = (TextView) findViewById(R.id.telephone);
         TextView cheapestService = (TextView) findViewById(R.id.cheapestService);
         TextView mostExpensiveService = (TextView) findViewById(R.id.mostExpensiveService);
-
+        TextView info = (TextView) findViewById(R.id.info);
 
         address.setText(item.getAddress());
         name.setText(item.getName());
         telephone.setText(item.getTelephone());
         cheapestService.setText(item.getCheapestService());
         mostExpensiveService.setText(item.getMostExpensiveService());
+        info.setText(item.getInfo());
     }
 
     @Override
@@ -376,7 +377,7 @@ public class DetailsActivity extends AppCompatActivity implements OnMapReadyCall
             // Drawing polyline in the Google Map for the i-th route
             if (lineOptions != null) {
                 mMap.addPolyline(lineOptions);
-                mMap.animateCamera(CameraUpdateFactory.newLatLngBounds(builder.build(), 5));
+                mMap.animateCamera(CameraUpdateFactory.newLatLngBounds(builder.build(), 100));
             } else {
                 Log.d("onPostExecute", "without Polylines drawn");
             }

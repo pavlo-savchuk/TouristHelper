@@ -26,7 +26,8 @@
         android:text="telephone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:customFont="@string/regular"/>
+        android:textSize="12sp"
+        app:customFont="@string/italic"/>
 
     <ua.com.lviv.fly.touristhelper.views.FontTextView
         android:id="@+id/info"
