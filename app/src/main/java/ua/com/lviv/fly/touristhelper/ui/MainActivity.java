@@ -43,13 +43,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         setContentView(R.layout.activity_main);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG).setAction("Action", null).show();
-            }
-        });
+//        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+//        fab.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG).setAction("Action", null).show();
+//            }
+//        });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close) {
@@ -117,12 +117,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.nav_camera:
                 setFragment(MapFragment.newInstance());
                 break;
-            case R.id.nav_gallery:
-                setFragment(NearbyPlacesFragment.newInstance());
-                break;
-            case R.id.nav_slideshow:
-                setFragment(SettingsFragment.newInstance());
-                break;
+//            case R.id.nav_gallery:
+//                setFragment(NearbyPlacesFragment.newInstance());
+//                break;
+//            case R.id.nav_slideshow:
+//                setFragment(SettingsFragment.newInstance());
+//                break;
             case R.id.nav_share:
                 setFragment(PrefsFragment.newInstance());
                 break;

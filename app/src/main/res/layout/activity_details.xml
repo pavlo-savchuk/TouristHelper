@@ -28,7 +28,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.4"
-                    android:text="Web site"
+                    android:text="Інтернет сторінка"
                     app:customFont="@string/bold"/>
 
                 <ua.com.lviv.fly.touristhelper.views.FontTextView
@@ -51,7 +51,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.4"
-                    android:text="Name"
+                    android:text="Назва"
                     app:customFont="@string/bold"/>
 
                 <ua.com.lviv.fly.touristhelper.views.FontTextView
@@ -74,7 +74,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.4"
-                    android:text="telephone"
+                    android:text="Телефон"
                     app:customFont="@string/bold"/>
 
                 <ua.com.lviv.fly.touristhelper.views.FontTextView
@@ -97,7 +97,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.4"
-                    android:text="cheapestService"
+                    android:text="Найдешевша послуга"
                     app:customFont="@string/bold"/>
 
                 <ua.com.lviv.fly.touristhelper.views.FontTextView
@@ -120,7 +120,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.4"
-                    android:text="mostExpensiveService"
+                    android:text="Найдорожча послуга"
                     app:customFont="@string/bold"/>
 
                 <ua.com.lviv.fly.touristhelper.views.FontTextView
@@ -143,8 +143,9 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.4"
-                    android:text="Address"
-                    app:customFont="@string/bold"/>
+                    android:text="Адреса"
+                    app:customFont="@string/bold"
+                    android:id="@+id/fontTextView" />
 
                 <ua.com.lviv.fly.touristhelper.views.FontTextView
                     android:id="@+id/address"
@@ -167,7 +168,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.4"
-                    android:text="Info"
+                    android:text="Інформація"
                     app:customFont="@string/bold"/>
 
                 <ua.com.lviv.fly.touristhelper.views.FontTextView

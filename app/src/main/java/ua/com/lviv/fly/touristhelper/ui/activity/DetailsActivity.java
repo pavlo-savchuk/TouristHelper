@@ -14,9 +14,11 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -37,10 +39,7 @@ import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.PolylineOptions;
 import com.google.gson.Gson;
-import com.ls.util.L;
-
 import org.json.JSONObject;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -50,14 +49,11 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Locale;
 
-import ua.com.lviv.fly.touristhelper.PlaceActivity;
 import ua.com.lviv.fly.touristhelper.R;
 import ua.com.lviv.fly.touristhelper.data.DataParser;
 import ua.com.lviv.fly.touristhelper.data.JsonVO;
 import ua.com.lviv.fly.touristhelper.model.Model;
-import ua.com.lviv.fly.touristhelper.ui.fragments.OptionsFragment;
 
 public class DetailsActivity extends AppCompatActivity implements OnMapReadyCallback, View.OnClickListener {
 
@@ -80,6 +76,7 @@ public class DetailsActivity extends AppCompatActivity implements OnMapReadyCall
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details);
+        setActionBar();
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
         if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
@@ -97,9 +94,24 @@ public class DetailsActivity extends AppCompatActivity implements OnMapReadyCall
             Location myLocation = Model.instance().getOptionManager().getMyLocation();
             MarkerPoints.add(new LatLng(myLocation.getLatitude(), myLocation.getLongitude()));
         }
+    }
 
 
-        //TextToSpeech
+    @Override
+    public boolean onOptionsItemSelected(MenuItem menuItem) {
+        switch (menuItem.getItemId()) {
+            case android.R.id.home:
+                finish();
+        }
+        return (super.onOptionsItemSelected(menuItem));
+    }
+
+
+    private void setActionBar(){
+        ActionBar supportActionBar = getSupportActionBar();
+        supportActionBar.setHomeButtonEnabled(true);
+        supportActionBar.setDisplayHomeAsUpEnabled(true);
+        setContentView(R.layout.activity_test);
     }
 
     private void fillView() {

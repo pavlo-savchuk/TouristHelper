@@ -1,46 +1,34 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-
-    <PreferenceCategory android:title="Types">
-
-        <ListPreference
-            android:defaultValue="1"
-            android:dialogTitle="@string/types_pref_title"
-            android:entries="@array/types"
-            android:entryValues="@array/types"
-            android:key="@string/types_key"
-            android:summary="Choose types"
-            android:title="@string/types_pref_title" />
-
-    </PreferenceCategory>
-
-    <PreferenceCategory android:title="Radius">
-
-        <ListPreference
-            android:defaultValue="1"
-            android:dialogTitle="@string/radius_pref_title"
-            android:entries="@array/radius"
-            android:entryValues="@array/radius"
-            android:key="@string/radius_key"
-            android:summary="Choose radius"
-            android:title="@string/radius_pref_title" />
-
-    </PreferenceCategory>
-
-    <PreferenceCategory android:title="User">
+    <PreferenceCategory android:title="Користувач">
 
         <EditTextPreference
             android:key="@string/user_first_name_key"
-            android:title="@string/user_first_name_default_value"
-            android:summary="@string/user_first_name_default_value"
-            android:dialogTitle="Enter User Name" />
+            android:title="Імя"
+            android:summary="Імя"
+            android:dialogTitle="Імя" />
 
 
         <EditTextPreference
             android:key="@string/user_email_key"
-            android:title="@string/user_email_title"
-            android:summary="@string/user_email_default_value"
-            android:dialogTitle="Enter Email" />
+            android:title="Електронна адреса"
+            android:summary="Електронна адреса"
+            android:dialogTitle="Електронна адреса" />
+
+        <EditTextPreference
+            android:key="@string/user_address_key"
+            android:title="Адресса"
+            android:summary="Адресса"
+            android:dialogTitle="Адресса" />
+
+
+        <EditTextPreference
+            android:key="@string/user_age_key"
+            android:title="Вік"
+            android:summary="Вік"
+            android:dialogTitle="Вік" />
+
+
     </PreferenceCategory>
 
 </PreferenceScreen>

@@ -20,6 +20,7 @@ import ua.com.lviv.fly.touristhelper.R;
 import ua.com.lviv.fly.touristhelper.data.JsonVO;
 import ua.com.lviv.fly.touristhelper.model.Model;
 import ua.com.lviv.fly.touristhelper.ui.activity.DetailsActivity;
+import ua.com.lviv.fly.touristhelper.ui.activity.TestActivity;
 import ua.com.lviv.fly.touristhelper.ui.adapters.FeedAdapter;
 
 public class FeedFragment extends Fragment {

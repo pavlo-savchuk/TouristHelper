@@ -61,8 +61,6 @@ public class FeedAdapter extends BaseAdapter {
             viewHolder.name = (TextView) convertView.findViewById(R.id.name);
             viewHolder.location = (TextView) convertView.findViewById(R.id.location);
             viewHolder.telephone = (TextView) convertView.findViewById(R.id.telephone);
-            viewHolder.info = (TextView) convertView.findViewById(R.id.info);
-            viewHolder.cheapestService = (TextView) convertView.findViewById(R.id.cheapestService);
 
             convertView.setTag(viewHolder);
         } else {
@@ -71,14 +69,7 @@ public class FeedAdapter extends BaseAdapter {
         JsonVO jsonVO = data.get(position);
         setText(viewHolder.name, jsonVO.getName());
         setText(viewHolder.location, jsonVO.getAddress() );
-        setText(viewHolder.telephone, jsonVO.getTelephone() );
-        setText(viewHolder.cheapestService, jsonVO.getCheapestService() );
 
-//        viewHolder.name.setText(jsonVO.getName());
-//        viewHolder.location.setText(jsonVO.getAddress());
-//        viewHolder.telephone.setText(setSpannable(context.getString(R.string.contacts), jsonVO.getTelephone()));
-//        viewHolder.info.setText("Інфо: " + jsonVO.getInfo());
-//        viewHolder.cheapestService.setText(jsonVO.getCheapestService());
 
         return convertView;
     }
@@ -87,8 +78,7 @@ public class FeedAdapter extends BaseAdapter {
         TextView name;
         TextView location;
         TextView telephone;
-        TextView info;
-        TextView cheapestService;
+
     }
 
     private Spannable setSpannable(String text1, String text2) {

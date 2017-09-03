@@ -42,8 +42,7 @@ public class OptionsFragment extends Fragment implements TextToSpeech.OnInitList
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_feed, container, false);
+        return inflater.inflate(R.layout.fragment_options, container, false);
     }
 
     @Override
@@ -72,7 +71,6 @@ public class OptionsFragment extends Fragment implements TextToSpeech.OnInitList
 
     @Override
     public void onInit(int status) {
-        L.e("onInit" + Locale.getAvailableLocales().toString());
         if (status == TextToSpeech.LANG_MISSING_DATA) {
             Intent installIntent = new Intent();
             installIntent.setAction(TextToSpeech.Engine.ACTION_INSTALL_TTS_DATA);
@@ -101,6 +99,6 @@ public class OptionsFragment extends Fragment implements TextToSpeech.OnInitList
 
         textToSpeech.speak(textholder, TextToSpeech.QUEUE_FLUSH, null);
 
-        Toast.makeText(getActivity(), textholder, Toast.LENGTH_LONG).show();
+//        Toast.makeText(getActivity(), textholder, Toast.LENGTH_LONG).show();
     }
 }
