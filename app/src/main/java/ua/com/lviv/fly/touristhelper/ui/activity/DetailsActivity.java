@@ -111,7 +111,6 @@ public class DetailsActivity extends AppCompatActivity implements OnMapReadyCall
         ActionBar supportActionBar = getSupportActionBar();
         supportActionBar.setHomeButtonEnabled(true);
         supportActionBar.setDisplayHomeAsUpEnabled(true);
-        setContentView(R.layout.activity_test);
     }
 
     private void fillView() {
