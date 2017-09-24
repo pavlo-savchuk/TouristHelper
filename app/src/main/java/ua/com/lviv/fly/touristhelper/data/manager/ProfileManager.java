@@ -135,7 +135,7 @@ public class ProfileManager {
         for (Map.Entry<Integer, Enum> entry : mapData.entrySet()) {
             Integer key = entry.getKey();
             if (entry.getValue() == Enum.yes) {
-                stringBuilder.append(createTextFeed(key) + "|");
+                stringBuilder.append(createTextFeed(key) + " ");
             }
         }
 
