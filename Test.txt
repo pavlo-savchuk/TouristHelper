@@ -786,12 +786,12 @@
          "geometry" : {
             "location" : {
                "lat" : 48.8840045,
-               "lng" : 2.3391613
+               "lng" : 2. 3391613
             }
          },
          "id" : "7836085c195a87b74ea4b914715093128a154d99",
          "placeId" : "ChIJWzNoWERu5kcRQhqrQIgzxJM",
-         "reference" : "CmRSAAAATgCzMe_djlKifs6zgolJx82huKpKxl3DcTCtf--jZSF3Q3Z6gExyQpzkl3-S-xVHdA5DOYxBlTLFiSYPEa8ufNtHlVYs6om75W7wJwHTLaSxvWd6aHzd2uPhP5nMbV15EhCtinoqihb-G5px5fGh9yrrGhSNNxVHuNZBlw8x7SNKgA6LPimMWw"
+         "reference" : "CmRSAAAATgCzMe_djlKifs6zgolJx82h uKpKxl3DcTCtf--jZSF3Q3Z6gExyQpzkl3-S-xVHdA5DOYxBlTLFiSYPEa8ufNtHlVYs6om75W7wJwHTLaSxvWd6aHzd2uPhP5nMbV15EhCtinoqihb-G5px5fGh9yrrGhSNNxVHuNZBlw8x7SNKgA6LPimMWw"
       },
       {
          "geometry" : {
@@ -1064,7 +1064,7 @@
                "lng" : 2.363009
             }
          },
-         "id" : "54e15fc08ce72bd69746c39f6883900782725eed",
+         "id" : "54e15fc 08ce72bd69746c39f6883900782725eed",
          "placeId" : "ChIJkyQ5bwZu5kcRpRTSkCtdSh4",
          "reference" : "CmRRAAAAnvKXy_p_1hKU06K-zhnVXzaMioRc-17C2pqtWhGFWW-EGJfyB2E83mi0QZaH6ySAyK7EFsitvkTmRkJe-kldslWaewo8ArZEldgIiTi5W3Is-Ey01yWD6yIDkKfMz7PaEhCL2Gcge6OzOQTZWeJ6dfZeGhRaJrQlpqv52WlOttdoHhSaAwxNuA"
       },
